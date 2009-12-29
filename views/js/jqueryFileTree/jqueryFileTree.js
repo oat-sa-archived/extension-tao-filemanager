@@ -33,7 +33,7 @@
 if(jQuery) (function($){
 	
 	$.extend($.fn, {
-		fileTree: function(o, h) {
+		fileTree: function(o, h, d) {
 			// Defaults
 			if( !o ) var o = {};
 			if( o.root == undefined ) o.root = '/';
@@ -75,6 +75,9 @@ if(jQuery) (function($){
 								// Collapse
 								$(this).parent().find('UL').slideUp({ duration: o.collapseSpeed, easing: o.collapseEasing });
 								$(this).parent().removeClass('expanded').addClass('collapsed');
+							}
+							if(d){
+								d($(this).attr('rel'));
 							}
 						} else {
 							h($(this).attr('rel'));

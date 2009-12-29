@@ -41,7 +41,9 @@ div#file-data-container{
 	border:solid 1px #ccc;
 	padding:1%;
 }
-.ui-state-highlight{
+#file-data-container .ui-state-highlight, 
+#file-data-container .ui-state-default,
+#file-data-container .ui-widget-content{
 	padding:10px;
 	margin:5px;
 }

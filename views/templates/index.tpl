@@ -15,9 +15,10 @@
 	<link rel="stylesheet" type="text/css" href="<?=BASE_WWW?>css/style.css" />
 	
 	<script type='text/javascript'>
-		var baseUrl = "<?=BASE_URL?>";
-		var basePath = "<?=BASE_PATH?>";
-		var baseData = "<?=BASE_DATA?>";
+		var baseUrl 	= "<?=BASE_URL?>";
+		var basePath 	= "<?=BASE_PATH?>";
+		var baseData 	= "<?=BASE_DATA?>";
+		var urlData 	= "<?=URL_DATA?>";
 	</script>
 	<script type='text/javascript' src="<?=BASE_WWW?>js/filemanager.js"></script>
 </head>
@@ -25,12 +26,13 @@
 	<div id="header" class="ui-widget-header ui-corner-all">File Manager</div>
 	<div id="main-container">
 		<div id="file-container-title" class="ui-state-default ui-corner-all" >File Browser</div>
-		<div id="file-container">
-			
-			
-		</div>
+		<div id="file-container"></div>
 		
 		<div id="file-data-container">
+			<div class="ui-state-highlight ui-corner-all">
+				<strong>Current directory</strong>:
+				<span id="dir-uri">/</span>
+			</div>
 			<div class="ui-state-highlight ui-corner-all">
 				<strong>URL</strong>:
 				<span id="file-url"></span>
@@ -57,6 +59,13 @@
 						</tr>
 					</tbody>
 				</table>
+			</div>
+			<div class="ui-widget-content ui-corner-all">
+				<strong>File upload</strong>
+				<form enctype='multipart/form-data' action="fileUpload">
+					<input type="file" name="media_file" /><br />
+					<input type="text" name="media_name" /><input type="submit" value="Upload" />
+				</form>
 			</div>
 		</div>
 	</div>

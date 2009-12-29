@@ -13,30 +13,50 @@ class Browser extends Module {
 		$this->setView('index.tpl');
 	}
 	
+	/**
+	 * display the list of folders and file of the directory sent in parameter
+	 * @return void
+	 */
 	public function fileData(){
-		$root = $this->getRequestParameter('root');
-		$dir = urldecode($this->getRequestParameter('dir'));
-		if( file_exists($root . $dir) ) {
-			$files = scandir($root . $dir);
-			natcasesort($files);
-			if( count($files) > 2 ) { /* The 2 accounts for . and .. */
-				echo "<ul class=\"jqueryFileTree\" style=\"display: none;\">";
-				// All dirs
-				foreach( $files as $file ) {
-					if( file_exists($root . $dir . $file) && $file != '.' && $file != '..' && is_dir($root . $dir . $file) ) {
-						echo "<li class=\"directory collapsed\"><a href=\"#\" rel=\"" . htmlentities($dir . $file) . "/\">" . htmlentities($file) . "</a></li>";
-					}
-				}
-				// All files
-				foreach( $files as $file ) {
-					if( file_exists($root . $dir . $file) && $file != '.' && $file != '..' && !is_dir($root . $dir . $file) ) {
-						$ext = preg_replace('/^.*\./', '', $file);
-						echo "<li class=\"file ext_$ext\"><a href=\"#\" rel=\"" . htmlentities($dir . $file) . "\">" . htmlentities($file) . "</a></li>";
-					}
-				}
-				echo "</ul>";	
+		$root = BASE_DATA;
+		
+		$dataDir = urldecode($this->getRequestParameter('dir'));
+		
+		//security check: detect directory traversal (deny the ../)
+		if(preg_match("/\.\.\//", $dataDir)){
+			throw new Exception("Security failure: directory path not allowed");
+		}
+		
+		//security check:  detect the null byte poison by finding the null char injection
+		for($i = 0; $i < strlen($dataDir); $i++){
+			if(ord($dataDir[$i]) === 0){
+				throw new Exception("Security failure: directory path not allowed");
 			}
 		}
+		
+		$dir = str_replace('//', '/', $root . $dataDir);
+		
+		$buffer = '';
+		if( file_exists($dir) && is_readable($dir)  ) {
+			$files = scandir($dir);
+			natcasesort($files);
+			if( count($files) > 2 ) {
+				$buffer .= "<ul class='jqueryFileTree' style='display: none;'>";
+				foreach( $files as $file ) {
+					if( file_exists($dir . $file) && $file != '.' && $file != '..' && is_dir($dir . $file) ) {
+						$buffer .= "<li class='directory collapse'><a href='#' rel='" . htmlentities($dataDir . $file) . "/'>" . htmlentities($file) . "</a></li>";
+					}
+				}
+				foreach( $files as $file ) {
+					if( file_exists($dir . $file) && $file != '.' && $file != '..' && !is_dir($dir . $file) ) {
+						$ext = preg_replace('/^.*\./', '', $file);
+						$buffer .= "<li class='file ext_$ext'><a href='#' rel='" . htmlentities($dataDir . $file) . "'>" . htmlentities($file) . "</a></li>";
+					}
+				}
+				$buffer .= "</ul>";	
+			}
+		}
+		echo $buffer;
 	}
 }
 ?>
