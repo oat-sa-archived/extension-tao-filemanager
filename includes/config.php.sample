@@ -1,0 +1,48 @@
+<?php
+/**
+ * main configuration file
+ *
+ * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
+ * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
+ *
+ */
+
+# actions directory
+define("DIR_ACTIONS"		, dirname(__FILE__). "/../actions/");
+
+# views directory
+define("DIR_VIEWS"			, dirname(__FILE__) . '/../views/');
+
+# plugin directory
+define('DIR_PLUGINS'		, dirname(__FILE__).'/../plugins/');
+
+# session namespace
+define('SESSION_NAMESPACE', 'ClearFw');
+
+# default module name
+define('DEFAULT_MODULE_NAME', 'Browser');
+
+#default action name
+define('DEFAULT_ACTION_NAME', 'index');
+										
+
+# theme directory
+$GLOBALS['dir_theme']		= "templates/";
+
+# language
+$GLOBALS['lang']			= 'EN';
+
+#BASE PATH: the root path in the file system (usually the document root)
+define('ROOT_PATH', $_SERVER['DOCUMENT_ROOT']);
+define('BASE_PATH', ROOT_PATH . 'filemanager');
+
+#BASE URL (usually the domain root)
+define('ROOT_URL', 'http://'.$_SERVER['HTTP_HOST']);
+define('BASE_URL', ROOT_URL.'/filemanager');
+
+#BASE WWW the web resources path
+define('BASE_WWW', BASE_URL . '/views/' );
+
+#root folder for the files
+define('BASE_DATA', BASE_PATH . '/views/data/' );
+?>

@@ -1,0 +1,50 @@
+body {
+	margin:0px;
+	padding:0px;
+	font-size:12px;
+}
+a img{
+	border-style:none;
+}
+div#header{
+	width:74%;
+	margin:1% auto 1% auto;
+	text-align:center;
+	font-size:16px;
+	font-weight:bold;
+	padding:5px 0.5% 5px 0.5%;
+}
+div#main-container{
+	width:75%;
+	margin:auto;
+	height:500px; 
+	position:relative;
+}
+div#file-container-title{
+	width:35%;
+	padding:0.5% 1% 0.5% 1%;
+}
+div#file-container{
+	width:35%; 
+	height:94.5%;
+	border:solid 1px #ccc;
+	padding:1%;
+	overflow-y:auto;
+}
+div#file-data-container{
+	position:absolute;
+	width:60.5%; 
+	height:100%;
+	left:37.5%;
+	top:0%;
+	background-color:#eee;
+	border:solid 1px #ccc;
+	padding:1%;
+}
+.ui-state-highlight{
+	padding:10px;
+	margin:5px;
+}
+table td{
+	text-align:center;
+}
