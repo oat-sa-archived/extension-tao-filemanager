@@ -6,6 +6,9 @@ body {
 a img{
 	border-style:none;
 }
+a{
+	text-decoration:none;
+}
 div#header{
 	width:74%;
 	margin:1% auto 1% auto;
@@ -47,6 +50,13 @@ div#file-data-container{
 	padding:10px;
 	margin:5px;
 }
-table td{
+table#actions td{
 	text-align:center;
+	width:100px;
+}
+.data-container{
+	background-color:#ddd;
+	font-family:Courier;
+	font-size: 12px;
+	color:#000;
 }

@@ -9,6 +9,7 @@
 	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery-ui-1.7.2.custom.min.js"></script>
 	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery.easing.1.3.js"></script>
 	<script type='text/javascript' src="<?=BASE_WWW?>js/jqueryFileTree/jqueryFileTree.js"></script>
+	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery.copy.js"></script>
 	
 	<link rel="stylesheet" type="text/css" href="<?=BASE_WWW?>css/custom-theme/jquery-ui-1.7.2.custom.css" />
 	<link rel="stylesheet" type="text/css" href="<?=BASE_WWW?>js/jqueryFileTree/jqueryFileTree.css" />
@@ -31,11 +32,12 @@
 		<div id="file-data-container">
 			<div class="ui-state-highlight ui-corner-all">
 				<strong>Current directory</strong>:
-				<span id="dir-uri">/</span>
+				<span id="dir-uri" class="data-container">/</span>
 			</div>
 			<div class="ui-state-highlight ui-corner-all">
 				<strong>URL</strong>:
-				<span id="file-url"></span>
+				<span id="file-url" class="data-container" ></span>
+				<span id="file-uri" style="display:none;"></span>
 			</div>
 			<div class="ui-state-highlight ui-corner-all" style="height:120px;">
 				<strong>Preview</strong>
@@ -43,19 +45,21 @@
 			</div>
 			<div class="ui-state-highlight ui-corner-all">
 				<strong>Actions</strong>
-				<table>
-					<colgroup>
-						<col width="100px" />
-						<col width="100px" />
-					</colgroup>
+				<table id="actions">
 					<tbody>
 						<tr>
-							<td><a href="#"><img src="<?=BASE_WWW?>img/download_disabled.png" /></a></td>
-							<td><a href="#"><img src="<?=BASE_WWW?>img/delete_disabled.png" /></a></td>
+							<td><a class="root-link" href="#"><img src="<?=BASE_WWW?>img/root.png" /></a></td>
+							<td><a class="new-dir-link" href="#"><img src="<?=BASE_WWW?>img/folder-new.png" /></a></td>
+							<td><a class="copy-url-link" href="#"><img src="<?=BASE_WWW?>img/copy_disabled.png" /></a></td>
+							<td><a class="download-link" href="#"><img src="<?=BASE_WWW?>img/download_disabled.png" /></a></td>
+							<td><a class="delete-link" href="#"><img src="<?=BASE_WWW?>img/delete_disabled.png" /></a></td>
 						</tr>
 						<tr>
-							<td><a href="#">Download</a></td>
-							<td><a href="#">Delete</a></td>
+							<td><a class="root-link" href="#">Root</a></td>
+							<td><a class="new-dir-link" href="#">New directory</a></td>
+							<td><a class="copy-url-link" href="#">Copy url</a></td>
+							<td><a class="download-link" href="#">Download</a></td>
+							<td><a class="delete-link" href="#">Delete</a></td>
 						</tr>
 					</tbody>
 				</table>
