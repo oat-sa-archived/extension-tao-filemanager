@@ -16,10 +16,17 @@
 	<link rel="stylesheet" type="text/css" href="<?=BASE_WWW?>css/style.css" />
 	
 	<script type='text/javascript'>
+		
 		var baseUrl 	= "<?=BASE_URL?>";
 		var basePath 	= "<?=BASE_PATH?>";
 		var baseData 	= "<?=BASE_DATA?>";
 		var urlData 	= "<?=URL_DATA?>";
+		<?if(get_data('openFolder')):?>
+		var openFolder	= "<?=get_data('openFolder')?>";
+		<?else:?>
+		var openFolder	= null;
+		<?endif?>
+		
 	</script>
 	<script type='text/javascript' src="<?=BASE_WWW?>js/filemanager.js"></script>
 </head>
@@ -39,9 +46,9 @@
 				<span id="file-url" class="data-container" ></span>
 				<span id="file-uri" style="display:none;"></span>
 			</div>
-			<div class="ui-state-highlight ui-corner-all" style="height:120px;">
+			<div class="ui-state-highlight ui-corner-all" style="height:170px;">
 				<strong>Preview</strong>
-				<div id="file-preview"></div>
+				<div id="file-preview" style="text-align:center;"></div>
 			</div>
 			<div class="ui-state-highlight ui-corner-all">
 				<strong>Actions</strong>
@@ -66,9 +73,11 @@
 			</div>
 			<div class="ui-widget-content ui-corner-all">
 				<strong>File upload</strong>
-				<form enctype='multipart/form-data' action="fileUpload">
-					<input type="file" name="media_file" /><br />
-					<input type="text" name="media_name" /><input type="submit" value="Upload" />
+				<form enctype='multipart/form-data' action="/filemanager/Browser/fileUpload" method="post">
+					<input id="media_folder" type="hidden" name="media_folder" value="/" />
+					<input type="hidden" name="MAX_FILE_SIZE" value="<?=UPLOAD_MAX_SIZE?>" />
+					<input id="media_file" type="file" name="media_file" /><br />
+					<input id="media_name" type="text" name="media_name" /><input type="submit" value="Upload" />
 				</form>
 			</div>
 		</div>

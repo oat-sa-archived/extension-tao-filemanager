@@ -1,11 +1,12 @@
 function goToRoot(){
-	window.location.reload();
+	window.location = "/filemanager/Browser/index";
 }
 function newFolder(){
 	
 	var parentDir = $("#dir-uri").text();
 	var newDir = prompt("Enter the of the new directory inside " + $("#dir-uri").text());
 	if(newDir){
+		var openFolder = parentDir;
 		$.ajax({
 			url: "/filemanager/Browser/addFolder",
 			type: "POST",
@@ -21,11 +22,11 @@ function newFolder(){
 			}
 		});
 	}
-	
 }
 function copyUrl(){
-	$.copy($("#file-url").text());
+	$.copy( $("#file-url").text() );
 }
+
 function download(){
 	window.location = '/filemanager/Browser/download?file='+encodeURIComponent($("#file-uri").text());
 }
@@ -67,6 +68,7 @@ function removeFolder(){
 function initFileTree(){
 	$('#file-container').fileTree({ 
 			root: '/',
+			open: openFolder, 
 			script: "/filemanager/Browser/fileData",
 			folderEvent: 'click',
 			multiFolder: false,
@@ -100,7 +102,9 @@ function initFileTree(){
 		   
 		   //url box
 		   $("#file-url").html( urlData + file.replace(/^\//, ''));
-		    $("#file-uri").html( file );
+		   $("#file-uri").html( file );
+		   $("#file-preview").html("<img src='"+baseUrl+"/views/img/throbber.gif'  alt='loading' />");
+		   $("#file-preview").load("/filemanager/Browser/preview",{file: file});
 		   
     	}, 
 		
@@ -134,8 +138,10 @@ function initFileTree(){
 				$(this).bind('click', removeFolder);
 			});
 			
-			//current dir box
+			//set current dir
 		    $("#dir-uri").html(dir);
+			$("#media_folder").val(dir);
+			 $("#file-preview").html('');
     	}
 	);
 }
@@ -145,4 +151,9 @@ $(document).ready(function(){
 	initFileTree();
 	$("a.root-link").click(goToRoot);
 	$("a.new-dir-link").click(newFolder);
+	
+	$("#media_file").change(function(){
+		$("#media_name").val(this.value.replace(/\\/g,'/').replace( /.*\//, ''));
+	});
+	
 });

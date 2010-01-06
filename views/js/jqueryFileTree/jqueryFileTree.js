@@ -44,6 +44,7 @@ if(jQuery) (function($){
 			if( o.expandEasing == undefined ) o.expandEasing = null;
 			if( o.collapseEasing == undefined ) o.collapseEasing = null;
 			if( o.multiFolder == undefined ) o.multiFolder = true;
+			if( o.open == undefined ) o.open = null;
 			if( o.loadMessage == undefined ) o.loadMessage = 'Loading...';
 			
 			$(this).each( function() {
@@ -51,7 +52,7 @@ if(jQuery) (function($){
 				function showTree(c, t) {
 					$(c).addClass('wait');
 					$(".jqueryFileTree.start").remove();
-					$.post(o.script, { dir: t }, function(data) {
+					$.post(o.script, { dir: t, open: o.open }, function(data) {
 						$(c).find('.start').html('');
 						$(c).removeClass('wait').append(data);
 						if( o.root == t ) $(c).find('UL:hidden').show(); else $(c).find('UL:hidden').slideDown({ duration: o.expandSpeed, easing: o.expandEasing });
