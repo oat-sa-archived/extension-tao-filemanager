@@ -60,3 +60,10 @@ table#actions td{
 	font-size: 12px;
 	color:#000;
 }
+span.form-label{
+	width:100px;
+	position:absolute;
+}
+input{
+	margin-left:100px;
+}

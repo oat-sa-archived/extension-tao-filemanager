@@ -46,7 +46,7 @@
 				<span id="file-url" class="data-container" ></span>
 				<span id="file-uri" style="display:none;"></span>
 			</div>
-			<div class="ui-state-highlight ui-corner-all" style="height:170px;">
+			<div class="ui-state-highlight ui-corner-all" style="height:160px;">
 				<strong>Preview</strong>
 				<div id="file-preview" style="text-align:center;"></div>
 			</div>
@@ -72,12 +72,13 @@
 				</table>
 			</div>
 			<div class="ui-widget-content ui-corner-all">
-				<strong>File upload</strong>
+				<strong>File upload</strong><br />
 				<form enctype='multipart/form-data' action="/filemanager/Browser/fileUpload" method="post">
 					<input id="media_folder" type="hidden" name="media_folder" value="/" />
 					<input type="hidden" name="MAX_FILE_SIZE" value="<?=UPLOAD_MAX_SIZE?>" />
-					<input id="media_file" type="file" name="media_file" /><br />
-					<input id="media_name" type="text" name="media_name" /><input type="submit" value="Upload" />
+					<span class="form-label">File</span><input id="media_file" type="file" name="media_file" /><br />
+					<span class="form-label">Name</span><input id="media_name" type="text" name="media_name" /><br />
+					<input type="submit" value="Upload" />
 				</form>
 			</div>
 		</div>

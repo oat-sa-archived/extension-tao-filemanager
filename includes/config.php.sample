@@ -16,6 +16,9 @@ define("DIR_VIEWS"			, dirname(__FILE__) . '/../views/');
 # plugin directory
 define('DIR_PLUGINS'		, dirname(__FILE__).'/../plugins/');
 
+# helpers directory
+define("DIR_HELPERS"		, dirname(__FILE__) . "/../helpers/");
+
 # session namespace
 define('SESSION_NAMESPACE', 'ClearFw');
 
@@ -45,4 +48,32 @@ define('BASE_WWW', BASE_URL . '/views/' );
 
 #root folder for the files
 define('BASE_DATA', BASE_PATH . '/views/data/' );
+define('URL_DATA', BASE_URL . '/views/data/' );
+
+# Max file size to upload
+define('UPLOAD_MAX_SIZE', '3145728'); 
+
+# Allowed media for upload
+$GLOBALS['allowed_media'] = array(
+	'application/ogg ',						//OGG
+	'application/pdf',						//PDF
+	'application/x-shockwave-flash',		//Flash
+	'audio/mpeg',							//MP3 MPEG
+	'audio/x-ms-wma',						//Windows Media Audio
+	'audio/vnd.rn-realaudio',				//RealAudio
+	'audio/x-wav',							//WAV
+	'image/gif',							//GIF 
+	'image/jpeg',							//JPEG
+	'image/png',							//PNG
+	'image/tiff',							//TIFF
+	'image/svg+xml',						//SVG
+	'image/bmp',							//BMP
+	'image/vnd.microsoft.icon',				//ICO 
+	'video/mpeg',							//MPEG-1
+	'video/mp4',							//MP4
+	'video/quicktime',						//QuickTime
+	'video/x-ms-wmv',						//Windows Media Video
+	'video/x-msvideo',						//AVI
+	'video/x-flv'							//Flash Video 
+);
 ?>

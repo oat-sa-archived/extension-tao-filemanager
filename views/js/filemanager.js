@@ -17,7 +17,7 @@ function newFolder(){
 			dataType: 'json',
 			success: function(response){
 				if(response.added){
-					initFileTree();
+					initFileTree(parentDir.replace(/\/$/, ''));
 				}
 			}
 		});
@@ -65,10 +65,13 @@ function removeFolder(){
 	}
 }
 
-function initFileTree(){
+function initFileTree(toOpen){
+	if(!toOpen){
+		toOpen = openFolder;
+	}
 	$('#file-container').fileTree({ 
 			root: '/',
-			open: openFolder, 
+			open: toOpen, 
 			script: "/filemanager/Browser/fileData",
 			folderEvent: 'click',
 			multiFolder: false,
