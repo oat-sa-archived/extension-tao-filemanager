@@ -21,10 +21,9 @@
 		var basePath 	= "<?=BASE_PATH?>";
 		var baseData 	= "<?=BASE_DATA?>";
 		var urlData 	= "<?=URL_DATA?>";
-		<?if(get_data('openFolder')):?>
-		var openFolder	= "<?=get_data('openFolder')?>";
-		<?else:?>
 		var openFolder	= null;
+		<?if(get_data('openFolder')):?>
+			openFolder	= "<?=get_data('openFolder')?>";
 		<?endif?>
 		
 	</script>
@@ -81,6 +80,12 @@
 					<input type="submit" value="Upload" />
 				</form>
 			</div>
+		</div>
+	</div>
+	<br/>
+	<div style="text-align:center;margin-top:30px;">
+		<div class="ui-state-default ui-corner-all" style="padding:5px;margin:auto; width:100px;">
+			<a href="#" style="font-weight:bold;" onclick="window.close();"><img src="<?=BASE_WWW?>img/cross.png" /> Close</a>
 		</div>
 	</div>
 </body>

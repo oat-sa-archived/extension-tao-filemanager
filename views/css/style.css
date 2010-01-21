@@ -10,7 +10,7 @@ a{
 	text-decoration:none;
 }
 div#header{
-	width:74%;
+	width:94%;
 	margin:1% auto 1% auto;
 	text-align:center;
 	font-size:16px;
@@ -18,7 +18,7 @@ div#header{
 	padding:5px 0.5% 5px 0.5%;
 }
 div#main-container{
-	width:75%;
+	width:95%;
 	margin:auto;
 	height:500px; 
 	position:relative;
