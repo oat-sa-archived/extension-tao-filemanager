@@ -23,9 +23,29 @@ try { FmRunner; } catch(e){
  * @example $("#myId").fmload({width: '1024px', height: '768px'});
  */
 jQuery.fn.fmload = function (options) {
-        return this.each(function () {
-                jQuery(this).click(function(){
-                        FmRunner.load(options);
-                });
-        });
+	return this.each(function () {
+		jQuery(this).addClass('fm-launcher');
+		jQuery(this).click(function(){
+			FmRunner.load(options);
+		});
+	});
+};
+
+/**
+ * JQuery plugin to bind the fmRunner to an icon inserted after the matching node
+ * @param {Object} options
+ */
+jQuery.fn.fmbind = function(options){
+	var imgSrc = '/filemanager/views/img/folder_page.png';
+	if(options.type == 'image'){
+		imgSrc = '/filemanager/views/img/folder_image.png';
+	}
+	
+	return this.each(function () {
+		if(!jQuery(this).next().hasClass('fm-launcher')){
+			imgNode = jQuery("<img src='"+imgSrc+"' style='cursor:pointer;' />");
+			imgNode.fmload();
+			jQuery(this).after(imgNode);
+		}
+	});
 };
