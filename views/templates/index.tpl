@@ -26,57 +26,60 @@
 			openFolder	= "<?=get_data('openFolder')?>";
 		<?endif?>
 		
+		window.urlData = urlData;
 	</script>
 	<script type='text/javascript' src="<?=BASE_WWW?>js/filemanager.js"></script>
 </head>
 <body>
-	<div id="header" class="ui-widget-header ui-corner-all">File Manager</div>
+	<div id="header" class="ui-widget-header ui-corner-all"><?=__('File Manager')?></div>
 	<div id="main-container">
-		<div id="file-container-title" class="ui-state-default ui-corner-all" >File Browser</div>
+		<div id="file-container-title" class="ui-state-default ui-corner-all" ><?=__('File Browser')?></div>
 		<div id="file-container"></div>
 		
 		<div id="file-data-container">
 			<div class="ui-state-highlight ui-corner-all">
-				<strong>Current directory</strong>:
+				<strong><?=__('Current directory')?></strong>:
 				<span id="dir-uri" class="data-container">/</span>
 			</div>
 			<div class="ui-state-highlight ui-corner-all">
-				<strong>URL</strong>:
+				<strong><?=__('URL')?></strong>:
 				<span id="file-url" class="data-container" ></span>
 				<span id="file-uri" style="display:none;"></span>
 			</div>
 			<div class="ui-state-highlight ui-corner-all" style="height:160px;">
-				<strong>Preview</strong>
+				<strong><?=__('Preview')?></strong>
 				<div id="file-preview" style="text-align:center;"></div>
 			</div>
 			<div class="ui-state-highlight ui-corner-all">
-				<strong>Actions</strong>
+				<strong><?=__('Actions')?></strong>
 				<table id="actions">
 					<tbody>
 						<tr>
-							<td><a class="root-link" href="#"><img src="<?=BASE_WWW?>img/root.png" /></a></td>
-							<td><a class="new-dir-link" href="#"><img src="<?=BASE_WWW?>img/folder-new.png" /></a></td>
-							<td><a class="copy-url-link" href="#"><img src="<?=BASE_WWW?>img/copy_disabled.png" /></a></td>
-							<td><a class="download-link" href="#"><img src="<?=BASE_WWW?>img/download_disabled.png" /></a></td>
-							<td><a class="delete-link" href="#"><img src="<?=BASE_WWW?>img/delete_disabled.png" /></a></td>
+							<td><a class="select-link" 		href="#"><img src="<?=BASE_WWW?>img/select_disabled.png" /></a></td>
+							<td><a class="root-link" 		href="#"><img src="<?=BASE_WWW?>img/root.png" /></a></td>
+							<td><a class="new-dir-link" 	href="#"><img src="<?=BASE_WWW?>img/folder-new.png" /></a></td>
+							<td><a class="copy-url-link" 	href="#"><img src="<?=BASE_WWW?>img/copy_disabled.png" /></a></td>
+							<td><a class="download-link" 	href="#"><img src="<?=BASE_WWW?>img/download_disabled.png" /></a></td>
+							<td><a class="delete-link" 		href="#"><img src="<?=BASE_WWW?>img/delete_disabled.png" /></a></td>
 						</tr>
 						<tr>
-							<td><a class="root-link" href="#">Root</a></td>
-							<td><a class="new-dir-link" href="#">New directory</a></td>
-							<td><a class="copy-url-link" href="#">Copy url</a></td>
-							<td><a class="download-link" href="#">Download</a></td>
-							<td><a class="delete-link" href="#">Delete</a></td>
+							<td><a class="select-link" 		href="#"><?=__('Select')?></a></td>
+							<td><a class="root-link" 		href="#"><?=__('Root')?></a></td>
+							<td><a class="new-dir-link" 	href="#"><?=__('New directory')?></a></td>
+							<td><a class="copy-url-link" 	href="#"><?=__('Copy url')?></a></td>
+							<td><a class="download-link" 	href="#"><?=__('Download')?></a></td>
+							<td><a class="delete-link" 		href="#"><?=__('Delete')?></a></td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 			<div class="ui-widget-content ui-corner-all">
-				<strong>File upload</strong><br />
+				<strong><?=__('File upload')?></strong><br />
 				<form enctype='multipart/form-data' action="/filemanager/Browser/fileUpload" method="post">
 					<input id="media_folder" type="hidden" name="media_folder" value="/" />
 					<input type="hidden" name="MAX_FILE_SIZE" value="<?=UPLOAD_MAX_SIZE?>" />
-					<span class="form-label">File</span><input id="media_file" type="file" name="media_file" /><br />
-					<span class="form-label">Name</span><input id="media_name" type="text" name="media_name" /><br />
+					<span class="form-label"><?=__('File')?></span><input id="media_file" type="file" name="media_file" /><br />
+					<span class="form-label"><?=__('Name')?></span><input id="media_name" type="text" name="media_name" /><br />
 					<input type="submit" value="Upload" />
 				</form>
 			</div>
@@ -85,7 +88,7 @@
 	<br/>
 	<div style="text-align:center;margin-top:30px;">
 		<div class="ui-state-default ui-corner-all" style="padding:5px;margin:auto; width:100px;">
-			<a href="#" style="font-weight:bold;" onclick="window.close();"><img src="<?=BASE_WWW?>img/cross.png" /> Close</a>
+			<a href="#" style="font-weight:bold;" onclick="window.close();"><img src="<?=BASE_WWW?>img/cross.png" /> <?=__('Close')?></a>
 		</div>
 	</div>
 </body>

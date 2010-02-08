@@ -1,3 +1,8 @@
+function selectUrl(){
+	window.urlData = $("#file-url").text();
+	window.close();
+}
+
 function goToRoot(){
 	window.location = "/filemanager/Browser/index";
 }
@@ -85,13 +90,16 @@ function initFileTree(toOpen){
 		function(file) {
 			
 	       //actions images
-		   $("a.copy-url-link img, a.download-link img, a.delete-link img").each(function(){
+		   $("a.select-link img, a.copy-url-link img, a.download-link img, a.delete-link img").each(function(){
 				if(/_disabled\.png$/.test(this.src)){
 					this.src = this.src.replace('_disabled.png', '.png');
 				}
 			});
 			
 			//actions links
+			$("a.select-link").each(function(){
+				$(this).bind('click', selectUrl);
+			});
 			$("a.copy-url-link").each(function(){
 				$(this).bind('click', copyUrl);
 			});
@@ -118,7 +126,7 @@ function initFileTree(toOpen){
 		function(dir) {
 	     
 		  //actions images
-		   $("a.copy-url-link img , a.download-link img").each(function(){
+		   $("a.select-link img, a.copy-url-link img , a.download-link img").each(function(){
 				if(!/disabled\.png$/.test(this.src)){
 					this.src = this.src.replace('.png', '_disabled.png');
 				}
@@ -130,6 +138,9 @@ function initFileTree(toOpen){
 			});
 			
 			//actions links
+			$("a.select-link").each(function(){
+				$(this).unbind('click', selectUrl);
+			});
 			$("a.copy-url-link").each(function(){
 				$(this).unbind('click', copyUrl);
 			});

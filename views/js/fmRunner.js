@@ -12,6 +12,7 @@ FmRunner = function() {
 	if(instance.single == undefined){
 		instance.single = this;
 	
+		instance.element = null;
 		instance.single.window = null; 
 		instance.single.defaultOpt = {
 			'width' 	: '800px',
@@ -19,10 +20,14 @@ FmRunner = function() {
 			'menubar'	: 'no',
 			'resizable'	: 'yes',
 			'status'	: 'no',
-			'toolbar'	: 'no'
+			'toolbar'	: 'no',
+			'dependent' : 'yes'
 		}
 		
-		instance.single.load = function(options){
+		instance.single.load = function(options, callback){
+			if(options.elt){
+				instance.element = options.elt;
+			}
 			if(instance.single.window != null){
 				//close previous window
 				 instance.single.window.close();
@@ -41,6 +46,12 @@ FmRunner = function() {
 			instance.single.window = window.open('/filemanager/Browser/index', 'filemanager', params);
 			instance.single.window.focus();
 			
+			instance.single.window.onunload = function(){
+				if(instance.single.window.urlData && callback != null && callback != undefined){
+					callback(instance.element, instance.single.window.urlData);
+				}
+			}
+			
 			return instance.single.window;
 		}
 	}		
@@ -55,10 +66,10 @@ FmRunner = function() {
  * @param {Object} options the popup options
  * @return {Object} the created window ref
  */
-FmRunner.load = function(options){
+FmRunner.load = function(options, callback){
 	if(options == undefined){
 		options = {};
 	}
-	return new FmRunner().load(options); 	//instanciate and load it
+	return new FmRunner().load(options, callback); 	//instanciate and load it
 }
 
