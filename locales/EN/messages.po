@@ -1,0 +1,48 @@
+msgid "File Manager"
+msgstr ""
+
+msgid "File Browser"
+msgstr ""
+
+msgid "Current directory"
+msgstr ""
+
+msgid "URL"
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "Select"
+msgstr ""
+
+msgid "Root"
+msgstr ""
+
+msgid "New directory"
+msgstr ""
+
+msgid "Copy url"
+msgstr ""
+
+msgid "Download"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "File upload"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+

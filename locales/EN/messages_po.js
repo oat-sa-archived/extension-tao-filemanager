@@ -1,4 +1,4 @@
 /* auto generated content */
-/* extesion: filemanager, lang: EN */
+/* extesion: , lang: EN */
 var langCode = 'EN';
-var i18n_tr = [];
+var i18n_tr = {"File Manager":"","File Browser":"","Current directory":"","URL":"","Preview":"","Actions":"","Select":"","Root":"","New directory":"","Copy url":"","Download":"","Delete":"","File upload":"","File":"","Name":"","Close":""};
