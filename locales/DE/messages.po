@@ -17,7 +17,7 @@ msgid "Actions"
 msgstr "Aktionen"
 
 msgid "Select"
-msgstr "Ausw‰hlen"
+msgstr "Ausw√§hlen"
 
 msgid "Root"
 msgstr "Root"
@@ -32,7 +32,7 @@ msgid "Download"
 msgstr "Download"
 
 msgid "Delete"
-msgstr "Lˆschen"
+msgstr "L√∂schen"
 
 msgid "File upload"
 msgstr "Datei-Upload"
@@ -44,5 +44,5 @@ msgid "Name"
 msgstr "Name"
 
 msgid "Close"
-msgstr "Schlieﬂen"
+msgstr "Schlie√üen"
 
