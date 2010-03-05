@@ -1,48 +1,48 @@
 msgid "File Manager"
-msgstr ""
+msgstr "Dateimanager"
 
 msgid "File Browser"
-msgstr ""
+msgstr "Dateibrowser"
 
 msgid "Current directory"
-msgstr ""
+msgstr "Aktuelles Verzeichnis"
 
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 msgid "Preview"
-msgstr ""
+msgstr "Vorschau"
 
 msgid "Actions"
-msgstr ""
+msgstr "Aktionen"
 
 msgid "Select"
-msgstr ""
+msgstr "Auswählen"
 
 msgid "Root"
-msgstr ""
+msgstr "Root"
 
 msgid "New directory"
-msgstr ""
+msgstr "Neues Verzeichnis"
 
 msgid "Copy url"
-msgstr ""
+msgstr "URL kopieren"
 
 msgid "Download"
-msgstr ""
+msgstr "Download"
 
 msgid "Delete"
-msgstr ""
+msgstr "Löschen"
 
 msgid "File upload"
-msgstr ""
+msgstr "Datei-Upload"
 
 msgid "File"
-msgstr ""
+msgstr "Datei"
 
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 msgid "Close"
-msgstr ""
+msgstr "Schließen"
 
