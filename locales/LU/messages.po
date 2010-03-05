@@ -5,13 +5,13 @@ msgid "File Browser"
 msgstr "Dateibrowser"
 
 msgid "Current directory"
-msgstr "Aktuellen RŽpertoire"
+msgstr "Aktuellen Répertoire"
 
 msgid "URL"
 msgstr "URL"
 
 msgid "Preview"
-msgstr "ViirblŽck"
+msgstr "Viirbléck"
 
 msgid "Actions"
 msgstr "Aktiounen"
@@ -23,16 +23,16 @@ msgid "Root"
 msgstr "Root"
 
 msgid "New directory"
-msgstr "Naien RŽpertoire"
+msgstr "Naien Répertoire"
 
 msgid "Copy url"
-msgstr "URL kopŽiren"
+msgstr "URL kopéiren"
 
 msgid "Download"
 msgstr "Erooflueden"
 
 msgid "Delete"
-msgstr "LŠschen"
+msgstr "Läschen"
 
 msgid "File upload"
 msgstr "Fichier roplueden"
