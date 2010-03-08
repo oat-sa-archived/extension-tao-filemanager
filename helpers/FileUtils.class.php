@@ -71,7 +71,7 @@ class FileUtils {
 	public static function cleanConcat(array $files){
 		$path = '';
 		foreach($files as $file){
-			if(!preg_match("/^\//", $file) && !preg_match("/\/$/", $path)){
+			if(!preg_match("/^\//", $file) && !preg_match("/\/$/", $path) && !empty($path)){
 				$path .= '/';
 			}
 			$path .= $file;
