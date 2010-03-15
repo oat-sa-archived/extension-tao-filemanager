@@ -22,7 +22,8 @@
 		var baseData 	= "<?=BASE_DATA?>";
 		var urlData 	= "<?=URL_DATA?>";
 		var openFolder	= null;
-		<?if(get_data('openFolder')):?>
+		
+		<?if(get_data("openFolder")):?>
 			openFolder	= "<?=get_data('openFolder')?>";
 		<?endif?>
 		
