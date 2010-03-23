@@ -1,4 +1,4 @@
-﻿msgid "File Manager"
+msgid "File Manager"
 msgstr "Dateimanager"
 
 msgid "File Browser"

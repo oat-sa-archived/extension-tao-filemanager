@@ -1,5 +1,5 @@
 msgid "File Manager"
-msgstr "Gestionnaire de fichiers "
+msgstr "Gestionnaire de fichiers"
 
 msgid "File Browser"
 msgstr "Navigateur"
