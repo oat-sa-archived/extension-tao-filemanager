@@ -5,7 +5,7 @@ msgid "File Browser"
 msgstr "Navigateur"
 
 msgid "Current directory"
-msgstr "Répertoire courant"
+msgstr "RÃ©pertoire courant"
 
 msgid "URL"
 msgstr ""
@@ -17,25 +17,25 @@ msgid "Actions"
 msgstr "Actions"
 
 msgid "Select"
-msgstr "Sélectionner"
+msgstr "SÃ©lectionner"
 
 msgid "Root"
 msgstr "Racine"
 
 msgid "New directory"
-msgstr "Nouveau répertoire"
+msgstr "Nouveau rÃ©pertoire"
 
 msgid "Copy url"
 msgstr "Copier le lien"
 
 msgid "Download"
-msgstr "Télécharger"
+msgstr "TÃ©lÃ©charger"
 
 msgid "Delete"
 msgstr "Supprimer"
 
 msgid "File upload"
-msgstr "Télécharger fichier"
+msgstr "TÃ©lÃ©charger fichier"
 
 msgid "File"
 msgstr "Fichier"
