@@ -147,6 +147,7 @@ class Browser extends Module {
 				$buffer .= "</ul>";	
 			}
 		}
+		
 		return $buffer;
 	}
 	
