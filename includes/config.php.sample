@@ -31,7 +31,7 @@ $GLOBALS['dir_theme']		= "templates/";
 
 
 #BASE PATH: the root path in the file system (usually the document root)
-define('BASE_PATH', ROOT_PATH . 'filemanager');
+define('BASE_PATH', ROOT_PATH . '/filemanager');
 
 #BASE URL (usually the domain root)
 define('BASE_URL', ROOT_URL.'/filemanager');
