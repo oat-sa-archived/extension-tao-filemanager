@@ -22,7 +22,7 @@ FmRunner = function() {
 			'status'	: 'no',
 			'toolbar'	: 'no',
 			'dependent' : 'yes'
-		}
+		};
 		
 		instance.single.load = function(options, callback){
 			if(options.elt){
@@ -50,16 +50,16 @@ FmRunner = function() {
 				if(instance.single.window.urlData && callback != null && callback != undefined){
 					callback(instance.element, instance.single.window.urlData);
 				}
-			}
+			};
 			
 			return instance.single.window;
-		}
+		};
 	}		
 	else {
 		//return singleton if already initialized
 		return instance.single;
 	}
-}
+};
 
 /**
  * Use this method instead of constructor to use the shared instance (singleton)
@@ -71,5 +71,4 @@ FmRunner.load = function(options, callback){
 		options = {};
 	}
 	return new FmRunner().load(options, callback); 	//instanciate and load it
-}
-
+};
