@@ -41,10 +41,19 @@ jQuery.fn.fmbind = function(options, callback){
 	if(options.type == 'image'){
 		imgSrc = '/filemanager/views/img/folder_image.png';
 	}
+	if(options.type == 'audio'){
+		imgSrc = '/filemanager/views/img/folder_audio.png';
+	}
+	
+	var fmType = 'file';
+	if(options.type){
+		fmType = options.type;
+	}
 	
 	return this.each(function () {
-		if(!jQuery(this).next().hasClass('fm-launcher')){
-			imgNode = jQuery("<img src='"+imgSrc+"' style='cursor:pointer;' />");
+		if(!jQuery(this).next().hasClass(fmType)){
+			imgNode = jQuery("<img src='"+imgSrc+"' style='cursor:pointer;margin:1px;' />");
+			imgNode.addClass(fmType);
 			imgNode.fmload(options, this, callback);
 			jQuery(this).after(imgNode);
 		}
