@@ -5,13 +5,13 @@
 	<title>File Manager</title>
 	<link rel="shortcut icon" href="<?=BASE_WWW?>img/favicon.ico" type="image/x-icon" />
 	
-	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery-1.3.2.min.js"></script>
-	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery-ui-1.7.2.custom.min.js"></script>
+	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery-1.4.2.min.js"></script>
+	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery-ui-1.8.custom.min.js"></script>
 	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery.easing.1.3.js"></script>
 	<script type='text/javascript' src="<?=BASE_WWW?>js/jqueryFileTree/jqueryFileTree.js"></script>
 	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery.copy.js"></script>
 	
-	<link rel="stylesheet" type="text/css" href="<?=BASE_WWW?>css/custom-theme/jquery-ui-1.7.2.custom.css" />
+	<link rel="stylesheet" type="text/css" href="<?=BASE_WWW?>css/custom-theme/jquery-ui-1.8.custom.css" />
 	<link rel="stylesheet" type="text/css" href="<?=BASE_WWW?>js/jqueryFileTree/jqueryFileTree.css" />
 	<link rel="stylesheet" type="text/css" href="<?=BASE_WWW?>css/style.css" />
 	
