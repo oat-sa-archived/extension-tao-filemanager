@@ -10,7 +10,7 @@
 		'name' => 'FileManager',
 		'description' => 'Manage media files on server',
 		'additional' => array(
-			'version' => '1.0',
+			'version' => '1.2',
 			'author' => 'CRP Henry Tudor',
 			'dependances' => array(),
 			'install' => array( 
