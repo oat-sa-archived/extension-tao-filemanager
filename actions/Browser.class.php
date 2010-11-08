@@ -8,6 +8,20 @@
  */
 class Browser extends Module {
 	
+	public function __construct(){
+		$errorMessage = __('Access denied. Please renew your authentication!');
+		if(class_exists("tao_helpers_Context", true) && !NO_FM_AUTH){
+			if(!core_kernel_users_Service::singleton()->isASessionOpened()){
+				if(tao_helpers_Request::isAjax()){
+					header("HTTP/1.0 403 Forbidden");
+					echo $errorMessage;
+					return;
+				}
+				throw new Exception($errorMessage);
+			}		
+		}
+	}
+	
 	/**
 	 * render the main layout
 	 * @return void

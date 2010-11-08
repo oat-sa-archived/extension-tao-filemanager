@@ -38,10 +38,14 @@ define('BASE_URL', ROOT_URL.'/filemanager');
 
 #BASE WWW the web resources path
 define('BASE_WWW', BASE_URL . '/views/' );
+define('TAOBASE_WWW', ROOT_URL.'/tao/views/');
 
 #root folder for the files
 define('BASE_DATA', BASE_PATH . '/views/data/' );
 define('URL_DATA', BASE_URL . '/views/data/' );
+
+# use the filemanager without authentication, please be carefull!
+define('NO_FM_AUTH', false);
 
 # Max file size to upload
 define('UPLOAD_MAX_SIZE', '3145728'); 
