@@ -20,7 +20,7 @@ div#header{
 div#main-container{
 	width:95%;
 	margin:auto;
-	height:500px; 
+	height:520px; 
 	position:relative;
 }
 div#file-container-title{
@@ -66,4 +66,16 @@ span.form-label{
 }
 input{
 	margin-left:100px;
+}
+div#closer {
+	text-align:center;
+	margin-top:20px;
+}
+div#closer div{
+	padding:5px;
+	margin:auto; 
+	width:100px;
+}
+div#closer a{
+	font-weight:bold;
 }

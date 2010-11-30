@@ -16,7 +16,7 @@ FmRunner = function() {
 		instance.single.window = null; 
 		instance.single.defaultOpt = {
 			'width' 	: '800px',
-			'height'	: '600px',
+			'height'	: '650px',
 			'menubar'	: 'no',
 			'resizable'	: 'yes',
 			'status'	: 'no',

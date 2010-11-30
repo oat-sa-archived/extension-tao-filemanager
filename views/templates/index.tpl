@@ -87,9 +87,9 @@
 		</div>
 	</div>
 	<br/>
-	<div style="text-align:center;margin-top:30px;">
-		<div class="ui-state-default ui-corner-all" style="padding:5px;margin:auto; width:100px;">
-			<a href="#" style="font-weight:bold;" onclick="window.close();"><img src="<?=BASE_WWW?>img/cross.png" /> <?=__('Close')?></a>
+	<div id="closer">
+		<div class="ui-state-default ui-corner-all" >
+			<a href="#" onclick="window.close();"><img src="<?=BASE_WWW?>img/cross.png" /> <?=__('Close')?></a>
 		</div>
 	</div>
 </body>
