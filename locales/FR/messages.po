@@ -44,8 +44,8 @@ msgid "Select"
 msgstr "Sélectionner"
 
 msgid "Access denied. Please renew your authentication!"
-msgstr ""
+msgstr "Accès interdit. Veuillez renouveller votre authentification!"
 
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
