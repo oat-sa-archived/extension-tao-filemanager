@@ -1,48 +1,51 @@
-msgid "File Manager"
-msgstr "Dateimanager"
-
-msgid "File Browser"
-msgstr "Dateibrowser"
-
-msgid "Current directory"
-msgstr "Aktuellen Répertoire"
-
-msgid "URL"
-msgstr "URL"
-
-msgid "Preview"
-msgstr "Viirbléck"
-
 msgid "Actions"
 msgstr "Aktiounen"
 
-msgid "Select"
-msgstr "Auswielen"
-
-msgid "Root"
-msgstr "Root"
-
-msgid "New directory"
-msgstr "Naien Répertoire"
+msgid "Close"
+msgstr "Zoumachen"
 
 msgid "Copy url"
 msgstr "URL kopéiren"
 
-msgid "Download"
-msgstr "Erooflueden"
+msgid "Current directory"
+msgstr "Aktuellen Répertoire"
 
 msgid "Delete"
 msgstr "Läschen"
 
-msgid "File upload"
-msgstr "Fichier roplueden"
+msgid "Download"
+msgstr "Erooflueden"
 
 msgid "File"
 msgstr "Fichier"
 
+msgid "File Browser"
+msgstr "Dateibrowser"
+
+msgid "File Manager"
+msgstr "Dateimanager"
+
+msgid "File upload"
+msgstr "Fichier roplueden"
+
 msgid "Name"
 msgstr "Numm"
 
-msgid "Close"
-msgstr "Zoumachen"
+msgid "New directory"
+msgstr "Naien Répertoire"
+
+msgid "Preview"
+msgstr "Viirbléck"
+
+msgid "Root"
+msgstr "Root"
+
+msgid "Select"
+msgstr "Auswielen"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Access denied. Please renew your authentication!"
+msgstr ""
 

@@ -1,48 +1,51 @@
-msgid "File Manager"
-msgstr "Dateimanager"
-
-msgid "File Browser"
-msgstr "Dateibrowser"
-
-msgid "Current directory"
-msgstr "Aktuelles Verzeichnis"
-
-msgid "URL"
-msgstr "URL"
-
-msgid "Preview"
-msgstr "Vorschau"
-
 msgid "Actions"
 msgstr "Aktionen"
 
-msgid "Select"
-msgstr "Auswählen"
-
-msgid "Root"
-msgstr "Root"
-
-msgid "New directory"
-msgstr "Neues Verzeichnis"
+msgid "Close"
+msgstr "Schließen"
 
 msgid "Copy url"
 msgstr "URL kopieren"
 
-msgid "Download"
-msgstr "Download"
+msgid "Current directory"
+msgstr "Aktuelles Verzeichnis"
 
 msgid "Delete"
 msgstr "Löschen"
 
-msgid "File upload"
-msgstr "Datei-Upload"
+msgid "Download"
+msgstr "Download"
 
 msgid "File"
 msgstr "Datei"
 
+msgid "File Browser"
+msgstr "Dateibrowser"
+
+msgid "File Manager"
+msgstr "Dateimanager"
+
+msgid "File upload"
+msgstr "Datei-Upload"
+
 msgid "Name"
 msgstr "Name"
 
-msgid "Close"
-msgstr "Schließen"
+msgid "New directory"
+msgstr "Neues Verzeichnis"
+
+msgid "Preview"
+msgstr "Vorschau"
+
+msgid "Root"
+msgstr "Root"
+
+msgid "Select"
+msgstr "Auswählen"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Access denied. Please renew your authentication!"
+msgstr ""
 
