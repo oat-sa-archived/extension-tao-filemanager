@@ -47,7 +47,7 @@
 				<span id="file-url" class="data-container" ></span>
 				<span id="file-uri" style="display:none;"></span>
 			</div>
-			<div class="ui-state-highlight ui-corner-all" style="height:160px;">
+			<div class="ui-state-highlight ui-corner-all" style="min-height:150px;">
 				<strong><?=__('Preview')?></strong>
 				<div id="file-preview" style="text-align:center;"></div>
 			</div>

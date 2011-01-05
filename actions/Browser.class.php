@@ -181,8 +181,28 @@ class Browser extends Module {
 				$mimeType = FileUtils::getMimeType($path);
 				if(in_array($mimeType, $GLOBALS['allowed_media'])){
 					if(file_exists($path) && is_readable($path)){
+						
+						$source = URL_DATA . $file;
+						$width = $height = 140;
+						$this->setData('isImage', false);
+						$this->setData('isEmbded', false);
+						if(preg_match("/^image/", $mimeType)){
+							$this->setData('isImage', true);
+							$size = getimagesize($source);
+							$width = $size[0];
+							$height = $size[1];
+							
+							if($height > 200){
+								$height = 200;
+								$width 	= '';
+							}
+						}
+						
+						$this->setData('width', $width);
+						$this->setData('height', $height);
 						$this->setData('mime_type', $mimeType);
-						$this->setData('source', URL_DATA . $file);
+						$this->setData('source', $source);
+					
 					}
 				}
 			}
