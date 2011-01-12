@@ -6,7 +6,7 @@
  * @package filemanager
  * @subpackage action
  */
-class Browser extends Module {
+class filemanager_actions_Browser extends Module {
 	
 	public function __construct(){
 		$errorMessage = __('Access denied. Please renew your authentication!');
@@ -30,7 +30,7 @@ class Browser extends Module {
 		
 		if($this->hasRequestParameter('openFolder')){
 			$folder = $this->getRequestParameter('openFolder');
-			if(FileUtils::securityCheck($folder)){
+			if(filemanager_helpers_FileUtils::securityCheck($folder)){
 				$folder = preg_replace('/^\//', '', $folder);
 				$folder = preg_replace('/\/$/', '', $folder);
 				$this->setData('openFolder', $folder);
@@ -75,8 +75,8 @@ class Browser extends Module {
 					$fileName = $_FILES['media_file']['name'];
 				}
 				
-				if(FileUtils::securityCheck($dataDir) && FileUtils::securityCheck($fileName)){
-					$destination = FileUtils::cleanConcat(array(BASE_DATA, $dataDir, $fileName));
+				if(filemanager_helpers_FileUtils::securityCheck($dataDir) && filemanager_helpers_FileUtils::securityCheck($fileName)){
+					$destination = filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $dataDir, $fileName));
 					if(move_uploaded_file($_FILES['media_file']['tmp_name'], $destination)){
 						$parameters = "?openFolder=$dataDir";
 					}
@@ -101,8 +101,8 @@ class Browser extends Module {
 			}
 		}
 		$buffer = '';
-		if(FileUtils::securityCheck($dataDir)){
-			$dir = FileUtils::cleanConcat(array($root, $dataDir));
+		if(filemanager_helpers_FileUtils::securityCheck($dataDir)){
+			$dir = filemanager_helpers_FileUtils::cleanConcat(array($root, $dataDir));
 			$buffer = $this->createFolderList($dir, $dataDir, $openDir);
 		}
 		echo $buffer;
@@ -144,7 +144,7 @@ class Browser extends Module {
 					 	$tmpbuffer = '';
 					 	$status = 'collapsed';
 						if($open !== false){
-							if(FileUtils::isFolder($open, str_replace(BASE_DATA, '', $dir . $file))){
+							if(filemanager_helpers_FileUtils::isFolder($open, str_replace(BASE_DATA, '', $dir . $file))){
 								$tmpbuffer = $this->createFolderList($dir . $file, preg_replace("/\/$/", '', $dataDir) . '/' .  preg_replace("/\/$/", '', $file).'/', $open, true);
 								$status = 'expanded';
 							}
@@ -174,11 +174,11 @@ class Browser extends Module {
 		$this->setData('type', '');
 		if($this->hasRequestParameter('file')){
 			$file = urldecode($this->getRequestParameter('file'));
-			if(FileUtils::securityCheck($file)){
+			if(filemanager_helpers_FileUtils::securityCheck($file)){
 				
-				$path = FileUtils::cleanConcat(array(BASE_DATA, $file));
+				$path = filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $file));
 				
-				$mimeType = FileUtils::getMimeType($path);
+				$mimeType = filemanager_helpers_FileUtils::getMimeType($path);
 				if(in_array($mimeType, $GLOBALS['allowed_media'])){
 					if(file_exists($path) && is_readable($path)){
 						
@@ -222,8 +222,8 @@ class Browser extends Module {
 			$folder = urldecode($this->getRequestParameter('folder'));
 			
 			$dataDir = $parentDir . $folder;
-			if(FileUtils::securityCheck($dataDir)){
-				$data['added'] = mkdir(FileUtils::cleanConcat(array(BASE_DATA, $dataDir)));
+			if(filemanager_helpers_FileUtils::securityCheck($dataDir)){
+				$data['added'] = mkdir(filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $dataDir)));
 			}
 		
 		} catch(Exception $e){ }
@@ -236,10 +236,10 @@ class Browser extends Module {
 	 */
 	public function download(){
 		$file = urldecode($this->getRequestParameter('file'));
-		if(FileUtils::securityCheck($file) && is_readable($file)){
+		if(filemanager_helpers_FileUtils::securityCheck($file) && is_readable($file)){
 			header("Content-Type: application/force-download");
 			header('Content-Disposition: attachment; filename="'.basename($file).'"');
-			echo file_get_contents(FileUtils::cleanConcat(array(BASE_DATA, $file)));
+			echo file_get_contents(filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $file)));
 			return;
 		}
 		$this->redirect("index");
@@ -253,14 +253,14 @@ class Browser extends Module {
 		$data = array('deleted' => false);
 		if($this->hasRequestParameter('file')){
 			$file = urldecode($this->getRequestParameter('file'));
-			if(FileUtils::securityCheck($file)){
-				$data['deleted'] = unlink(FileUtils::cleanConcat(array(BASE_DATA, $file)));
+			if(filemanager_helpers_FileUtils::securityCheck($file)){
+				$data['deleted'] = unlink(filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $file)));
 			}
 		}
 		if($this->hasRequestParameter("folder")){
 			$folder = urldecode($this->getRequestParameter('folder'));
-			if(FileUtils::securityCheck($folder)){
-				if(FileUtils::deleteFolder(FileUtils::cleanConcat(array(BASE_DATA, $folder)), true)){
+			if(filemanager_helpers_FileUtils::securityCheck($folder)){
+				if(filemanager_helpers_FileUtils::deleteFolder(filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $folder)), true)){
 					$data['deleted'] = true;
 				}
 			}

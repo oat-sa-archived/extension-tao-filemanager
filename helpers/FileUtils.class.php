@@ -1,5 +1,5 @@
 <?php
-class FileUtils {
+class filemanager_helpers_FileUtils {
 
 	/**
 	 * delete folder and it's content
