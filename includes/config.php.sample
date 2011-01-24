@@ -39,6 +39,7 @@ define('BASE_URL', ROOT_URL.'/filemanager');
 #BASE WWW the web resources path
 define('BASE_WWW', BASE_URL . '/views/' );
 define('TAOBASE_WWW', ROOT_URL.'/tao/views/');
+define('TAO_TPL_PATH', ROOT_PATH . '/tao/' . DIR_VIEWS . $GLOBALS['dir_theme']);
 
 #root folder for the files
 define('BASE_DATA', BASE_PATH . '/views/data/' );
