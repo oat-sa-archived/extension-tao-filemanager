@@ -139,13 +139,13 @@ class filemanager_helpers_FileUtils {
 
             // open office
             'odt' => 'application/vnd.oasis.opendocument.text',
-            'ods' => 'application/vnd.oasis.opendocument.spreadsheet',
+            'ods' => 'application/vnd.oasis.opendocument.spreadsheet'
         );
 
         $ext = strtolower(array_pop(explode('.',$filename)));
-        $mime_type = @mime_content_type($filename);
-		if($mime_type){
-			return $mime_type;
+		
+		if(function_exists('mime_content_type')){
+			return mime_content_type($filename);
 		}
 		elseif (function_exists('finfo_open')) {
             $finfo = finfo_open(FILEINFO_MIME);
