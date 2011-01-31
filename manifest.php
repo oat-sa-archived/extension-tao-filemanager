@@ -10,9 +10,6 @@ return array(
 		'version' => '2.0',
 		'author' => 'CRP Henry Tudor',
 		'dependances' => array('tao'),
-		'install' => array( 
-			'php' => dirname(__FILE__). '/install/install.php'
-		),
 		'classLoaderPackages' => array( 
 			dirname(__FILE__).'/actions/'
 		 )
