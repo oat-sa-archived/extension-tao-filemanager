@@ -48,7 +48,12 @@ FmRunner = function() {
 			
 			instance.single.window.onunload = function(){
 				if(instance.single.window.urlData && callback != null && callback != undefined){
-					callback(instance.element, instance.single.window.urlData);
+					if(instance.single.window.mediaData){
+						callback(instance.element, instance.single.window.urlData, instance.single.window.mediaData);
+					}
+					else{
+						callback(instance.element, instance.single.window.urlData);
+					}
 				}
 			};
 			

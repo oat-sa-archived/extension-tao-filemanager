@@ -31,6 +31,12 @@ class filemanager_actions_Browser extends Module {
 				$this->setData('openFolder', $folder);
 			}
 		}
+		if($this->hasRequestParameter('urlData')){
+			$this->setData('urlData', $this->getRequestParameter('urlData'));
+		}
+		if($this->hasRequestParameter('error')){
+			$this->setData('error', $this->getRequestParameter('error'));
+		}
 		
 		$this->setView('index.tpl');
 	}
@@ -40,6 +46,9 @@ class filemanager_actions_Browser extends Module {
 	 * @return void
 	 */
 	public function fileUpload(){
+		
+		$error = '';
+		
 		$parameters = '';
 		if(is_array($_FILES['media_file'])){
 			$copy = true;
@@ -48,12 +57,15 @@ class filemanager_actions_Browser extends Module {
 			}
 			else if(!in_array($_FILES['media_file']['type'], $GLOBALS['allowed_media']) || !$_FILES['media_file']['type']){
 				$copy = false;
+				$error = __('unknow media type : '.$_FILES['media_file']['type']);
 			}
 			if(!isset($_FILES['media_file']['size'])){
 				$copy = false;
+				$error = __('unknow media size');
 			}
 			else if( $_FILES['media_file']['size'] > UPLOAD_MAX_SIZE || !is_int($_FILES['media_file']['size'])){
 				$copy = false;
+				$error = __('media size must be leather than : ').UPLOAD_MAX_SIZE;
 			}
 			
 			if($copy){
@@ -73,10 +85,25 @@ class filemanager_actions_Browser extends Module {
 				if(filemanager_helpers_FileUtils::securityCheck($dataDir) && filemanager_helpers_FileUtils::securityCheck($fileName)){
 					$destination = filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $dataDir, $fileName));
 					if(move_uploaded_file($_FILES['media_file']['tmp_name'], $destination)){
-						$parameters = "?openFolder=$dataDir";
+						$parameters = "?openFolder=$dataDir&urlData=$fileName";
+					}
+					else{
+						$error = __('unable to move uploaded file');
 					}
 				}
+				else{
+					$error = __('Security issue');
+				}
 			}
+		}
+		if(!empty($error)){
+			if(strpos($parameters, '?') === false){
+				$parameters .= '?';
+			}
+			else{
+				$parameters .= '&';
+			}
+			$parameters .= 'error='.$error;
 		}
 		$this->redirect("index".$parameters);
 	}
@@ -175,6 +202,7 @@ class filemanager_actions_Browser extends Module {
 				
 				$mimeType = filemanager_helpers_FileUtils::getMimeType($path);
 				if(in_array($mimeType, $GLOBALS['allowed_media'])){
+					
 					if(file_exists($path) && is_readable($path)){
 						
 						$source = URL_DATA . $file;

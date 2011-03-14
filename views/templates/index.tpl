@@ -21,6 +21,11 @@
 		var basePath 	= "<?=BASE_PATH?>";
 		var baseData 	= "<?=BASE_DATA?>";
 		var urlData 	= "<?=URL_DATA?>";
+
+		<?if(get_data("urlData")):?>
+			urlData	= "<?=get_data('urlData')?>";
+	    <?endif?>
+		
 		var openFolder	= null;
 		
 		<?if(get_data("openFolder")):?>
@@ -28,6 +33,10 @@
 		<?endif?>
 		
 		window.urlData = urlData;
+		window.mediaData = {};
+
+
+		console.log(urlData);
 	</script>
 	<script type='text/javascript' src="<?=BASE_WWW?>js/filemanager.js"></script>
 </head>
@@ -38,6 +47,11 @@
 		<div id="file-container"></div>
 		
 		<div id="file-data-container">
+			<?if(get_data('error')):?>
+				<div class="ui-widget ui-corner-all ui-state-error error-message">
+						<?=urldecode(get_data('error'))?>
+				</div>
+			<?endif?>
 			<div class="ui-state-highlight ui-corner-all">
 				<strong><?=__('Current directory')?></strong>:
 				<span id="dir-uri" class="data-container">/</span>

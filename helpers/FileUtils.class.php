@@ -123,6 +123,8 @@ class filemanager_helpers_FileUtils {
             'mp3' => 'audio/mpeg',
             'qt' => 'video/quicktime',
             'mov' => 'video/quicktime',
+        	'ogv' => 'video/ogg',
+        	'oga' => 'audio/ogg',
 
             // adobe
             'pdf' => 'application/pdf',
