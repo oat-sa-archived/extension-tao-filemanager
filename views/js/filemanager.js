@@ -1,10 +1,16 @@
-function selectUrl(){
-	window.urlData = $("#file-url").text();
+
+/**
+ * @param {FmRunner} runner instance
+ */
+function selectUrl(runner){
+	runner.urlData = $("#file-url").text();
+	runner.mediaData = $("#file-url").data('media');
+	window.top.opener.$(window.top.opener.document).trigger('fmSelect');
 	window.close();
 }
 
 function goToRoot(){
-	window.location = "/filemanager/Browser/index";
+	window.location = root_url + "/filemanager/Browser/index";
 }
 function newFolder(){
 	
@@ -13,7 +19,7 @@ function newFolder(){
 	if(newDir){
 		var openFolder = parentDir;
 		$.ajax({
-			url: "/filemanager/Browser/addFolder",
+			url: root_url + "/filemanager/Browser/addFolder",
 			type: "POST",
 			data: {
 				parent: parentDir,
@@ -33,7 +39,7 @@ function copyUrl(){
 }
 
 function download(){
-	window.location = '/filemanager/Browser/download?file='+encodeURIComponent($("#file-uri").text());
+	window.location = root_url + '/filemanager/Browser/download?file='+encodeURIComponent($("#file-uri").text());
 }
 function removeFile(){
 	if(confirm('Please confirm file deletion')){
@@ -55,7 +61,7 @@ function removeFile(){
 function removeFolder(){
 	if(confirm("Please confirm folder deletion.\nBe carefull, it will remove all the folder content!")){
 		$.ajax({
-			url: "/filemanager/Browser/delete",
+			url: root_url + "/filemanager/Browser/delete",
 			type: "POST",
 			data: {
 				folder: $("#dir-uri").text()
@@ -77,7 +83,7 @@ function initFileTree(toOpen){
 	$('#file-container').fileTree({ 
 			root: '/',
 			open: toOpen, 
-			script: "/filemanager/Browser/fileData",
+			script: root_url + "/filemanager/Browser/fileData",
 			folderEvent: 'click',
 			multiFolder: false,
 			expandEasing: 'easeOutBounce'
@@ -89,33 +95,42 @@ function initFileTree(toOpen){
 		 */
 		function(file) {
 			
-	       //actions images
-		   $("a.select-link img, a.copy-url-link img, a.download-link img, a.delete-link img").each(function(){
-				if(/_disabled\.png$/.test(this.src)){
-					this.src = this.src.replace('_disabled.png', '.png');
-				}
-			});
-			
-			//actions links
-			$("a.select-link").each(function(){
-				$(this).bind('click', selectUrl);
-			});
-			$("a.copy-url-link").each(function(){
-				$(this).bind('click', copyUrl);
-			});
-			$("a.download-link").each(function(){
-				$(this).bind('click', download);
-			});
-			$("a.delete-link").each(function(){
-				$(this).unbind('click', removeFolder);
-				$(this).bind('click', removeFile);
-			});
-		   
-		   //url box
-		   $("#file-url").html( urlData + file.replace(/^\//, ''));
-		   $("#file-uri").html( file );
 		   $("#file-preview").html("<img src='"+baseUrl+"/views/img/throbber.gif'  alt='loading' />");
-		   $("#file-preview").load("/filemanager/Browser/preview",{file: file});
+		   $.post(root_url + "/filemanager/Browser/getInfo", {file: file}, function(response){
+			   if(response.type){
+				   $("#file-url").data('media',{
+					   type : response.type,
+					   width: response.width || '',
+					   height: response.height || ''
+				   });
+				   
+				   //enable the selection only once the data are received
+				   $("a.select-link").click(function(){
+					   var runner = window.top.opener.fmRunner.single;
+					   selectUrl(runner);				//runner is defined locally
+				   });
+				   //actions images
+				   $("a.select-link img, a.copy-url-link img, a.download-link img, a.delete-link img").each(function(){
+						if(/_disabled\.png$/.test(this.src)){
+							this.src = this.src.replace('_disabled.png', '.png');
+						}
+					});
+					
+				    //actions links
+					$("a.copy-url-link").bind('click', copyUrl);
+					$("a.download-link").bind('click', download);
+					$("a.delete-link").each(function(){
+						$(this).unbind('click', removeFolder);
+						$(this).bind('click', removeFile);
+					});
+				   
+				   //url box
+				   $("#file-url").html( urlData + file.replace(/^\//, ''));
+				   $("#file-uri").html( file );
+				  
+				   $("#file-preview").load(root_url + "/filemanager/Browser/preview",{file: file});
+			   }
+		   }, "json");
 		   
     	}, 
 		
@@ -169,5 +184,4 @@ $(document).ready(function(){
 	$("#media_file").change(function(){
 		$("#media_name").val(this.value.replace(/\\/g,'/').replace( /.*\//, ''));
 	});
-	
 });

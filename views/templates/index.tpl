@@ -5,38 +5,34 @@
 	<title>File Manager</title>
 	<link rel="shortcut icon" href="<?=BASE_WWW?>img/favicon.ico" type="image/x-icon" />
 	
+	<link rel="stylesheet" type="text/css" href="<?=BASE_WWW?>css/custom-theme/jquery-ui-1.8.custom.css" />
+	<link rel="stylesheet" type="text/css" href="<?=BASE_WWW?>js/jqueryFileTree/jqueryFileTree.css" />
+	<link rel="stylesheet" type="text/css" href="<?=BASE_WWW?>css/style.css" />
+	
 	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery-1.4.2.min.js"></script>
 	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery-ui-1.8.custom.min.js"></script>
 	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery.easing.1.3.js"></script>
 	<script type='text/javascript' src="<?=BASE_WWW?>js/jqueryFileTree/jqueryFileTree.js"></script>
 	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery.copy.js"></script>
 	
-	<link rel="stylesheet" type="text/css" href="<?=BASE_WWW?>css/custom-theme/jquery-ui-1.8.custom.css" />
-	<link rel="stylesheet" type="text/css" href="<?=BASE_WWW?>js/jqueryFileTree/jqueryFileTree.css" />
-	<link rel="stylesheet" type="text/css" href="<?=BASE_WWW?>css/style.css" />
-	
 	<script type='text/javascript'>
-		
+
+		var root_url	= "<?=ROOT_URL?>";
 		var baseUrl 	= "<?=BASE_URL?>";
 		var basePath 	= "<?=BASE_PATH?>";
 		var baseData 	= "<?=BASE_DATA?>";
 		var urlData 	= "<?=URL_DATA?>";
 
-		<?if(get_data("urlData")):?>
-			urlData	= "<?=get_data('urlData')?>";
-	    <?endif?>
-		
-		var openFolder	= null;
+		var openFolder	= '/';
 		
 		<?if(get_data("openFolder")):?>
 			openFolder	= "<?=get_data('openFolder')?>";
 		<?endif?>
+
+		var runner = window.top.opener.fmRunner.single;
+		runner.urlData = urlData;
+		runner.mediaData = {};
 		
-		window.urlData = urlData;
-		window.mediaData = {};
-
-
-		console.log(urlData);
 	</script>
 	<script type='text/javascript' src="<?=BASE_WWW?>js/filemanager.js"></script>
 </head>

@@ -6,15 +6,15 @@
 FmRunner = function() {
 	
 	//save the instance
-	instance = this.constructor;
+	window.fmRunner = this.constructor;
 	
 	//this part is loaded only the first call
-	if(instance.single == undefined){
-		instance.single = this;
+	if(window.fmRunner.single == undefined){
+		window.fmRunner.single = this;
 	
-		instance.element = null;
-		instance.single.window = null; 
-		instance.single.defaultOpt = {
+		window.fmRunner.single.element = null;
+		window.fmRunner.single.window = null; 
+		window.fmRunner.single.defaultOpt = {
 			'width' 	: '800px',
 			'height'	: '650px',
 			'menubar'	: 'no',
@@ -24,45 +24,45 @@ FmRunner = function() {
 			'dependent' : 'yes'
 		};
 		
-		instance.single.load = function(options, callback){
+		window.fmRunner.single.load = function(options, callback){
 			if(options.elt){
-				instance.element = options.elt;
+				window.fmRunner.single.element = options.elt;
 			}
-			if(instance.single.window != null){
+			if(window.fmRunner.single.window != null){
 				//close previous window
-				 instance.single.window.close();
+				window.fmRunner.single.window.close();
 			}
 			params = '';
-			for (i in instance.single.defaultOpt){
+			for (i in window.fmRunner.defaultOpt){
 				params += i + '=';
-				(options[i]) ? params += options[i] :  params += instance.single.defaultOpt[i];
+				(options[i]) ? params += options[i] :  params += window.fmRunner.single.defaultOpt[i];
 				params += ',';
 			}
 			for (i in options) {
-				if(!instance.single.defaultOpt[i]){
+				if(!window.fmRunner.single.defaultOpt[i]){
 					params += i + '=' + options[i] + ',';
 				}
 			}
-			instance.single.window = window.open('/filemanager/Browser/index', 'filemanager', params);
-			instance.single.window.focus();
-			
-			instance.single.window.onunload = function(){
-				if(instance.single.window.urlData && callback != null && callback != undefined){
-					if(instance.single.window.mediaData){
-						callback(instance.element, instance.single.window.urlData, instance.single.window.mediaData);
+			window.fmRunner.single.window = window.open('/filemanager/Browser/index', 'filemanager', params);
+			window.fmRunner.single.window.focus();
+			$(document).bind('fmSelect', function(e){
+				e.preventDefault();
+				if(window.fmRunner.single.urlData && callback != null && callback != undefined){
+					if(window.fmRunner.single.mediaData){
+						callback(window.fmRunner.single.element, window.fmRunner.single.urlData, window.fmRunner.single.mediaData);
 					}
 					else{
-						callback(instance.element, instance.single.window.urlData);
+						callback(window.fmRunner.single.element, window.fmRunner.single.urlData);
 					}
 				}
-			};
+			});
 			
-			return instance.single.window;
+			return window.fmRunner.single.window;
 		};
 	}		
 	else {
 		//return singleton if already initialized
-		return instance.single;
+		return window.fmRunner.single;
 	}
 };
 

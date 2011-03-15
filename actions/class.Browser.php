@@ -55,7 +55,10 @@ class filemanager_actions_Browser extends Module {
 			if(!isset($_FILES['media_file']['type'])){
 				$copy = false;
 			}
-			else if(!in_array($_FILES['media_file']['type'], $GLOBALS['allowed_media']) || !$_FILES['media_file']['type']){
+			elseif(empty($_FILES['media_file']['type'])){
+				$_FILES['media_file']['type'] = filemanager_helpers_FileUtils::getMimeType($_FILES['media_file']['tmp_name']);
+			}
+			if(!in_array($_FILES['media_file']['type'], $GLOBALS['allowed_media']) || !$_FILES['media_file']['type']){
 				$copy = false;
 				$error = __('unknow media type : '.$_FILES['media_file']['type']);
 			}
@@ -83,6 +86,7 @@ class filemanager_actions_Browser extends Module {
 				}
 				
 				if(filemanager_helpers_FileUtils::securityCheck($dataDir) && filemanager_helpers_FileUtils::securityCheck($fileName)){
+					$fileName = filemanager_helpers_FileUtils::cleanName($fileName);
 					$destination = filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $dataDir, $fileName));
 					if(move_uploaded_file($_FILES['media_file']['tmp_name'], $destination)){
 						$parameters = "?openFolder=$dataDir&urlData=$fileName";
@@ -128,6 +132,38 @@ class filemanager_actions_Browser extends Module {
 			$buffer = $this->createFolderList($dir, $dataDir, $openDir);
 		}
 		echo $buffer;
+	}
+	
+	/**
+	 * (non-PHPdoc)
+	 * @see Module::getData()
+	 */
+	public function getInfo(){
+		$response = array();
+		if($this->hasRequestParameter('file')){
+			$file = urldecode($this->getRequestParameter('file'));
+			if(filemanager_helpers_FileUtils::securityCheck($file)){
+				$path = filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $file));
+				$mimeType = filemanager_helpers_FileUtils::getMimeType($path);
+				if(in_array($mimeType, $GLOBALS['allowed_media'])){
+					if(file_exists($path) && is_readable($path)){
+						
+						$width = $height = '';
+						if(preg_match("/^image/", $mimeType)){
+							$this->setData('isImage', true);
+							$size = getimagesize($path);
+							$width = $size[0];
+							$height = $size[1];
+						}
+						
+						$response['width'] = $width;
+						$response['height'] = $height;
+						$response['type'] = $mimeType;
+					}
+				}
+			}
+		}
+		print json_encode($response);
 	}
 	
 	/**

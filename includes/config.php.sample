@@ -53,7 +53,9 @@ define('UPLOAD_MAX_SIZE', '3145728');
 
 # Allowed media for upload
 $GLOBALS['allowed_media'] = array(
-	'application/ogg ',						//OGG
+	'application/ogg',						//OGG
+	'audio/ogg',
+	'video/ogg',
 	'application/pdf',						//PDF
 	'application/x-shockwave-flash',		//Flash
 	'audio/mpeg',							//MP3 MPEG

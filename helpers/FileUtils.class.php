@@ -64,6 +64,26 @@ class filemanager_helpers_FileUtils {
 	}
 	
 	/**
+	 * Clean up the fileName
+	 * @param string $fileName
+	 * @param string $joker replace denied characted with it
+	 * @return the clean filename
+	 */
+	public static function cleanName($fileName, $joker = '_'){
+		$i=0;
+		while($i < strlen($fileName)){
+			if(preg_match("/^[a-zA-Z0-9.-]{1}$/", $fileName[$i])){
+				$returnValue .= $fileName[$i];
+			}
+			elseif($fileName[$i] != $joker) {
+				$returnValue .= $joker;
+			}
+			$i++;
+		}
+		return $returnValue;
+	}
+	
+	/**
 	 * Concat the path in the array in param
 	 * @param array $files
 	 * @return string contacted path
@@ -144,22 +164,32 @@ class filemanager_helpers_FileUtils {
             'ods' => 'application/vnd.oasis.opendocument.spreadsheet'
         );
 
-        $ext = strtolower(array_pop(explode('.',$filename)));
+        
 		
-		if(function_exists('mime_content_type')){
-			return mime_content_type($filename);
-		}
-		elseif (function_exists('finfo_open')) {
+		if (function_exists('finfo_open')) {
             $finfo = finfo_open(FILEINFO_MIME);
             $mimetype = finfo_file($finfo, $filename);
             finfo_close($finfo);
-            return $mimetype;
         }
-		elseif (array_key_exists($ext, $mime_types)) {
+        else if (function_exists('mime_content_type')) {
+			$mimetype = mime_content_type($filename);
+		}
+		if(!empty($mimetype)){
+			if(preg_match("/; charset/", $mimetype)){
+				$mimetypeInfos = explode(';', $mimetype);
+				$mimetype = $mimetypeInfos[0];
+			}
+		}
+		if(!preg_match("/^application/",$mimetype)){
+			return $mimetype;
+		}
+		
+		$ext = strtolower(array_pop(explode('.',$filename)));
+		if (array_key_exists($ext, $mime_types)) {
             return $mime_types[$ext];
         }
         else {
-            return 'application/octet-stream';
+            return (empty($mimetype)) ? 'application/octet-stream' : $mimetype;
         }
     }
 }
