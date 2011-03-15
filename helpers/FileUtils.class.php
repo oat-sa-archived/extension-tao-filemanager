@@ -58,7 +58,8 @@ class filemanager_helpers_FileUtils {
 					return true;
 				}
 				$refPath = dirname($refPath);
-			} while($refPath != '/' && $refPath != '' && $refPath != '.');
+			
+			} while(($refPath != '/'  && $refPath != '\\' )&& $refPath != '' && $refPath != '.');
 		}
 		return false;
 	}
@@ -141,6 +142,8 @@ class filemanager_helpers_FileUtils {
 
             // audio/video
             'mp3' => 'audio/mpeg',
+			'mp4' => 'video/mp4',
+			'wmv' => 'video/x-ms-wmv',
             'qt' => 'video/quicktime',
             'mov' => 'video/quicktime',
         	'ogv' => 'video/ogg',
@@ -179,10 +182,11 @@ class filemanager_helpers_FileUtils {
 				$mimetypeInfos = explode(';', $mimetype);
 				$mimetype = $mimetypeInfos[0];
 			}
+			if(!preg_match("/^application/",$mimetype)){
+				return $mimetype;
+			}
 		}
-		if(!preg_match("/^application/",$mimetype)){
-			return $mimetype;
-		}
+		
 		
 		$ext = strtolower(array_pop(explode('.',$filename)));
 		if (array_key_exists($ext, $mime_types)) {
