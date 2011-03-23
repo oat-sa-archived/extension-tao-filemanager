@@ -71,6 +71,8 @@ class filemanager_helpers_FileUtils {
 	 * @return the clean filename
 	 */
 	public static function cleanName($fileName, $joker = '_'){
+		$returnValue = '';
+		
 		$i=0;
 		while($i < strlen($fileName)){
 			if(preg_match("/^[a-zA-Z0-9.-]{1}$/", $fileName[$i])){
