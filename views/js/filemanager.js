@@ -37,6 +37,29 @@ function newFolder(){
 function copyUrl(){
 	$.copy( $("#file-url").text() );
 }
+function hasFlash(){
+	if($.browser.msie){
+		var hasFlash = false; 
+		try {   
+			var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');   
+			if(fo) hasFlash = true; 
+		}
+		catch(e){   
+			if(navigator.mimeTypes ["application/x-shockwave-flash"] != undefined) hasFlash = true; 
+		} 
+		return hasFlash;
+	}
+	else{
+		if(navigator.plugins != null && navigator.plugins.length > 0){
+			for(i in navigator.plugins){
+				if(/(Shockwave|Flash)/i.test(navigator.plugins[i]['name'])){
+					return true;
+				}
+			}
+		}
+	}
+	return false;
+}
 
 function download(){
 	window.location = root_url + '/filemanager/Browser/download?file='+encodeURIComponent($("#file-uri").text());
@@ -176,6 +199,10 @@ function initFileTree(toOpen){
 }
 
 $(document).ready(function(){
+	
+	if(!hasFlash()){
+		$("a.copy-url-link").hide();
+	}
 	
 	initFileTree();
 	$("a.root-link").click(goToRoot);

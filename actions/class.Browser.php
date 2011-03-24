@@ -247,7 +247,7 @@ class filemanager_actions_Browser extends Module {
 						$this->setData('isEmbded', false);
 						if(preg_match("/^image/", $mimeType)){
 							$this->setData('isImage', true);
-							$size = getimagesize($source);
+							$size = getimagesize(BASE_DATA . $file);
 							$width = $size[0];
 							$height = $size[1];
 							
