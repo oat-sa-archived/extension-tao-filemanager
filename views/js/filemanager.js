@@ -67,7 +67,7 @@ function download(){
 function removeFile(){
 	if(confirm('Please confirm file deletion')){
 		$.ajax({
-			url: "/filemanager/Browser/delete",
+			url: root_url + "/filemanager/Browser/delete",
 			type: "POST",
 			data: {
 				file: $("#file-uri").text()

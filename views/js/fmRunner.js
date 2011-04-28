@@ -43,7 +43,7 @@ FmRunner = function() {
 					params += i + '=' + options[i] + ',';
 				}
 			}
-			window.fmRunner.single.window = window.open('/filemanager/Browser/index', 'filemanager', params);
+			window.fmRunner.single.window = window.open(root_url + '/filemanager/Browser/index', 'filemanager', params);
 			window.fmRunner.single.window.focus();
 			$(document).bind('fmSelect', function(e){
 				e.preventDefault();

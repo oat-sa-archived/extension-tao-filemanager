@@ -86,7 +86,7 @@
 			</div>
 			<div class="ui-widget-content ui-corner-all">
 				<strong><?=__('File upload')?></strong><br />
-				<form enctype='multipart/form-data' action="/filemanager/Browser/fileUpload" method="post">
+				<form enctype='multipart/form-data' action="<?=ROOT_URL?>/filemanager/Browser/fileUpload" method="post">
 					<input id="media_folder" type="hidden" name="media_folder" value="/" />
 					<input type="hidden" name="MAX_FILE_SIZE" value="<?=UPLOAD_MAX_SIZE?>" />
 					<span class="form-label"><?=__('File')?></span><input id="media_file" type="file" name="media_file" /><br />

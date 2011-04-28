@@ -37,12 +37,12 @@ jQuery.fn.fmload = function (options, elt, callback) {
  * @param {Object} options
  */
 jQuery.fn.fmbind = function(options, callback){
-	var imgSrc = '/filemanager/views/img/folder_page.png';
+	var imgSrc = root_url + '/filemanager/views/img/folder_page.png';
 	if(options.type == 'image'){
-		imgSrc = '/filemanager/views/img/folder_image.png';
+		imgSrc = root_url + '/filemanager/views/img/folder_image.png';
 	}
 	if(options.type == 'audio'){
-		imgSrc = '/filemanager/views/img/folder_audio.png';
+		imgSrc = root_url + '/filemanager/views/img/folder_audio.png';
 	}
 	
 	var fmType = 'file';
