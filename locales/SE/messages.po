@@ -1,0 +1,51 @@
+msgid "Access denied. Please renew your authentication!"
+msgstr "Åtkomst nekad. Var vänlig förnya din verifiering!"
+
+msgid "Actions"
+msgstr "Handlingar"
+
+msgid "Close"
+msgstr "Stäng"
+
+msgid "Copy url"
+msgstr "Kopiera url"
+
+msgid "Current directory"
+msgstr "Aktuell katalog"
+
+msgid "Delete"
+msgstr "Ta bort"
+
+msgid "Download"
+msgstr "Ladda ner"
+
+msgid "File"
+msgstr "Fil"
+
+msgid "File Browser"
+msgstr "Filbläddrare"
+
+msgid "File Manager"
+msgstr "Filhanterare"
+
+msgid "File upload"
+msgstr "Filöverföring"
+
+msgid "Name"
+msgstr "Namn"
+
+msgid "New directory"
+msgstr "Ny katalog"
+
+msgid "Preview"
+msgstr "Förhandsvisning"
+
+msgid "Root"
+msgstr "Rot"
+
+msgid "Select"
+msgstr "Välj"
+
+msgid "URL"
+msgstr "URL"
+
