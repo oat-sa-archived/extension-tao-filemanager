@@ -1,0 +1,4 @@
+/* auto generated content */
+/* extesion: filemanager, lang: SE */
+var langCode = 'SE';
+var i18n_tr = {"Access denied. Please renew your authentication!":"\u00c5tkomst nekad. Var v\u00e4nlig f\u00f6rnya din verifiering!","Actions":"Handlingar","Close":"St\u00e4ng","Copy url":"Kopiera url","Current directory":"Aktuell katalog","Delete":"Ta bort","Download":"Ladda ner","File":"Fil","File Browser":"Filbl\u00e4ddrare","File Manager":"Filhanterare","File upload":"Fil\u00f6verf\u00f6ring","Name":"Namn","New directory":"Ny katalog","Preview":"F\u00f6rhandsvisning","Root":"Rot","Select":"V\u00e4lj","URL":"URL"};
