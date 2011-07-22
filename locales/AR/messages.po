@@ -1,0 +1,51 @@
+msgid "Actions"
+msgstr "الأعمال"
+
+msgid "Close"
+msgstr "إغلاق"
+
+msgid "Copy url"
+msgstr "URL نسخ"
+
+msgid "Current directory"
+msgstr "الدليل الحالي"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Download"
+msgstr "تحميل"
+
+msgid "File"
+msgstr "ملف"
+
+msgid "File Browser"
+msgstr "متصفح الملف"
+
+msgid "File Manager"
+msgstr "إدارة الملفات"
+
+msgid "File upload"
+msgstr "تحميل الملف"
+
+msgid "Name"
+msgstr "الاسم"
+
+msgid "New directory"
+msgstr "دليل جديد"
+
+msgid "Preview"
+msgstr "معاينة"
+
+msgid "Root"
+msgstr "الجذر"
+
+msgid "Select"
+msgstr "تحديد"
+
+msgid "Access denied. Please renew your authentication!"
+msgstr "!تم رفض الوصول. يرجى تجديد المصادقة الخاصة بك"
+
+msgid "URL"
+msgstr "URL"
+
