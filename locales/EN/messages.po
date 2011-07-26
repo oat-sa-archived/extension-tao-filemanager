@@ -43,9 +43,21 @@ msgstr ""
 msgid "Root"
 msgstr ""
 
+msgid "Security issue"
+msgstr ""
+
 msgid "Select"
 msgstr ""
 
 msgid "URL"
+msgstr ""
+
+msgid "media size must be leather than : "
+msgstr ""
+
+msgid "unable to move uploaded file"
+msgstr ""
+
+msgid "unknow media size"
 msgstr ""
 

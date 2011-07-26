@@ -49,3 +49,15 @@ msgstr "Välj"
 msgid "URL"
 msgstr "URL"
 
+msgid "Security issue"
+msgstr ""
+
+msgid "media size must be leather than : "
+msgstr ""
+
+msgid "unable to move uploaded file"
+msgstr ""
+
+msgid "unknow media size"
+msgstr ""
+

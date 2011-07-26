@@ -1,3 +1,6 @@
+msgid "Access denied. Please renew your authentication!"
+msgstr "!تم رفض الوصول. يرجى تجديد المصادقة الخاصة بك"
+
 msgid "Actions"
 msgstr "الأعمال"
 
@@ -43,9 +46,18 @@ msgstr "الجذر"
 msgid "Select"
 msgstr "تحديد"
 
-msgid "Access denied. Please renew your authentication!"
-msgstr "!تم رفض الوصول. يرجى تجديد المصادقة الخاصة بك"
-
 msgid "URL"
 msgstr "URL"
+
+msgid "Security issue"
+msgstr ""
+
+msgid "media size must be leather than : "
+msgstr ""
+
+msgid "unable to move uploaded file"
+msgstr ""
+
+msgid "unknow media size"
+msgstr ""
 

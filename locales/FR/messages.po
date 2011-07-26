@@ -1,3 +1,6 @@
+msgid "Access denied. Please renew your authentication!"
+msgstr "Accès interdit. Veuillez renouveller votre authentification!"
+
 msgid "Actions"
 msgstr "Actions"
 
@@ -43,9 +46,18 @@ msgstr "Racine"
 msgid "Select"
 msgstr "Sélectionner"
 
-msgid "Access denied. Please renew your authentication!"
-msgstr "Accès interdit. Veuillez renouveller votre authentification!"
-
 msgid "URL"
 msgstr "URL"
+
+msgid "Security issue"
+msgstr ""
+
+msgid "media size must be leather than : "
+msgstr ""
+
+msgid "unable to move uploaded file"
+msgstr ""
+
+msgid "unknow media size"
+msgstr ""
 

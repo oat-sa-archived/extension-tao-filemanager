@@ -49,3 +49,15 @@ msgstr "URL"
 msgid "Access denied. Please renew your authentication!"
 msgstr ""
 
+msgid "Security issue"
+msgstr ""
+
+msgid "media size must be leather than : "
+msgstr ""
+
+msgid "unable to move uploaded file"
+msgstr ""
+
+msgid "unknow media size"
+msgstr ""
+
