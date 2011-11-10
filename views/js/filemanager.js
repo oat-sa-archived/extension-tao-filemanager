@@ -34,9 +34,7 @@ function newFolder(){
 		});
 	}
 }
-function copyUrl(){
-	$.copy( $("#file-url").text() );
-}
+
 function hasFlash(){
 	if($.browser.msie){
 		var hasFlash = false; 
@@ -140,7 +138,12 @@ function initFileTree(toOpen){
 					});
 					
 				    //actions links
-					$("a.copy-url-link").bind('click', copyUrl);
+				   $("a.copy-url-link").zclip({
+						path:'/filemanager/views/js/ZeroClipboard.swf',
+						setCSSEffects: false,
+						afterCopy:function(){},
+						copy:function(){return $("#file-url").text();}
+					});
 					$("a.download-link").bind('click', download);
 					$("a.delete-link").each(function(){
 						$(this).unbind('click', removeFolder);
@@ -179,9 +182,7 @@ function initFileTree(toOpen){
 			$("a.select-link").each(function(){
 				$(this).unbind('click', selectUrl);
 			});
-			$("a.copy-url-link").each(function(){
-				$(this).unbind('click', copyUrl);
-			});
+			$("a.copy-url-link").zclip('remove');
 			$("a.download-link").each(function(){
 				$(this).unbind('click', download);
 			});
