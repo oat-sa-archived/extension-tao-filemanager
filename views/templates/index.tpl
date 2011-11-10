@@ -13,7 +13,7 @@
 	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery-ui-1.8.custom.min.js"></script>
 	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery.easing.1.3.js"></script>
 	<script type='text/javascript' src="<?=BASE_WWW?>js/jqueryFileTree/jqueryFileTree.js"></script>
-	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery.copy.js"></script>
+	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery.zclip.js"></script>
 	
 	<script type='text/javascript'>
 
@@ -69,7 +69,7 @@
 							<td><a class="select-link" 		href="#"><img src="<?=BASE_WWW?>img/select_disabled.png" /></a></td>
 							<td><a class="root-link" 		href="#"><img src="<?=BASE_WWW?>img/root.png" /></a></td>
 							<td><a class="new-dir-link" 	href="#"><img src="<?=BASE_WWW?>img/folder-new.png" /></a></td>
-							<td><a class="copy-url-link" 	href="#"><img src="<?=BASE_WWW?>img/copy_disabled.png" /></a></td>
+							<td><div style="position: relative"><a href="#" class="copy-url-link" style="display: inline-block"><img src="<?=BASE_WWW?>img/copy_disabled.png"/></a></div></td>
 							<td><a class="download-link" 	href="#"><img src="<?=BASE_WWW?>img/download_disabled.png" /></a></td>
 							<td><a class="delete-link" 		href="#"><img src="<?=BASE_WWW?>img/delete_disabled.png" /></a></td>
 						</tr>
@@ -77,7 +77,7 @@
 							<td><a class="select-link" 		href="#"><?=__('Select')?></a></td>
 							<td><a class="root-link" 		href="#"><?=__('Root')?></a></td>
 							<td><a class="new-dir-link" 	href="#"><?=__('New directory')?></a></td>
-							<td><a class="copy-url-link" 	href="#"><?=__('Copy url')?></a></td>
+							<td><div style="position: relative"><a class="copy-url-link" href="#"><?=__('Copy url')?></a></div></td>
 							<td><a class="download-link" 	href="#"><?=__('Download')?></a></td>
 							<td><a class="delete-link" 		href="#"><?=__('Delete')?></a></td>
 						</tr>
