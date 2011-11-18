@@ -74,6 +74,7 @@ $GLOBALS['allowed_media'] = array(
 	'video/quicktime',						//QuickTime
 	'video/x-ms-wmv',						//Windows Media Video
 	'video/x-msvideo',						//AVI
-	'video/x-flv'							//Flash Video 
+	'video/x-flv'							//Flash Video
+	'application/x-subrip'					//Subtitles
 );
 ?>

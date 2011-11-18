@@ -108,6 +108,12 @@ class filemanager_helpers_FileUtils {
 	 * @return the mime type
 	 */
 	public static function getMimeType($filename) {
+		
+		if (empty($filename)) {
+			$logger = new Logger('filemanager', Logger::debug_level);
+			$logger->error('getMimeType called without filename', __FILE__, __LINE__, 'filemanager');
+		}
+		
 
         $mime_types = array(
 
@@ -166,17 +172,22 @@ class filemanager_helpers_FileUtils {
 
             // open office
             'odt' => 'application/vnd.oasis.opendocument.text',
-            'ods' => 'application/vnd.oasis.opendocument.spreadsheet'
+            'ods' => 'application/vnd.oasis.opendocument.spreadsheet',
+        		
+        	// srt
+            'srt' => 'application/x-subrip'
         );
 
         
 		
-		if (function_exists('finfo_open')) {
+		if (function_exists('finfo_open')) {			
             $finfo = finfo_open(FILEINFO_MIME);
             $mimetype = finfo_file($finfo, $filename);
             finfo_close($finfo);
+            
         }
         else if (function_exists('mime_content_type')) {
+        	
 			$mimetype = mime_content_type($filename);
 		}
 		if(!empty($mimetype)){
@@ -191,6 +202,7 @@ class filemanager_helpers_FileUtils {
 		
 		
 		$ext = strtolower(array_pop(explode('.',$filename)));
+		
 		if (array_key_exists($ext, $mime_types)) {
             return $mime_types[$ext];
         }
