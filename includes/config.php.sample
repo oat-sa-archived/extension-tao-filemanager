@@ -58,6 +58,7 @@ $GLOBALS['allowed_media'] = array(
 	'video/ogg',
 	'application/pdf',						//PDF
 	'application/x-shockwave-flash',		//Flash
+	'application/x-subrip',					//Subtitles
 	'audio/mpeg',							//MP3 MPEG
 	'audio/x-ms-wma',						//Windows Media Audio
 	'audio/vnd.rn-realaudio',				//RealAudio
@@ -75,6 +76,6 @@ $GLOBALS['allowed_media'] = array(
 	'video/x-ms-wmv',						//Windows Media Video
 	'video/x-msvideo',						//AVI
 	'video/x-flv'							//Flash Video
-	'application/x-subrip'					//Subtitles
+
 );
 ?>
