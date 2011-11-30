@@ -38,7 +38,35 @@ class filemanager_actions_Browser extends Module {
 			$this->setData('error', $this->getRequestParameter('error'));
 		}
 		
+		$this->setData('upload_limit', $this->getFileUploadLimit());
+		
 		$this->setView('index.tpl');
+	}
+	
+	private function getFileUploadLimit($pInMegabytes = false) {
+		
+		function tobytes($val) {
+			$val = trim($val);
+			$last = strtolower($val[strlen($val)-1]);
+			switch($last) {
+				// The 'G' modifier is available since PHP 5.1.0
+				case 'g':
+					$val *= 1024;
+				case 'm':
+					$val *= 1024;
+				case 'k':
+					$val *= 1024;
+			}
+		
+			return $val;
+		}
+		
+		$max_upload		= tobytes(ini_get('upload_max_filesize'));
+		$max_post		= tobytes(ini_get('post_max_size'));
+		$memory_limit	= tobytes(ini_get('memory_limit'));
+		
+		$limit = min($max_upload, $max_post, $memory_limit,UPLOAD_MAX_SIZE);
+		return $pInMegabytes ? round(($limit / 1048576), 1) : $limit;
 	}
 	
 	/**
@@ -50,25 +78,48 @@ class filemanager_actions_Browser extends Module {
 		$error = '';
 		
 		$parameters = '';
+		
 		if(is_array($_FILES['media_file'])){
+			
 			$copy = true;
-			if(!isset($_FILES['media_file']['type'])){
+			if($_FILES['media_file']['error']  !== UPLOAD_ERR_OK) {
+				
+				$logger = new Logger('filemanager', Logger::debug_level);
+				$logger->debug('fileUpload failed with Error '.$_FILES['media_file']['error'], __FILE__, __LINE__, 'filemanager');
+				
 				$copy = false;
-			}
-			elseif(empty($_FILES['media_file']['type'])){
-				$_FILES['media_file']['type'] = filemanager_helpers_FileUtils::getMimeType($_FILES['media_file']['tmp_name']);
-			}
-			if(!in_array($_FILES['media_file']['type'], $GLOBALS['allowed_media']) || !$_FILES['media_file']['type']){
-				$copy = false;
-				$error = __('unknow media type : '.$_FILES['media_file']['type']);
-			}
-			if(!isset($_FILES['media_file']['size'])){
-				$copy = false;
-				$error = __('unknow media size');
-			}
-			else if( $_FILES['media_file']['size'] > UPLOAD_MAX_SIZE || !is_int($_FILES['media_file']['size'])){
-				$copy = false;
-				$error = __('media size must be leather than : ').UPLOAD_MAX_SIZE;
+				switch ($_FILES['media_file']['error']) {
+					case UPLOAD_ERR_INI_SIZE:
+					case UPLOAD_ERR_FORM_SIZE:
+						$error = __('media size must be less than : ').$this->getFileUploadLimit(true).__(' MB');
+						break;
+					case UPLOAD_ERR_PARTIAL:
+						$error = __('file upload failed');
+						break;
+					case UPLOAD_ERR_NO_FILE:
+						$error = __('no file uploaded');
+						break;
+				}
+			} else {
+			
+				if(!isset($_FILES['media_file']['type'])){
+					$copy = false;
+				}
+				elseif(empty($_FILES['media_file']['type'])){
+					$_FILES['media_file']['type'] = filemanager_helpers_FileUtils::getMimeType($_FILES['media_file']['tmp_name']);
+				}
+				if(!$_FILES['media_file']['type'] || !in_array($_FILES['media_file']['type'], $GLOBALS['allowed_media'])){
+					$copy = false;
+					$error = __('unknow media type : '.$_FILES['media_file']['type']);
+				}
+				if(!isset($_FILES['media_file']['size'])){
+					$copy = false;
+					$error = __('unknow media size');
+				}
+				else if( $_FILES['media_file']['size'] > UPLOAD_MAX_SIZE || !is_int($_FILES['media_file']['size'])){
+					$copy = false;
+					$error = __('media size must be less than : ').$this->getFileUploadLimit(true).__(' MB');
+				}
 			}
 			
 			if($copy){
@@ -99,6 +150,11 @@ class filemanager_actions_Browser extends Module {
 					$error = __('Security issue');
 				}
 			}
+		} else {
+			$logger = new Logger('filemanager', Logger::debug_level);
+			$logger->debug('file upload information missing, probably file > upload limit in php.ini', __FILE__, __LINE__, 'filemanager');
+			
+			$error = __('media size must be less than : ').$this->getFileUploadLimit(true).__(' MB');
 		}
 		if(!empty($error)){
 			if(strpos($parameters, '?') === false){

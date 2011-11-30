@@ -88,8 +88,8 @@
 				<strong><?=__('File upload')?></strong><br /><br />
 				<form enctype='multipart/form-data' action="<?=ROOT_URL?>/filemanager/Browser/fileUpload" method="post">
 					<input id="media_folder" type="hidden" name="media_folder" value="/" />
-					<input type="hidden" name="MAX_FILE_SIZE" value="<?=UPLOAD_MAX_SIZE?>" />
-					<span><?=__('Max filesize')?> <?=round(UPLOAD_MAX_SIZE/1048576)?><?=__('MB')?></span><br /><br />
+					<input type="hidden" name="MAX_FILE_SIZE" value="<?=get_data('upload_limit')?>" />
+					<span><?=__('Max filesize')?> <?=round(get_data('upload_limit')/1048576, 1)?><?=__(' MB')?></span><br /><br />
 					<span class="form-label"><?=__('File')?></span><input id="media_file" type="file" name="media_file" /><br />
 					<span class="form-label"><?=__('Name')?></span><input id="media_name" type="text" name="media_name" /><br />
 					<input type="submit" value="Upload" />
