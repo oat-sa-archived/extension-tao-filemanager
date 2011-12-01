@@ -43,13 +43,19 @@ class filemanager_actions_Browser extends Module {
 		$this->setView('index.tpl');
 	}
 	
-	private function getFileUploadLimit($pInMegabytes = false) {
+	/**
+	 * returns the fileupload limit in either Bytes or MB
+	 * default is Bytes
+	 * 
+	 * @param boolean $inMegabytes
+	 * @return number
+	 */
+	private function getFileUploadLimit($inMegabytes = false) {
 		
 		function tobytes($val) {
 			$val = trim($val);
 			$last = strtolower($val[strlen($val)-1]);
 			switch($last) {
-				// The 'G' modifier is available since PHP 5.1.0
 				case 'g':
 					$val *= 1024;
 				case 'm':
@@ -65,7 +71,7 @@ class filemanager_actions_Browser extends Module {
 		$max_post		= tobytes(ini_get('post_max_size'));
 		$memory_limit	= tobytes(ini_get('memory_limit'));
 		
-		$limit = min($max_upload, $max_post, $memory_limit,UPLOAD_MAX_SIZE);
+		$limit = min($max_upload, $max_post, $memory_limit, UPLOAD_MAX_SIZE);
 		return $pInMegabytes ? round(($limit / 1048576), 1) : $limit;
 	}
 	
