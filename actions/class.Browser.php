@@ -52,27 +52,8 @@ class filemanager_actions_Browser extends Module {
 	 */
 	private function getFileUploadLimit($inMegabytes = false) {
 		
-		function tobytes($val) {
-			$val = trim($val);
-			$last = strtolower($val[strlen($val)-1]);
-			switch($last) {
-				case 'g':
-					$val *= 1024;
-				case 'm':
-					$val *= 1024;
-				case 'k':
-					$val *= 1024;
-			}
-		
-			return $val;
-		}
-		
-		$max_upload		= tobytes(ini_get('upload_max_filesize'));
-		$max_post		= tobytes(ini_get('post_max_size'));
-		$memory_limit	= tobytes(ini_get('memory_limit'));
-		
-		$limit = min($max_upload, $max_post, $memory_limit, UPLOAD_MAX_SIZE);
-		return $pInMegabytes ? round(($limit / 1048576), 1) : $limit;
+		$limit = min(tao_helpers_Environment::getFileUploadLimit(), UPLOAD_MAX_SIZE);
+		return $inMegabytes ? round(($limit / 1048576), 1) : $limit;
 	}
 	
 	/**
