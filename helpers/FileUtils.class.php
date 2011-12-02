@@ -110,8 +110,7 @@ class filemanager_helpers_FileUtils {
 	public static function getMimeType($filename) {
 		
 		if (empty($filename)) {
-			$logger = new Logger('filemanager', Logger::debug_level);
-			$logger->error('getMimeType called without filename', __FILE__, __LINE__, 'filemanager');
+			common_Logger::e('getMimeType called without filename');
 		}
 		
 

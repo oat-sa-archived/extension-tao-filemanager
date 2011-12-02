@@ -71,8 +71,7 @@ class filemanager_actions_Browser extends Module {
 			$copy = true;
 			if($_FILES['media_file']['error']  !== UPLOAD_ERR_OK) {
 				
-				$logger = new Logger('filemanager', Logger::debug_level);
-				$logger->debug('fileUpload failed with Error '.$_FILES['media_file']['error'], __FILE__, __LINE__, 'filemanager');
+				common_Logger::w('fileUpload failed with Error '.$_FILES['media_file']['error']);
 				
 				$copy = false;
 				switch ($_FILES['media_file']['error']) {
@@ -138,8 +137,7 @@ class filemanager_actions_Browser extends Module {
 				}
 			}
 		} else {
-			$logger = new Logger('filemanager', Logger::debug_level);
-			$logger->debug('file upload information missing, probably file > upload limit in php.ini', __FILE__, __LINE__, 'filemanager');
+			common_Logger::w('file upload information missing, probably file > upload limit in php.ini');
 			
 			$error = __('media size must be less than : ').$this->getFileUploadLimit(true).__(' MB');
 		}
