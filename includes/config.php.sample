@@ -78,4 +78,22 @@ $GLOBALS['allowed_media'] = array(
 	'video/x-flv'							//Flash Video
 
 );
+
+# Allowed file type to upload
+$GLOBALS['allowed_file'] = array(
+	'application/pdf',
+	'image/vnd.adobe.photoshop',
+	'application/postscript',
+	'application/msword',
+	'application/rtf',
+	'application/vnd.ms-excel',
+	'application/vnd.ms-powerpoint',
+	'application/vnd.oasis.opendocument.text',
+	'application/vnd.oasis.opendocument.spreadsheet',
+	'text/xml',
+    'text/csv',
+	'text/plain',
+	'text/richtext',
+	'text/rtf'
+);
 ?>
