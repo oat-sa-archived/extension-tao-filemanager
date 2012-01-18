@@ -1,4 +1,4 @@
 /* auto generated content */
-/* extesion: filemanager, lang: _raw */
+/* lang: _raw */
 var langCode = '_raw';
-var i18n_tr = {"Access denied. Please renew your authentication!":"","Actions":"","Close":"","Copy url":"","Current directory":"","Delete":"","Download":"","File":"","File Browser":"","File Manager":"","File upload":"","Name":"","New directory":"","Preview":"","Root":"","Security issue":"","Select":"","URL":"","media size must be leather than : ":"","unable to move uploaded file":"","unknow media size":""};
+var i18n_tr = {" MB":"","Access denied. Please renew your authentication!":"","Actions":"","Close":"","Copy url":"","Current directory":"","Delete":"","Download":"","File":"","File Browser":"","File Manager":"","File upload":"","file upload failed":"","Max filesize":"","media size must be less than : ":"","Name":"","New directory":"","no file uploaded":"","Preview":"","Root":"","Security issue":"","Select":"","unable to move uploaded file":"","unknow media size":"","URL":""};
