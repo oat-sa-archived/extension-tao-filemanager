@@ -20,30 +20,29 @@ div#header{
 }
 div#main-container{
 	width:95%;
-	margin:auto;
-	height:520px; 
-	position:relative;
+	margin:10px auto;
+}
+div#file-browser{
+	border:none;
+	float:left;
+	width:38%;
+	height:94.5%;
+	margin-right:1.5%;
 }
 div#file-container-title{
-	width:35%;
 	padding:0.5% 1% 0.5% 1%;
 }
 div#file-container{
-	width:35%; 
-	height:94.5%;
 	border:solid 1px #ccc;
+	border-top:none;
 	padding:1%;
 	overflow-y:auto;
 }
 div#file-data-container{
-	position:absolute;
+	float:left;
 	width:60.5%; 
 	height:100%;
-	left:37.5%;
-	top:0%;
 	background-color:#eee;
-	border:solid 1px #ccc;
-	padding:1%;
 }
 #file-data-container .ui-state-highlight, 
 #file-data-container .ui-state-default,
@@ -67,16 +66,4 @@ span.form-label{
 }
 input{
 	margin-left:100px;
-}
-div#closer {
-	text-align:center;
-	margin-top:20px;
-}
-div#closer div{
-	padding:5px;
-	margin:auto; 
-	width:100px;
-}
-div#closer a{
-	font-weight:bold;
 }

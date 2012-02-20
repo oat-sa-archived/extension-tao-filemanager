@@ -39,8 +39,10 @@
 <body>
 	<div id="header" class="ui-widget-header ui-corner-all"><?=__('File Manager')?></div>
 	<div id="main-container">
-		<div id="file-container-title" class="ui-state-default ui-corner-all" ><?=__('File Browser')?></div>
-		<div id="file-container"></div>
+	    <div id="file-browser">
+		  <div id="file-container-title" class="ui-state-default ui-corner-top" ><?=__('File Browser')?></div>
+		  <div id="file-container"></div>
+		</div>
 		
 		<div id="file-data-container">
 			<?if(get_data('error')):?>
@@ -95,12 +97,6 @@
 					<input type="submit" value="Upload" />
 				</form>
 			</div>
-		</div>
-	</div>
-	<br/>
-	<div id="closer">
-		<div class="ui-state-default ui-corner-all" >
-			<a href="#" onclick="window.close();"><img src="<?=BASE_WWW?>img/cross.png" /> <?=__('Close')?></a>
 		</div>
 	</div>
 </body>
