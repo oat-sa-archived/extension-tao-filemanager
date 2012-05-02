@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v2.2-alpha\n"
-"PO-Revision-Date: 2012-04-26T16:11:17\n"
+"Project-Id-Version: TAO v2.2-beta\n"
+"PO-Revision-Date: 2012-05-02T12:48:07\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: EN\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid " MB"
-msgstr ""
+msgstr " Mo"
 
 msgid "Access denied. Please renew your authentication!"
 msgstr "Accès interdit. Veuillez renouveller votre authentification!"
@@ -42,13 +42,13 @@ msgid "File upload"
 msgstr "Télécharger fichier"
 
 msgid "file upload failed"
-msgstr ""
+msgstr "le téléversement a échoué"
 
 msgid "Max filesize"
-msgstr ""
+msgstr "Taille de fichier maximum"
 
 msgid "media size must be less than : "
-msgstr ""
+msgstr "La taille du média doit être inférieure à : "
 
 msgid "Name"
 msgstr "Nom"
@@ -57,7 +57,7 @@ msgid "New directory"
 msgstr "Nouveau répertoire"
 
 msgid "no file uploaded"
-msgstr ""
+msgstr "pas de fichier téléversé"
 
 msgid "Preview"
 msgstr "Afficher"
@@ -66,16 +66,16 @@ msgid "Root"
 msgstr "Racine"
 
 msgid "Security issue"
-msgstr ""
+msgstr "Problème de sécurité"
 
 msgid "Select"
 msgstr "Sélectionner"
 
 msgid "unable to move uploaded file"
-msgstr ""
+msgstr "impossible de déplacer le fichier"
 
 msgid "unknow media size"
-msgstr ""
+msgstr "Taille du média inconnue"
 
 msgid "URL"
 msgstr "URL"
