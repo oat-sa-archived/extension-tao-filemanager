@@ -2,18 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>File Manager</title>
+	<title><?=__('File Manager')?></title>
 	<link rel="shortcut icon" href="<?=BASE_WWW?>img/favicon.ico" type="image/x-icon" />
 	
-	<link rel="stylesheet" type="text/css" href="<?=BASE_WWW?>css/custom-theme/jquery-ui-1.8.custom.css" />
-	<link rel="stylesheet" type="text/css" href="<?=BASE_WWW?>js/jqueryFileTree/jqueryFileTree.css" />
-	<link rel="stylesheet" type="text/css" href="<?=BASE_WWW?>css/style.css" />
-	
-	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery-1.4.2.min.js"></script>
-	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery-ui-1.8.custom.min.js"></script>
-	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery.easing.1.3.js"></script>
-	<script type='text/javascript' src="<?=BASE_WWW?>js/jqueryFileTree/jqueryFileTree.js"></script>
-	<script type='text/javascript' src="<?=BASE_WWW?>js/jquery.zclip.js"></script>
+	<?=tao_helpers_Scriptloader::render()?>
 	
 	<script type='text/javascript'>
 
@@ -34,7 +26,6 @@
 		runner.mediaData = {};
 		
 	</script>
-	<script type='text/javascript' src="<?=BASE_WWW?>js/filemanager.js"></script>
 </head>
 <body>
 	<div id="header" class="ui-widget-header ui-corner-all"><?=__('File Manager')?></div>
@@ -94,7 +85,7 @@
 					<span><?=__('Max filesize')?> <?=round(get_data('upload_limit')/1048576, 1)?><?=__(' MB')?></span><br /><br />
 					<span class="form-label"><?=__('File')?></span><input id="media_file" type="file" name="media_file" /><br />
 					<span class="form-label"><?=__('Name')?></span><input id="media_name" type="text" name="media_name" /><br />
-					<input type="submit" value="Upload" />
+					<input type="submit" value="<?=__('Upload')?>" />
 				</form>
 			</div>
 		</div>

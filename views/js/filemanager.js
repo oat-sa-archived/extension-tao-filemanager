@@ -63,7 +63,7 @@ function download(){
 	window.location = root_url + '/filemanager/Browser/download?file='+encodeURIComponent($("#file-uri").text());
 }
 function removeFile(){
-	if(confirm('Please confirm file deletion')){
+	if(confirm(__('Please confirm file deletion.'))){
 		$.ajax({
 			url: root_url + "/filemanager/Browser/delete",
 			type: "POST",
@@ -80,7 +80,7 @@ function removeFile(){
 	}
 }
 function removeFolder(){
-	if(confirm("Please confirm folder deletion.\nBe carefull, it will remove all the folder content!")){
+	if(confirm(__("Please confirm folder deletion.\nBe carefull, it will remove the entire content of the folder!"))){
 		$.ajax({
 			url: root_url + "/filemanager/Browser/delete",
 			type: "POST",
