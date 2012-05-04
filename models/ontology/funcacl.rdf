@@ -74,4 +74,9 @@
 		<funcacl:actionMemberOf rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_filemanager_Browser" />
   </rdf:Description>
 
+	<rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAO.rdf#TaoManagerRole">
+		<funcacl:grantAccessModule rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_filemanager_Browser" />
+	</rdf:Description>
+
+
 </rdf:RDF>
