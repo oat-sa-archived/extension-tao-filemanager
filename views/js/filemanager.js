@@ -80,7 +80,7 @@ function removeFile(){
 	}
 }
 function removeFolder(){
-	if(confirm(__("Please confirm folder deletion.\nBe carefull, it will remove the entire content of the folder!"))){
+	if(confirm(__("Please confirm directory deletion.\nBe carefull, it will remove the entire content of the directory!"))){
 		$.ajax({
 			url: root_url + "/filemanager/Browser/delete",
 			type: "POST",
