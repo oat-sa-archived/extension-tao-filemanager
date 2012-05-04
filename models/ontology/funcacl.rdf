@@ -11,65 +11,65 @@
 >
 	<rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_filemanager_Browser">
     <rdf:type rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#Module"/>
-    <rdfs:label xml:lang="EN"><![CDATA[module Browser]]></rdfs:label>
-		<rdfs:comment xml:lang="EN"><![CDATA[module Browser]]></rdfs:comment>
+    <rdfs:label xml:lang="EN"><![CDATA[Module Browser]]></rdfs:label>
+		<rdfs:comment xml:lang="EN"><![CDATA[Module Browser]]></rdfs:comment>
 		<funcacl:moduleIdentifier xml:lang="EN"><![CDATA[Browser]]></funcacl:moduleIdentifier>
 		<funcacl:moduleExtension xml:lang="EN"><![CDATA[filemanager]]></funcacl:moduleExtension>
   </rdf:Description>
 
 	<rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_filemanager_Browser_index">
     <rdf:type rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#Action"/>
-    <rdfs:label xml:lang="EN"><![CDATA[action index]]></rdfs:label>
-		<rdfs:comment xml:lang="EN"><![CDATA[action index]]></rdfs:comment>
+    <rdfs:label xml:lang="EN"><![CDATA[Action index]]></rdfs:label>
+		<rdfs:comment xml:lang="EN"><![CDATA[Action index]]></rdfs:comment>
 		<funcacl:actionIdentifier xml:lang="EN"><![CDATA[index]]></funcacl:actionIdentifier>
 		<funcacl:actionMemberOf rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_filemanager_Browser" />
   </rdf:Description>
 	<rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_filemanager_Browser_fileUpload">
     <rdf:type rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#Action"/>
-    <rdfs:label xml:lang="EN"><![CDATA[action fileUpload]]></rdfs:label>
-		<rdfs:comment xml:lang="EN"><![CDATA[action fileUpload]]></rdfs:comment>
+    <rdfs:label xml:lang="EN"><![CDATA[Action fileUpload]]></rdfs:label>
+		<rdfs:comment xml:lang="EN"><![CDATA[Action fileUpload]]></rdfs:comment>
 		<funcacl:actionIdentifier xml:lang="EN"><![CDATA[fileUpload]]></funcacl:actionIdentifier>
 		<funcacl:actionMemberOf rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_filemanager_Browser" />
   </rdf:Description>
 	<rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_filemanager_Browser_fileData">
     <rdf:type rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#Action"/>
-    <rdfs:label xml:lang="EN"><![CDATA[action fileData]]></rdfs:label>
-		<rdfs:comment xml:lang="EN"><![CDATA[action fileData]]></rdfs:comment>
+    <rdfs:label xml:lang="EN"><![CDATA[Action fileData]]></rdfs:label>
+		<rdfs:comment xml:lang="EN"><![CDATA[Action fileData]]></rdfs:comment>
 		<funcacl:actionIdentifier xml:lang="EN"><![CDATA[fileData]]></funcacl:actionIdentifier>
 		<funcacl:actionMemberOf rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_filemanager_Browser" />
   </rdf:Description>
 	<rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_filemanager_Browser_getInfo">
     <rdf:type rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#Action"/>
-    <rdfs:label xml:lang="EN"><![CDATA[action getInfo]]></rdfs:label>
-		<rdfs:comment xml:lang="EN"><![CDATA[action getInfo]]></rdfs:comment>
+    <rdfs:label xml:lang="EN"><![CDATA[Action getInfo]]></rdfs:label>
+		<rdfs:comment xml:lang="EN"><![CDATA[Action getInfo]]></rdfs:comment>
 		<funcacl:actionIdentifier xml:lang="EN"><![CDATA[getInfo]]></funcacl:actionIdentifier>
 		<funcacl:actionMemberOf rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_filemanager_Browser" />
   </rdf:Description>
 	<rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_filemanager_Browser_preview">
     <rdf:type rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#Action"/>
-    <rdfs:label xml:lang="EN"><![CDATA[action preview]]></rdfs:label>
-		<rdfs:comment xml:lang="EN"><![CDATA[action preview]]></rdfs:comment>
+    <rdfs:label xml:lang="EN"><![CDATA[Action preview]]></rdfs:label>
+		<rdfs:comment xml:lang="EN"><![CDATA[Action preview]]></rdfs:comment>
 		<funcacl:actionIdentifier xml:lang="EN"><![CDATA[preview]]></funcacl:actionIdentifier>
 		<funcacl:actionMemberOf rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_filemanager_Browser" />
   </rdf:Description>
 	<rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_filemanager_Browser_addFolder">
     <rdf:type rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#Action"/>
-    <rdfs:label xml:lang="EN"><![CDATA[action addFolder]]></rdfs:label>
-		<rdfs:comment xml:lang="EN"><![CDATA[action addFolder]]></rdfs:comment>
+    <rdfs:label xml:lang="EN"><![CDATA[Action addFolder]]></rdfs:label>
+		<rdfs:comment xml:lang="EN"><![CDATA[Action addFolder]]></rdfs:comment>
 		<funcacl:actionIdentifier xml:lang="EN"><![CDATA[addFolder]]></funcacl:actionIdentifier>
 		<funcacl:actionMemberOf rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_filemanager_Browser" />
   </rdf:Description>
 	<rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_filemanager_Browser_download">
     <rdf:type rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#Action"/>
-    <rdfs:label xml:lang="EN"><![CDATA[action download]]></rdfs:label>
-		<rdfs:comment xml:lang="EN"><![CDATA[action download]]></rdfs:comment>
+    <rdfs:label xml:lang="EN"><![CDATA[Action download]]></rdfs:label>
+		<rdfs:comment xml:lang="EN"><![CDATA[Action download]]></rdfs:comment>
 		<funcacl:actionIdentifier xml:lang="EN"><![CDATA[download]]></funcacl:actionIdentifier>
 		<funcacl:actionMemberOf rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_filemanager_Browser" />
   </rdf:Description>
 	<rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_filemanager_Browser_delete">
     <rdf:type rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#Action"/>
-    <rdfs:label xml:lang="EN"><![CDATA[action delete]]></rdfs:label>
-		<rdfs:comment xml:lang="EN"><![CDATA[action delete]]></rdfs:comment>
+    <rdfs:label xml:lang="EN"><![CDATA[Action delete]]></rdfs:label>
+		<rdfs:comment xml:lang="EN"><![CDATA[Action delete]]></rdfs:comment>
 		<funcacl:actionIdentifier xml:lang="EN"><![CDATA[delete]]></funcacl:actionIdentifier>
 		<funcacl:actionMemberOf rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_filemanager_Browser" />
   </rdf:Description>
