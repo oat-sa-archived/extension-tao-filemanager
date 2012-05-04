@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TAO v2.2-beta\n"
-"PO-Revision-Date: 2012-05-02T13:49:29\n"
+"PO-Revision-Date: 2012-05-04T11:38:44\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: EN\n"
@@ -28,6 +28,9 @@ msgstr "Supprimer"
 
 msgid "Download"
 msgstr "Télécharger"
+
+msgid "Enter the name of the new directory inside "
+msgstr "Saisissez le nom du nouveau répertoire dans "
 
 msgid "File"
 msgstr "Fichier"

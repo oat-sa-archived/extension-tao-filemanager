@@ -15,7 +15,7 @@ function goToRoot(){
 function newFolder(){
 	
 	var parentDir = $("#dir-uri").text();
-	var newDir = prompt("Enter the of the new directory inside " + $("#dir-uri").text());
+	var newDir = prompt(__("Enter the name of the new directory inside ") + $("#dir-uri").text());
 	if(newDir){
 		var openFolder = parentDir;
 		$.ajax({
