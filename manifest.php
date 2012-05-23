@@ -10,9 +10,17 @@ return array(
 		'version' => '2.0',
 		'author' => 'CRP Henry Tudor',
 		'dependances' => array('tao'),
-		'classLoaderPackages' => array( 
+		'classLoaderPackages' => array(
 			dirname(__FILE__).'/actions/'
-		 )
+		 ),
+		'models' => array(
+				'http://www.tao.lu/Ontologies/taoFuncACL.rdf'
+		),
+		'install' => array(
+			'rdf' => array(
+					array('ns' => 'http://www.tao.lu/Ontologies/taoFuncACL.rdf', 'file' => dirname(__FILE__). '/models/ontology/funcacl.rdf')
+			)
+		)
 	)
 );
 ?>
