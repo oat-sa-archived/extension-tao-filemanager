@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title><?=__('File Manager')?></title>
+	<title><?=__('Media Manager')?></title>
 	<link rel="shortcut icon" href="<?=BASE_WWW?>img/favicon.ico" type="image/x-icon" />
 	
 	<?=tao_helpers_Scriptloader::render()?>
@@ -28,7 +28,7 @@
 	</script>
 </head>
 <body>
-	<div id="header" class="ui-widget-header ui-corner-all"><?=__('File Manager')?></div>
+	<div id="header" class="ui-widget-header ui-corner-all"><?=__('Media Manager')?></div>
 	<div id="main-container">
 	    <div id="file-browser">
 		  <div id="file-container-title" class="ui-state-default ui-corner-top" ><?=__('File Browser')?></div>

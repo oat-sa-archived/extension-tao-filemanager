@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TAO v2.2-beta\n"
-"PO-Revision-Date: 2012-05-23T10:54:44\n"
+"PO-Revision-Date: 2012-05-24T15:30:00\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: FR\n"
@@ -38,9 +38,6 @@ msgstr "Fichier"
 msgid "File Browser"
 msgstr "Navigateur"
 
-msgid "File Manager"
-msgstr "Gestionnaire de fichiers"
-
 msgid "File upload"
 msgstr "Télécharger le fichier"
 
@@ -49,6 +46,9 @@ msgstr "le téléversement a échoué"
 
 msgid "Max filesize"
 msgstr "Taille de fichier maximum"
+
+msgid "Media Manager"
+msgstr "Médiathèque"
 
 msgid "media size must be less than : "
 msgstr "La taille du média doit être inférieure à : "
