@@ -9,11 +9,12 @@ function selectUrl(runner){
 	window.close();
 }
 
-function goToRoot(){
+function goToRoot(event){
 	window.location = root_url + "/filemanager/Browser/index";
+	event.preventDefault();
 }
-function newFolder(){
-	
+
+function newFolder(event){
 	var parentDir = $("#dir-uri").text();
 	var newDir = prompt(__("Enter the name of the new directory inside ") + $("#dir-uri").text());
 	if(newDir){
@@ -33,18 +34,19 @@ function newFolder(){
 			}
 		});
 	}
+	event.preventDefault();
 }
 
 function hasFlash(){
 	if($.browser.msie){
-		var hasFlash = false; 
-		try {   
-			var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');   
-			if(fo) hasFlash = true; 
+		var hasFlash = false;
+		try {
+			var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
+			if(fo) hasFlash = true;
 		}
-		catch(e){   
-			if(navigator.mimeTypes ["application/x-shockwave-flash"] != undefined) hasFlash = true; 
-		} 
+		catch(e){
+			if(navigator.mimeTypes ["application/x-shockwave-flash"] != undefined) hasFlash = true;
+		}
 		return hasFlash;
 	}
 	else{
@@ -59,10 +61,12 @@ function hasFlash(){
 	return false;
 }
 
-function download(){
+function download(event){
 	window.location = root_url + '/filemanager/Browser/download?file='+encodeURIComponent($("#file-uri").text());
+	event.preventDefault();
 }
-function removeFile(){
+
+function removeFile(event){
 	if(confirm(__('Please confirm file deletion.'))){
 		$.ajax({
 			url: root_url + "/filemanager/Browser/delete",
@@ -78,8 +82,9 @@ function removeFile(){
 			}
 		});
 	}
+	event.preventDefault();
 }
-function removeFolder(){
+function removeFolder(event){
 	if(confirm(__("Please confirm directory deletion.\nBe careful, it will remove the entire content of the directory!"))){
 		$.ajax({
 			url: root_url + "/filemanager/Browser/delete",
@@ -95,120 +100,95 @@ function removeFolder(){
 			}
 		});
 	}
+	event.preventDefault();
 }
 
 function initFileTree(toOpen){
-	if(!toOpen){
-		toOpen = openFolder;
-	}
-	$('#file-container').fileTree({ 
+	if(!toOpen) toOpen = openFolder;
+
+	$('#file-container').fileTree({
 			root: '/',
-			open: toOpen, 
+			open: toOpen,
 			script: root_url + "/filemanager/Browser/fileData",
 			folderEvent: 'click',
 			multiFolder: false,
 			expandEasing: 'easeOutBounce'
-		}, 
-		
+		},
+
 		/**
 		 * by clikcing on a file in the file tree
 		 * @param {String} file the file path
 		 */
 		function(file) {
-			
-		   $("#file-preview").html("<img src='"+baseUrl+"/views/img/throbber.gif'  alt='loading' />");
-		   $.post(root_url + "/filemanager/Browser/getInfo", {file: file}, function(response){
-			   if(response.type){
-				   $("#file-url").data('media',{
-					   type : response.type,
-					   width: response.width || '',
-					   height: response.height || ''
-				   });
-				   
-				   //enable the selection only once the data are received
-				   $("a.select-link").click(function(){
-					   var runner = window.top.opener.fmRunner.single;
-					   selectUrl(runner);				//runner is defined locally
-				   });
-				   //actions images
-				   $("a.select-link img, a.copy-url-link img, a.download-link img, a.delete-link img").each(function(){
-						if(/_disabled\.png$/.test(this.src)){
-							this.src = this.src.replace('_disabled.png', '.png');
-						}
+			$("#file-preview").html("<img src='"+baseUrl+"/views/img/throbber.gif'  alt='loading' />");
+			$.post(root_url + "/filemanager/Browser/getInfo", {file: file}, function(response){
+				if(response.type){
+					$("#file-url").data('media',{
+						type : response.type,
+						width: response.width || '',
+						height: response.height || ''
 					});
-					
-				    //actions links
-				   $("a.copy-url-link").zclip({
+
+					//enable the selection only once the data are received
+					$("a.link.select").click(function(event){
+						var runner = window.top.opener.fmRunner.single;
+						selectUrl(runner);
+						//runner is defined locally
+						event.preventDefault();
+					});
+					//actions images
+					if ($("a.link.select, a.link.copy-url, a.link.download, a.link.delete").hasClass('disabled')) $("a.link.select, a.link.copy-url, a.link.download, a.link.delete").removeClass('disabled');
+
+					//actions links
+					$("a.link.copy-url").zclip({
 						path:'/filemanager/views/js/ZeroClipboard.swf',
 						setCSSEffects: false,
 						afterCopy:function(){},
 						copy:function(){return $("#file-url").text();}
 					});
-					$("a.download-link").bind('click', download);
-					$("a.delete-link").each(function(){
-						$(this).unbind('click', removeFolder);
-						$(this).bind('click', removeFile);
-					});
-				   
-				   //url box
-				   $("#file-url").html( urlData + file.replace(/^\//, ''));
-				   $("#file-uri").html( file );
-				  
-				   $("#file-preview").load(root_url + "/filemanager/Browser/preview",{file: file});
-			   }
-		   }, "json");
-		   
-    	}, 
-		
+					$("a.link.download").bind('click', download);
+					$("a.link.delete").unbind('click', removeFolder).bind('click', removeFile);
+
+					//url box
+					$("#file-url").html( urlData + file.replace(/^\//, ''));
+					$("#file-uri").html( file );
+
+					$("#file-preview").load(root_url + "/filemanager/Browser/preview",{file: file});
+				}
+			}, "json");
+		},
+
 		/**
 		 * by clikcing on a dir in the file tree
 		 * @param {String} dir the directory path
 		 */
 		function(dir) {
-	     
 		  //actions images
-		   $("a.select-link img, a.copy-url-link img , a.download-link img").each(function(){
-				if(!/disabled\.png$/.test(this.src)){
-					this.src = this.src.replace('.png', '_disabled.png');
-				}
-			});
-			$("a.delete-link img").each(function(){
-				if (/disabled\.png$/.test(this.src)) {
-					this.src = this.src.replace('_disabled.png', '.png');
-				}
-			});
-			
+			if (!$("a.link.select, a.link.copy-url, a.link.download").hasClass('disabled')) $("a.link.select, a.link.copy-url, a.link.download").addClass('disabled');
+			if ($("a.link.delete").hasClass('disabled')) $("a.link.delete").removeClass('disabled');
+
 			//actions links
-			$("a.select-link").each(function(){
-				$(this).unbind('click', selectUrl);
-			});
-			$("a.copy-url-link").zclip('remove');
-			$("a.download-link").each(function(){
-				$(this).unbind('click', download);
-			});
-			$("a.delete-link").each(function(){
-				$(this).unbind('click', removeFile);
-				$(this).bind('click', removeFolder);
-			});
-			
+			$("a.link.select").unbind('click', selectUrl);
+			$("a.link.copy-url").zclip('remove');
+			$("a.link.download").unbind('click', download);
+			$("a.link.delete").unbind('click', removeFile).bind('click', removeFolder);
+
 			//set current dir
-		    $("#dir-uri").html(dir);
+			$("#dir-uri").html(dir);
 			$("#media_folder").val(dir);
-			 $("#file-preview").html('');
-    	}
+			$("#file-preview").html('');
+		}
 	);
 }
 
 $(document).ready(function(){
-	
-	if(!hasFlash()){
-		$("a.copy-url-link").hide();
-	}
-	
+	if(!hasFlash()) $("a.link.copy-url").hide();
+
 	initFileTree();
-	$("a.root-link").click(goToRoot);
-	$("a.new-dir-link").click(newFolder);
-	
+	$("a.link.disabled").live('click', function(event){ event.preventDefault(); });
+	$("a.link.root").click(goToRoot);
+	$("a.link.new-dir").click(newFolder);
+
 	$("#media_file").change(function(){
 		$("#media_name").val(this.value.replace(/\\/g,'/').replace( /.*\//, ''));
 	});

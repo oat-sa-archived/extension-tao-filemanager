@@ -4,11 +4,11 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title><?=__('Media Manager')?></title>
 	<link rel="shortcut icon" href="<?=BASE_WWW?>img/favicon.ico" type="image/x-icon" />
-	
-	<?=tao_helpers_Scriptloader::render()?>
-	
-	<script type='text/javascript'>
+	<base href="<?=BASE_WWW?>" />
 
+	<?=tao_helpers_Scriptloader::render()?>
+
+	<script type='text/javascript'>
 		var root_url	= "<?=ROOT_URL?>";
 		var baseUrl 	= "<?=BASE_URL?>";
 		var basePath 	= "<?=BASE_PATH?>";
@@ -16,7 +16,7 @@
 		var urlData 	= "<?=URL_DATA?>";
 
 		var openFolder	= '/';
-		
+
 		<?if(get_data("openFolder")):?>
 			openFolder	= "<?=get_data('openFolder')?>";
 		<?endif?>
@@ -24,7 +24,6 @@
 		var runner = window.top.opener.fmRunner.single;
 		runner.urlData = urlData;
 		runner.mediaData = {};
-		
 	</script>
 </head>
 <body>
@@ -34,7 +33,7 @@
 		  <div id="file-container-title" class="ui-state-default ui-corner-top" ><?=__('File Browser')?></div>
 		  <div id="file-container"></div>
 		</div>
-		
+
 		<div id="file-data-container">
 			<?if(get_data('error')):?>
 				<div class="ui-widget ui-corner-all ui-state-error error-message">
@@ -50,32 +49,20 @@
 				<span id="file-url" class="data-container" ></span>
 				<span id="file-uri" style="display:none;"></span>
 			</div>
-			<div class="ui-state-highlight ui-corner-all" style="min-height:150px;">
+			<div class="ui-state-highlight ui-corner-all">
 				<strong><?=__('Preview')?></strong>
 				<div id="file-preview" style="text-align:center;"></div>
 			</div>
 			<div class="ui-state-highlight ui-corner-all">
 				<strong><?=__('Actions')?></strong>
-				<table id="actions">
-					<tbody>
-						<tr>
-							<td><a class="select-link" 		href="#"><img src="<?=BASE_WWW?>img/select_disabled.png" /></a></td>
-							<td><a class="root-link" 		href="#"><img src="<?=BASE_WWW?>img/root.png" /></a></td>
-							<td><a class="new-dir-link" 	href="#"><img src="<?=BASE_WWW?>img/folder-new.png" /></a></td>
-							<td><div style="position: relative"><a href="#" class="copy-url-link" style="display: inline-block"><img src="<?=BASE_WWW?>img/copy_disabled.png"/></a></div></td>
-							<td><a class="download-link" 	href="#"><img src="<?=BASE_WWW?>img/download_disabled.png" /></a></td>
-							<td><a class="delete-link" 		href="#"><img src="<?=BASE_WWW?>img/delete_disabled.png" /></a></td>
-						</tr>
-						<tr>
-							<td><a class="select-link" 		href="#"><?=__('Select')?></a></td>
-							<td><a class="root-link" 		href="#"><?=__('Root')?></a></td>
-							<td><a class="new-dir-link" 	href="#"><?=__('New directory')?></a></td>
-							<td><div style="position: relative"><a class="copy-url-link" href="#"><?=__('Copy url')?></a></div></td>
-							<td><a class="download-link" 	href="#"><?=__('Download')?></a></td>
-							<td><a class="delete-link" 		href="#"><?=__('Delete')?></a></td>
-						</tr>
-					</tbody>
-				</table>
+				<ul id="actions">
+					<li class="ui-corner-all"><a class="link select disabled" href="#"><?=__('Select')?></a></li>
+					<li class="ui-corner-all"><a class="link root" href="#"><?=__('Root')?></a></li>
+					<li class="ui-corner-all"><a class="link new-dir" href="#"><?=__('New directory')?></a></li>
+					<li class="ui-corner-all"><a class="link copy-url" href="#"><?=__('Copy url')?></a></li>
+					<li class="ui-corner-all"><a class="link download disabled" href="#"><?=__('Download')?></a></li>
+					<li class="ui-corner-all"><a class="link delete disabled" href="#"><?=__('Delete')?></a></li>
+				</ul>
 			</div>
 			<div class="ui-widget-content ui-corner-all">
 				<strong><?=__('File upload')?></strong><br /><br />

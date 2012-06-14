@@ -40,19 +40,15 @@ div#file-container{
 }
 div#file-data-container{
 	float:left;
-	width:60.5%; 
+	width:60.5%;
 	height:100%;
 	background-color:#eee;
 }
-#file-data-container .ui-state-highlight, 
+#file-data-container .ui-state-highlight,
 #file-data-container .ui-state-default,
 #file-data-container .ui-widget-content{
 	padding:10px;
 	margin:5px;
-}
-table#actions td{
-	text-align:center;
-	width:100px;
 }
 .data-container{
 	background-color:#ddd;
@@ -67,3 +63,42 @@ span.form-label{
 input{
 	margin-left:100px;
 }
+
+ul#actions {
+	padding: 0;
+	margin: 10px auto;
+	display: block;
+}
+
+ul#actions li {
+	display: inline-block;
+	padding: 5px 3px;
+}
+
+ul#actions li:hover {
+	background-color: rgba(238, 238, 238, 0.8);
+	box-shadow: 0 0 3px #000;
+}
+
+ul#actions a {
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: top center;
+	width: 88px;
+	text-align: center;
+	padding-top: 50px;
+}
+
+.link.select { background-image: url(../img/select.png) }
+.link.select.disabled { background-image: url(../img/select_disabled.png) }
+.link.root { background-image: url(../img/root.png) }
+.link.root.disabled { background-image: url(../img/root_disabled.png) }
+.link.new-dir { background-image: url(../img/folder-new.png) }
+.link.new-dir.disabled { background-image: url(../img/folder-new_disabled.png) }
+.link.copy-url { background-image: url(../img/copy.png) }
+.link.copy-url.disabled { background-image: url(../img/copy_disabled.png) }
+.link.download { background-image: url(../img/download.png) }
+.link.download.disabled { background-image: url(../img/download_disabled.png) }
+.link.delete { background-image: url(../img/delete.png) }
+.link.delete.disabled { background-image: url(../img/delete_disabled.png) }
+.link.disabled { cursor: not-allowed }
