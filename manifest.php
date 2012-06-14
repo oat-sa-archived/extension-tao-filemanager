@@ -15,11 +15,6 @@ return array(
 		 ),
 		'models' => array(
 				'http://www.tao.lu/Ontologies/taoFuncACL.rdf'
-		),
-		'install' => array(
-			'rdf' => array(
-					array('ns' => 'http://www.tao.lu/Ontologies/taoFuncACL.rdf', 'file' => dirname(__FILE__). '/models/ontology/funcacl.rdf')
-			)
 		)
 	)
 );
