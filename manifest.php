@@ -7,7 +7,7 @@ return array(
 	'name' => 'filemanager',
 	'description' => 'Manage media files on server',
 	'additional' => array(
-		'version' => '2.0',
+		'version' => '2.3',
 		'author' => 'CRP Henry Tudor',
 		'dependances' => array('tao'),
 		'classLoaderPackages' => array(
