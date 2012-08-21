@@ -5,7 +5,7 @@
  */
 
 //include the fmRunner class if not done previously
-try { FmRunner; } catch(e){
+/*try { FmRunner; } catch(e){
 	$("script").each(function(){
 		source = $(this).attr('src');
 		if(/jquery\.fmRunner\.js$/.test(source)){
@@ -13,20 +13,22 @@ try { FmRunner; } catch(e){
 			return;
 		}
 	})
-}
+}*/
+
+require([root_url + '/filemanager/views/js/fmRunner.js']);
 
 /**
  * JQuery plugin to bind the fmRunner with any node.
  * The runner is bound to the click event
  * @param {Object} options the list of options usually used with the window.open function (width,height, menubar, toolbar, etc.)
- * @example $("#myId").fmload() 
+ * @example $("#myId").fmload()
  * @example $("#myId").fmload({width: '1024px', height: '768px'});
  */
-jQuery.fn.fmload = function (options, elt, callback) {
+$.fn.fmload = function (options, elt, callback) {
 	return this.each(function () {
-		jQuery(this).addClass('fm-launcher');
-		jQuery(this).click(function(){	
-			options.elt = elt;		
+		$(this).addClass('fm-launcher');
+		$(this).click(function(){
+			options.elt = elt;
 			FmRunner.load(options, callback);
 		});
 	});
@@ -36,7 +38,7 @@ jQuery.fn.fmload = function (options, elt, callback) {
  * JQuery plugin to bind the fmRunner to an icon inserted after the matching node
  * @param {Object} options
  */
-jQuery.fn.fmbind = function(options, callback){
+$.fn.fmbind = function(options, callback){
 	var imgSrc = root_url + '/filemanager/views/img/folder_page.png';
 	if(options.type == 'image'){
 		imgSrc = root_url + '/filemanager/views/img/folder_image.png';
@@ -44,18 +46,18 @@ jQuery.fn.fmbind = function(options, callback){
 	if(options.type == 'audio'){
 		imgSrc = root_url + '/filemanager/views/img/folder_audio.png';
 	}
-	
+
 	var fmType = 'file';
 	if(options.type){
 		fmType = options.type;
 	}
-	
+
 	return this.each(function () {
-		if(!jQuery(this).next().hasClass(fmType)){
-			imgNode = jQuery("<img src='"+imgSrc+"' style='cursor:pointer;margin:1px;' />");
+		if(!$(this).next().hasClass(fmType)){
+			imgNode = $("<img src='"+imgSrc+"' style='cursor:pointer;margin:1px;' />");
 			imgNode.addClass(fmType);
 			imgNode.fmload(options, this, callback);
-			jQuery(this).after(imgNode);
+			$(this).after(imgNode);
 		}
 	});
 };
