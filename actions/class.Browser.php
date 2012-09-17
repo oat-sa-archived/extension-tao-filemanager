@@ -94,7 +94,7 @@ class filemanager_actions_Browser extends Module {
 				elseif(empty($_FILES['media_file']['type'])){
 					$_FILES['media_file']['type'] = filemanager_helpers_FileUtils::getMimeType($_FILES['media_file']['tmp_name']);
 				}
-				if(!$_FILES['media_file']['type'] || !in_array($_FILES['media_file']['type'], $GLOBALS['allowed_media'])){
+				if(!$_FILES['media_file']['type'] || !$this->isMimeTypeAllowed($_FILES['media_file']['type'])){
 					$copy = false;
 					$error = __('unknow media type : '.$_FILES['media_file']['type']);
 				}
@@ -186,7 +186,7 @@ class filemanager_actions_Browser extends Module {
 			if(filemanager_helpers_FileUtils::securityCheck($file)){
 				$path = filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $file));
 				$mimeType = filemanager_helpers_FileUtils::getMimeType($path);
-				if(in_array($mimeType, $GLOBALS['allowed_media'])){
+				if($this->isMimeTypeAllowed($mimeType)){
 					if(file_exists($path) && is_readable($path)){
 						
 						$width = $height = '';
@@ -278,7 +278,7 @@ class filemanager_actions_Browser extends Module {
 				$path = filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $file));
 				
 				$mimeType = filemanager_helpers_FileUtils::getMimeType($path);
-				if(in_array($mimeType, $GLOBALS['allowed_media'])){
+				if($this->isMimeTypeAllowed($mimeType)){
 					
 					if(file_exists($path) && is_readable($path)){
 						
@@ -368,6 +368,10 @@ class filemanager_actions_Browser extends Module {
 		echo json_encode($data);
 	}
 	
+	private function isMimeTypeAllowed($mimeType) {
+		$extFM = common_ext_ExtensionsManager::singleton()->getExtensionById('filemanager');
+		return (in_array($mimeType, $extFM->getConstant('allowed_media')));
+	}
 	
 }
 ?>
