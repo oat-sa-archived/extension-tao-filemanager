@@ -11,7 +11,7 @@ return array(
 	'description' => 'Manage media files on server',
 	'version' => '2.3',
 	'author' => 'CRP Henry Tudor',
-	'dependances' => array('tao'),
+	'dependencies' => array('tao'),
 	'classLoaderPackages' => array(
 		dirname(__FILE__).'/actions/'
 	 ),
