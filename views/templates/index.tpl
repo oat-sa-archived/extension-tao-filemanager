@@ -11,8 +11,8 @@
 	<script type='text/javascript'>
 		var root_url	= "<?=ROOT_URL?>";
 		var baseUrl 	= "<?=BASE_URL?>";
-		var basePath 	= "<?=BASE_PATH?>";
-		var baseData 	= "<?=BASE_DATA?>";
+		var basePath 	= "<?=addslashes(BASE_PATH);?>";
+		var baseData 	= "<?=addslashes(BASE_DATA);?>";
 		var urlData 	= "<?=URL_DATA?>";
 
 		var openFolder	= '/';
