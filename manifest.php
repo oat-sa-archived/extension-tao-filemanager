@@ -41,18 +41,18 @@ return array(
 		'BASE_PATH'				=> $extpath ,
 	
 		#BASE URL (usually the domain root)
-		'BASE_URL'				=> ROOT_URL . '/filemanager',
+		'BASE_URL'				=> ROOT_URL . 'filemanager',
 	
 		#BASE WWW the web resources path
-		'BASE_WWW'				=> ROOT_URL . '/filemanager/views/',
+		'BASE_WWW'				=> ROOT_URL . 'filemanager/views/',
 	 
 	
 		#root folder for the files
 		'BASE_DATA'				=> $extpath.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR,
-		'URL_DATA'				=> ROOT_URL . '/filemanager/views/data/',
+		'URL_DATA'				=> ROOT_URL . 'filemanager/views/data/',
 	
 		#TAO extension Paths
-		'TAOBASE_WWW'			=> ROOT_URL  . '/tao/views/',
+		'TAOBASE_WWW'			=> ROOT_URL  . 'tao/views/',
 		'TAOVIEW_PATH'			=> $taopath.'views'.DIRECTORY_SEPARATOR,
 		'TAO_TPL_PATH'			=> $taopath.'views'.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR,
 	
