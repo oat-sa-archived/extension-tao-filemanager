@@ -15,7 +15,7 @@
 	})
 }*/
 
-require(['require', 'jquery', root_url + '/filemanager/views/js/fmRunner.js']);
+require(['require', 'jquery', root_url + 'filemanager/views/js/fmRunner.js']);
 
 /**
  * JQuery plugin to bind the fmRunner with any node.
