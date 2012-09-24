@@ -141,7 +141,7 @@ function initFileTree(toOpen){
 
 					//actions links
 					$("a.link.copy-url").zclip({
-						path:'/filemanager/views/js/ZeroClipboard.swf',
+						path: baseUrl+'/views/js/ZeroClipboard.swf',
 						setCSSEffects: false,
 						afterCopy:function(){},
 						copy:function(){return $("#file-url").text();}
