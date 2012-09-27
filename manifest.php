@@ -10,7 +10,7 @@ return array(
 	'name' => 'filemanager',
 	'description' => 'Manage media files on server',
 	'version' => '2.3',
-	'author' => 'CRP Henry Tudor',
+	'author' => 'CRP Henri Tudor',
 	'dependencies' => array('tao'),
 	'classLoaderPackages' => array(
 		dirname(__FILE__).'/actions/'
