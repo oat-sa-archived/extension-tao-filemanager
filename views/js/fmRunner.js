@@ -33,7 +33,7 @@ FmRunner = function() {
 				window.fmRunner.single.window.close();
 			}
 			params = '';
-			for (i in window.fmRunner.defaultOpt){
+			for (i in window.fmRunner.single.defaultOpt){
 				params += i + '=';
 				(options[i]) ? params += options[i] :  params += window.fmRunner.single.defaultOpt[i];
 				params += ',';
@@ -43,7 +43,8 @@ FmRunner = function() {
 					params += i + '=' + options[i] + ',';
 				}
 			}
-			window.fmRunner.single.window = window.open(root_url + '/filemanager/Browser/index', 'filemanager', params);
+
+			window.fmRunner.single.window = window.open(root_url + 'filemanager/Browser/index', 'filemanager', params);
 			window.fmRunner.single.window.focus();
 			$(document).bind('fmSelect', function(e){
 				e.preventDefault();

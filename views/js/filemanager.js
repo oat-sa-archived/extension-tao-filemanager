@@ -10,7 +10,7 @@ function selectUrl(runner){
 }
 
 function goToRoot(event){
-	window.location = root_url + "/filemanager/Browser/index";
+	window.location = root_url + "filemanager/Browser/index";
 	event.preventDefault();
 }
 
@@ -20,7 +20,7 @@ function newFolder(event){
 	if(newDir){
 		var openFolder = parentDir;
 		$.ajax({
-			url: root_url + "/filemanager/Browser/addFolder",
+			url: root_url + "filemanager/Browser/addFolder",
 			type: "POST",
 			data: {
 				parent: parentDir,
@@ -62,14 +62,14 @@ function hasFlash(){
 }
 
 function download(event){
-	window.location = root_url + '/filemanager/Browser/download?file='+encodeURIComponent($("#file-uri").text());
+	window.location = root_url + 'filemanager/Browser/download?file='+encodeURIComponent($("#file-uri").text());
 	event.preventDefault();
 }
 
 function removeFile(event){
 	if(confirm(__('Please confirm file deletion.'))){
 		$.ajax({
-			url: root_url + "/filemanager/Browser/delete",
+			url: root_url + "filemanager/Browser/delete",
 			type: "POST",
 			data: {
 				file: $("#file-uri").text()
@@ -87,7 +87,7 @@ function removeFile(event){
 function removeFolder(event){
 	if(confirm(__("Please confirm directory deletion.\nBe careful, it will remove the entire content of the directory!"))){
 		$.ajax({
-			url: root_url + "/filemanager/Browser/delete",
+			url: root_url + "filemanager/Browser/delete",
 			type: "POST",
 			data: {
 				folder: $("#dir-uri").text()
@@ -109,7 +109,7 @@ function initFileTree(toOpen){
 	$('#file-container').fileTree({
 			root: '/',
 			open: toOpen,
-			script: root_url + "/filemanager/Browser/fileData",
+			script: root_url + "filemanager/Browser/fileData",
 			folderEvent: 'click',
 			multiFolder: false,
 			expandEasing: 'easeOutBounce'
@@ -120,8 +120,8 @@ function initFileTree(toOpen){
 		 * @param {String} file the file path
 		 */
 		function(file) {
-			$("#file-preview").html("<img src='"+baseUrl+"/views/img/throbber.gif'  alt='loading' />");
-			$.post(root_url + "/filemanager/Browser/getInfo", {file: file}, function(response){
+			$("#file-preview").html("<img src='"+baseUrl+"views/img/throbber.gif'  alt='loading' />");
+			$.post(root_url + "filemanager/Browser/getInfo", {file: file}, function(response){
 				if(response.type){
 					$("#file-url").data('media',{
 						type : response.type,
@@ -136,16 +136,13 @@ function initFileTree(toOpen){
 						//runner is defined locally
 						event.preventDefault();
 					});
-					//actions images
-					if ($("a.link.select, a.link.copy-url, a.link.download, a.link.delete").hasClass('disabled')) $("a.link.select, a.link.copy-url, a.link.download, a.link.delete").removeClass('disabled');
+					
+					//actions' images
+					if ($("a.link.select, a.link.copy-url, a.link.download, a.link.delete").hasClass('disabled')){
+						$("a.link.select, a.link.copy-url, a.link.download, a.link.delete").removeClass('disabled');
+					} 
 
-					//actions links
-					$("a.link.copy-url").zclip({
-						path: baseUrl+'/views/js/ZeroClipboard.swf',
-						setCSSEffects: false,
-						afterCopy:function(){},
-						copy:function(){return $("#file-url").text();}
-					});
+					//actions' links
 					$("a.link.download").bind('click', download);
 					$("a.link.delete").unbind('click', removeFolder).bind('click', removeFile);
 
@@ -153,7 +150,14 @@ function initFileTree(toOpen){
 					$("#file-url").html( urlData + file.replace(/^\//, ''));
 					$("#file-uri").html( file );
 
-					$("#file-preview").load(root_url + "/filemanager/Browser/preview",{file: file});
+					$("#file-preview").load(root_url + "filemanager/Browser/preview",{file: file}, function() {
+						$("a.link.copy-url").zclip({
+							path: baseUrl + 'views/js/ZeroClipboard.swf',
+							setCSSEffects: false,
+							afterCopy: function(){},
+							copy: function(){return $('#file-url').text();}
+						});
+					});
 				}
 			}, "json");
 		},
@@ -169,7 +173,6 @@ function initFileTree(toOpen){
 
 			//actions links
 			$("a.link.select").unbind('click', selectUrl);
-			$("a.link.copy-url").zclip('remove');
 			$("a.link.download").unbind('click', download);
 			$("a.link.delete").unbind('click', removeFile).bind('click', removeFolder);
 
