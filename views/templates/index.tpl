@@ -57,9 +57,9 @@
 				<strong><?=__('Actions')?></strong>
 				<ul id="actions">
 					<li class="ui-corner-all"><a class="link select disabled" href="#"><?=__('Select')?></a></li>
-					<li class="ui-corner-all"><a class="link root" href="#"><?=__('Root')?></a></li>
+					<li class="ui-corner-all"><a class="link root disabled" href="#"><?=__('Root')?></a></li>
 					<li class="ui-corner-all"><a class="link new-dir" href="#"><?=__('New directory')?></a></li>
-					<li class="ui-corner-all"><a class="link copy-url" href="#"><?=__('Copy url')?></a></li>
+					<li class="ui-corner-all"><a class="link copy-url disabled" href="#"><?=__('Copy url')?></a></li>
 					<li class="ui-corner-all"><a class="link download disabled" href="#"><?=__('Download')?></a></li>
 					<li class="ui-corner-all"><a class="link delete disabled" href="#"><?=__('Delete')?></a></li>
 				</ul>

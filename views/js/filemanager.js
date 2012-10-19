@@ -120,6 +120,7 @@ function initFileTree(toOpen){
 		 * @param {String} file the file path
 		 */
 		function(file) {
+			$('a.link.copy-url').zclip('remove');
 			$("#file-preview").html("<img src='"+baseUrl+"views/img/throbber.gif'  alt='loading' />");
 			$.post(root_url + "filemanager/Browser/getInfo", {file: file}, function(response){
 				if(response.type){
@@ -144,7 +145,9 @@ function initFileTree(toOpen){
 
 					//actions' links
 					$("a.link.download").bind('click', download);
-					$("a.link.delete").unbind('click', removeFolder).bind('click', removeFile);
+					$("a.link.delete").unbind('click', removeFolder)
+									  .unbind('click', removeFile)
+									  .bind('click', removeFile);
 
 					//url box
 					$("#file-url").html( urlData + file.replace(/^\//, ''));
@@ -167,14 +170,17 @@ function initFileTree(toOpen){
 		 * @param {String} dir the directory path
 		 */
 		function(dir) {
-		  //actions images
-			if (!$("a.link.select, a.link.copy-url, a.link.download").hasClass('disabled')) $("a.link.select, a.link.copy-url, a.link.download").addClass('disabled');
-			if ($("a.link.delete").hasClass('disabled')) $("a.link.delete").removeClass('disabled');
+			//disable buttons that have no effects on a directory.
+			$("a.link.select, a.link.copy-url, a.link.download").toggleClass("disabled", true);
+			//enable buttons that have effects on a directory.
+			$("a.link.new-dir, a.link.root, a.link.delete").toggleClass("disabled", false);
 
-			//actions links
-			$("a.link.select").unbind('click', selectUrl);
-			$("a.link.download").unbind('click', download);
-			$("a.link.delete").unbind('click', removeFile).bind('click', removeFolder);
+			//events.
+			$("a.link.select, a.link.download, a.link.delete, a.link.root").off('click')
+															  .on('click', function(e){ e.preventDefault(); });
+			$("a.link.copy-url").zclip('remove');
+			$("a.link.delete").bind('click', removeFolder);
+			$("a.link.root").bind('click', goToRoot);
 
 			//set current dir
 			$("#dir-uri").html(dir);
@@ -189,7 +195,6 @@ $(document).ready(function(){
 
 	initFileTree();
 	$("a.link.disabled").live('click', function(event){ event.preventDefault(); });
-	$("a.link.root").click(goToRoot);
 	$("a.link.new-dir").click(newFolder);
 
 	$("#media_file").change(function(){
