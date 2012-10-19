@@ -48,7 +48,7 @@ return array(
 	 
 	
 		#root folder for the files
-		'BASE_DATA'				=> $extpath.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR,
+		'BASE_DATA'				=> $extpath.'views'.DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR,
 		'URL_DATA'				=> ROOT_URL . 'filemanager/views/data/',
 	
 		#TAO extension Paths

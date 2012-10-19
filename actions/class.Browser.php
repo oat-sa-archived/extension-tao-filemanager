@@ -336,12 +336,15 @@ class filemanager_actions_Browser extends Module {
 	 */
 	public function download(){
 		$file = urldecode($this->getRequestParameter('file'));
+		$file = filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $file));
+
 		if(filemanager_helpers_FileUtils::securityCheck($file) && is_readable($file)){
 			header("Content-Type: application/force-download");
 			header('Content-Disposition: attachment; filename="'.basename($file).'"');
-			echo file_get_contents(filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $file)));
+			echo file_get_contents($file);
 			return;
 		}
+		
 		$this->redirect("index");
 	}
 	
