@@ -190,6 +190,7 @@ function initFileTree(toOpen){
 		 */
 		function(dir) {
 			highlight();
+			$('#file-url, #file-uri').empty();
 			
 			//disable buttons that have no effects on a directory.
 			$("a.link.select, a.link.copy-url, a.link.download").toggleClass("disabled", true);
