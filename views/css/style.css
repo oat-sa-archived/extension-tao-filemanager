@@ -102,3 +102,7 @@ ul#actions a {
 .link.delete { background-image: url(../img/delete.png) }
 .link.delete.disabled { background-image: url(../img/delete_disabled.png) }
 .link.disabled { cursor: not-allowed }
+
+#file-preview{
+	overflow: auto;
+}

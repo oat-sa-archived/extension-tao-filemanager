@@ -21,8 +21,8 @@ FmRunner = function() {
 			'resizable'	: 'yes',
 			'status'	: 'no',
 			'toolbar'	: 'no',
-			'dependent' : 'yes'
-		};
+			'dependent' : 'yes',
+		}
 		
 		window.fmRunner.single.load = function(options, callback){
 			if(options.elt){
@@ -44,7 +44,16 @@ FmRunner = function() {
 				}
 			}
 
-			window.fmRunner.single.window = window.open(root_url + 'filemanager/Browser/index', 'filemanager', params);
+			// Show or not the "Select" button.
+			var showSelectString;
+			if (typeof(options['showselect']) != 'undefined' && options['showselect'] == false){
+				showSelectString = '0';
+			}
+			else{
+				showSelectString = '1';
+			}
+			
+			window.fmRunner.single.window = window.open(root_url + 'filemanager/Browser/index?showselect=' + showSelectString, 'filemanager', params);
 			window.fmRunner.single.window.focus();
 			$(document).bind('fmSelect', function(e){
 				e.preventDefault();

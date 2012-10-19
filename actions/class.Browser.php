@@ -38,8 +38,13 @@ class filemanager_actions_Browser extends Module {
 			$this->setData('error', $this->getRequestParameter('error'));
 		}
 		
-		$this->setData('upload_limit', $this->getFileUploadLimit());
+		// Show select action?
+		$this->setData('showSelect', false);
+		if($this->hasRequestParameter('showselect') && $this->getRequestParameter('showselect') == '1'){
+			$this->setData('showSelect', true);
+		}
 		
+		$this->setData('upload_limit', $this->getFileUploadLimit());
 		$this->setView('index.tpl');
 	}
 	

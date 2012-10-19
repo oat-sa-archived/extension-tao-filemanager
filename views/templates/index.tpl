@@ -56,7 +56,9 @@
 			<div class="ui-state-highlight ui-corner-all">
 				<strong><?=__('Actions')?></strong>
 				<ul id="actions">
+					<? if (get_data('showSelect') == true): ?>
 					<li class="ui-corner-all"><a class="link select disabled" href="#"><?=__('Select')?></a></li>
+					<? endif; ?>
 					<li class="ui-corner-all"><a class="link root disabled" href="#"><?=__('Root')?></a></li>
 					<li class="ui-corner-all"><a class="link new-dir" href="#"><?=__('New directory')?></a></li>
 					<li class="ui-corner-all"><a class="link copy-url disabled" href="#"><?=__('Copy url')?></a></li>
