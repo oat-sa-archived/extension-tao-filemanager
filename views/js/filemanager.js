@@ -103,6 +103,23 @@ function removeFolder(event){
 	event.preventDefault();
 }
 
+/**
+ * Highlight a given file/directory in the tree.
+ * If no file parameter is given, this function will
+ * only unhighlight the currently highlighted item.
+ * 
+ * @param {String} The file/directory to be hilighted.
+ */
+function highlight(file){
+	//remove present hilights.
+	$(".jqueryFileTree a").removeClass('active');
+	
+	if (typeof(file) != 'undefined'){
+		$(".jqueryFileTree").find('a[rel="' + file + '"]')
+							.addClass('active');	
+	}
+}
+
 function initFileTree(toOpen){
 	if(!toOpen) toOpen = openFolder;
 
@@ -120,6 +137,8 @@ function initFileTree(toOpen){
 		 * @param {String} file the file path
 		 */
 		function(file) {
+			highlight(file);
+			
 			$('a.link.copy-url').zclip('remove');
 			$("#file-preview").html("<img src='"+baseUrl+"views/img/throbber.gif'  alt='loading' />");
 			$.post(root_url + "filemanager/Browser/getInfo", {file: file}, function(response){
@@ -170,6 +189,8 @@ function initFileTree(toOpen){
 		 * @param {String} dir the directory path
 		 */
 		function(dir) {
+			highlight();
+			
 			//disable buttons that have no effects on a directory.
 			$("a.link.select, a.link.copy-url, a.link.download").toggleClass("disabled", true);
 			//enable buttons that have effects on a directory.
