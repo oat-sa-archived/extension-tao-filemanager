@@ -199,8 +199,8 @@ class filemanager_helpers_FileUtils {
 			}
 		}
 		
-		
-		$ext = strtolower(array_pop(explode('.',$filename)));
+		$explosion = explode('.',$filename);
+		$ext = strtolower(array_pop($explosion));
 		
 		if (array_key_exists($ext, $mime_types)) {
             return $mime_types[$ext];
