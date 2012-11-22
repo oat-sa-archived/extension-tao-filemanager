@@ -205,6 +205,12 @@ class filemanager_actions_Browser extends Module {
 						$response['width'] = $width;
 						$response['height'] = $height;
 						$response['type'] = $mimeType;
+						
+						// try to get the folder path of the file.
+						$folderPath = filemanager_helpers_FileUtils::getFolderPath($path);
+						if (!empty($folderPath)){
+							$response['dir'] = $folderPath;
+						}
 					}
 				}
 			}

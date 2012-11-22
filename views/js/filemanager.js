@@ -171,6 +171,11 @@ function initFileTree(toOpen){
 					//url box
 					$("#file-url").html( urlData + file.replace(/^\//, ''));
 					$("#file-uri").html( file );
+					
+					if (typeof(response.dir) != 'undefined'){
+						$("#dir-uri").html(response.dir);
+					}
+					
 
 					$("#file-preview").load(root_url + "filemanager/Browser/preview",{file: file}, function() {
 						$("a.link.copy-url").zclip({

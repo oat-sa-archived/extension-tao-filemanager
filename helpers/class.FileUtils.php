@@ -306,6 +306,58 @@ class filemanager_helpers_FileUtils
         return (string) $returnValue;
     }
 
+    /**
+     * Obtains the path of the folder that contains the file described by
+     * If no path to the file can be determined, null is returned.
+     *
+     * @access public
+     * @author Jerome Bogaerts, <jerome.bogaerts@tudor.lu>
+     * @param  string filePath A path to a file.
+     * @param  string dataPath Set a specific media data path instead of letting the implementation of the method use the value in the BASE_DATA constant.
+     * @param  boolean strict Default value is true. If set to false, the file does not necessary need to exist.
+     * @return string
+     */
+    public static function getFolderPath($filePath, $dataPath = null, $strict = true)
+    {
+        $returnValue = (string) '';
+
+        // section 10-13-1-85--34176ece:13b2750645e:-8000:0000000000003C63 begin
+        // Get the BASE_DATA constant properly.
+        if (is_readable($filePath) || false == $strict){
+        	$base = '';
+        	if (null == $dataPath){
+        		$man = common_ext_ExtensionsManager::singleton();
+        		$ext = $man->getExtensionById('filemanager');
+        		$base = $ext->getConstant('BASE_DATA');
+        	}
+        	else{
+        		$base = $dataPath;
+        	}
+        	
+        	$fileName = pathinfo($filePath, PATHINFO_BASENAME);
+        	
+        	// Remove $base and $fileName from $filePath
+        	$filePath = str_replace(array($base, $fileName), '', $filePath);
+        	$filePath = preg_replace(array('!^/*!', '!/*$!'), '', $filePath);
+        	// Add a leading/trailing slash to the final result.
+        	// We consider the containing folder in $base as the root folder.
+        	$filePath = '/' . $filePath . '/';
+        	
+        	if ($filePath == '//'){
+        		$returnValue = '/';
+        	}
+        	else{
+        		$returnValue = $filePath;
+        	}
+        }
+        else{
+        	return null;
+        }
+        // section 10-13-1-85--34176ece:13b2750645e:-8000:0000000000003C63 end
+
+        return (string) $returnValue;
+    }
+
 } /* end of class filemanager_helpers_FileUtils */
 
 ?>
