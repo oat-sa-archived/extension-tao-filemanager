@@ -6,11 +6,10 @@ $GLOBALS['__l10n']["A short text"]="نص قصير";
 $GLOBALS['__l10n']["A single choice list"]="قائمة خيار واحد";
 $GLOBALS['__l10n']["A single choice long list"]="قائمة خيار واحد طويلة";
 $GLOBALS['__l10n']["Access denied. Please renew your authentication!"]="!تم رفض الوصول. يرجى تجديد المصادقة الخاصة بك";
-$GLOBALS['__l10n']["actions"]="الأعمال";
 $GLOBALS['__l10n']["Actions"]="الأعمال";
+$GLOBALS['__l10n']["actions"]="الأعمال";
 $GLOBALS['__l10n']["Add"]="إضافة";
 $GLOBALS['__l10n']["Add / Edit lists"]="إضافة / تعديل القوائم";
-$GLOBALS['__l10n']["Add a user"]="إضافة مستخدم";
 $GLOBALS['__l10n']["Add property"]="إضافة خاصية";
 $GLOBALS['__l10n']["Add the source file"]="إضافة الملف المصدر";
 $GLOBALS['__l10n']["Advanced Authoring Tool"]="محرر متقدم";
@@ -44,13 +43,12 @@ $GLOBALS['__l10n']["Delete property"]="حذف الخاصية";
 $GLOBALS['__l10n']["Delete user"]="حذف المستخدم";
 $GLOBALS['__l10n']["Deliveries"]="Deliveries";
 $GLOBALS['__l10n']["Don't set"]="لا تدرج";
-$GLOBALS['__l10n']["download"]="تحميل";
 $GLOBALS['__l10n']["Download"]="تحميل";
+$GLOBALS['__l10n']["download"]="تحميل";
 $GLOBALS['__l10n']["duplicate"]="تكرار";
 $GLOBALS['__l10n']["Dynamic date picker"]="روزنامة";
-$GLOBALS['__l10n']["edit"]="تحرير";
 $GLOBALS['__l10n']["Edit"]="تحرير";
-$GLOBALS['__l10n']["Edit a user"]="تحرير المستخم";
+$GLOBALS['__l10n']["edit"]="تحرير";
 $GLOBALS['__l10n']["Edit Comment"]="تحرير تعليق";
 $GLOBALS['__l10n']["Edit item comment"]="تحرير تعليق";
 $GLOBALS['__l10n']["Edit user"]="تحرير مستخدم";
@@ -73,11 +71,10 @@ $GLOBALS['__l10n']["Filter"]="تصفية";
 $GLOBALS['__l10n']["Filtering mode"]="طريقة التصفية";
 $GLOBALS['__l10n']["Filters"]="Filtres";
 $GLOBALS['__l10n']["Groups"]="مجموعات";
-$GLOBALS['__l10n']["Home"]="الصفحة الرئيسية";
 $GLOBALS['__l10n']["Import"]="استيراد";
 $GLOBALS['__l10n']["Inclusive (AND)"]="Inclusif (ET)";
-$GLOBALS['__l10n']["Interface Language"]="لغة الواجهة";
 $GLOBALS['__l10n']["Interface language"]="لغة الواجهة";
+$GLOBALS['__l10n']["Interface Language"]="لغة الواجهة";
 $GLOBALS['__l10n']["Invalid field length"]="طول الحقل غير صحيح";
 $GLOBALS['__l10n']["Invalid field range"]="Le rang du champ est invalide";
 $GLOBALS['__l10n']["Invalid file size"]="حجم الملف غير صحيح";
@@ -104,12 +101,9 @@ $GLOBALS['__l10n']["Manage data list"]="إدارة قائمة البيانات";
 $GLOBALS['__l10n']["Manage deliveries"]="Gérer les deliveries";
 $GLOBALS['__l10n']["Manage groups"]="إدارة المجموعات";
 $GLOBALS['__l10n']["Manage items"]="ادارة الاسئلة";
-$GLOBALS['__l10n']["Manage processes"]="إدارة العمليات";
 $GLOBALS['__l10n']["Manage result servers"]="ادارة خوادم النتائج";
-$GLOBALS['__l10n']["Manage roles"]="إدارة الأدوار";
 $GLOBALS['__l10n']["Manage test takers"]="إدارة المتقدمين للاختبار";
 $GLOBALS['__l10n']["Manage tests"]="ادارة الاختبارات";
-$GLOBALS['__l10n']["Manage users"]="إدارة المستخدمين";
 $GLOBALS['__l10n']["Map the properties to the CSV columns"]="CSV اختر الخصائص المتعلقة بالاعمدة";
 $GLOBALS['__l10n']["Media manager"]="Médiathèque";
 $GLOBALS['__l10n']["Meta Data"]="بيانات التعريف";
@@ -144,8 +138,6 @@ $GLOBALS['__l10n']["Please select the input data format to import"]="الرجا�
 $GLOBALS['__l10n']["Please select the way to export the data"]="الرجاء حدد طريقة لتصدير البيانات\n\nmsgid";
 $GLOBALS['__l10n']["Please upload an RDF file."]=".RDF الرجاء تحميل ملف";
 $GLOBALS['__l10n']["Preview"]="معاينة";
-$GLOBALS['__l10n']["Process authoring"]="Processus de création";
-$GLOBALS['__l10n']["Processes"]="Processus";
 $GLOBALS['__l10n']["Property"]="خاصية";
 $GLOBALS['__l10n']["Remove"]="إزالة";
 $GLOBALS['__l10n']["Rename"]="إعادة تسمية";
@@ -167,7 +159,6 @@ $GLOBALS['__l10n']["selected"]="محدد";
 $GLOBALS['__l10n']["Selected file:"]=":الملف المحدد";
 $GLOBALS['__l10n']["Selection saved successfully"]="تم حفظ التحديد بنجاح";
 $GLOBALS['__l10n']["Settings"]="الإعدادات";
-$GLOBALS['__l10n']["settings updated"]="تحديث الاعدادات";
 $GLOBALS['__l10n']["Simple Mode"]="الطريقة البسيطة";
 $GLOBALS['__l10n']["Start upload"]="بدء التحميل";
 $GLOBALS['__l10n']["Supported export formats"]="صيغ الاستيراد المعتمدة";
