@@ -1,5 +1,5 @@
 <?php
-require_once dirname(__FILE__) . '/TaoTestRunner.php';
+require_once dirname(__FILE__) . '/../../tao/test/TaoTestRunner.php';
 
 //get the test into each extensions
 $tests = TaoTestRunner::getTests(array('filemanager'));
