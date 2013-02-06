@@ -74,7 +74,7 @@
 					<span><?=__('Max filesize')?> <?=round(get_data('upload_limit')/1048576, 1)?><?=__(' MB')?></span><br /><br />
 					<span class="form-label"><?=__('File')?></span><input id="media_file" type="file" name="media_file" /><br />
 					<span class="form-label"><?=__('Name')?></span><input id="media_name" type="text" name="media_name" /><br />
-					<input type="submit" value="<?=__('Upload')?>" />
+					<input id="button-submit" type="submit" value="<?=__('Upload')?>" />
 				</form>
 			</div>
 		</div>

@@ -114,3 +114,5 @@ ul#actions a {
 ul.jqueryFileTree A:hover{
 	background-color: #efefef;
 }
+
+#button-submit{cursor: pointer;}
