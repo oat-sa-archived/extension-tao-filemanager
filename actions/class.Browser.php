@@ -6,15 +6,10 @@
  * @package filemanager
  * @subpackage action
  */
-class filemanager_actions_Browser extends Module {
+class filemanager_actions_Browser extends tao_actions_CommonModule {
 	
 	public function __construct(){
-		$errorMessage = __('Access denied. Please renew your authentication!');
-		if(class_exists("tao_helpers_Context", true) && !NO_FM_AUTH){
-			if(!core_kernel_users_Service::singleton()->isASessionOpened()){
-				throw new tao_models_classes_UserException($errorMessage);
-			}		
-		}
+		parent::__construct();
 	}
 	
 	/**
@@ -387,5 +382,12 @@ class filemanager_actions_Browser extends Module {
 		return (in_array($mimeType, $extFM->getConstant('allowed_media')));
 	}
 	
+	protected function _isAllowed() {
+		if (NO_FM_AUTH) {
+			return true;
+		} else {
+			return parent::_isAllowed();
+		}
+	}
 }
 ?>
