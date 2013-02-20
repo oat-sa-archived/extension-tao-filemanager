@@ -16,15 +16,20 @@ return array(
 		dirname(__FILE__).'/actions/'
 	 ),
 	'models' => array(
-			'http://www.tao.lu/Ontologies/taoFuncACL.rdf'
+			'http://www.tao.lu/Ontologies/taoFuncACL.rdf',
+			'http://www.tao.lu/Ontologies/filemanager.rdf'
 	),
 	'install' => array(
+		'rdf' => array(
+			array('ns' => 'http://www.tao.lu/Ontologies/filemanager.rdf', 'file' => dirname(__FILE__). '/models/ontology/filemanager.rdf')
+		),
 		'checks' => array(
 			array('type' => 'CheckPHPExtension', 'value' => array('id' => 'filemanager_extension_gd', 'name' => 'gd')),
 			array('type' => 'CheckFileSystemComponent', 'value' => array('id' => 'fs_filemanager_views_data', 'location' => 'filemanager/views/data', 'rights' => 'rw')),
 			array('type' => 'CheckFileSystemComponent', 'value' => array('id' => 'fs_filemanager_includes', 'location' => 'filemanager/includes', 'rights' => 'r'))
 		)
 	),
+	'managementRole' => 'http://www.tao.lu/Ontologies/filemanager.rdf#MediaManagerRole',
 	'constants' => array(
 		# actions directory
 		"DIR_ACTIONS"			=> $extpath."actions".DIRECTORY_SEPARATOR,
