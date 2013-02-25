@@ -38,8 +38,9 @@ class FileUtilsTestCase extends UnitTestCase {
     	$folderPath = filemanager_helpers_FileUtils::getFolderPath($filePath);
     	$this->assertNull($folderPath);
     	
-    	$filePath = 'C:\\wamp3\\www\\taotrunk\\filemanager\\views\\data\\/Animals/chicken.png';
-    	$folderPath = filemanager_helpers_FileUtils::getFolderPath($filePath);
+    	$base = 'C:\\wamp3\\www\\taotrunk\\filemanager\\views\\data\\';
+    	$filePath = $base . 'Animals/chicken.png';
+    	$folderPath = filemanager_helpers_FileUtils::getFolderPath($filePath, $base, false);
     	$this->assertEqual($folderPath, '/Animals/');
     	
     	// Test a linux like test.
