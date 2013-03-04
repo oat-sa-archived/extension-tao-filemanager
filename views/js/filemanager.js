@@ -37,30 +37,6 @@ function newFolder(event){
 	event.preventDefault();
 }
 
-function hasFlash(){
-	if($.browser.msie){
-		var hasFlash = false;
-		try {
-			var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
-			if(fo) hasFlash = true;
-		}
-		catch(e){
-			if(navigator.mimeTypes ["application/x-shockwave-flash"] != undefined) hasFlash = true;
-		}
-		return hasFlash;
-	}
-	else{
-		if(navigator.plugins != null && navigator.plugins.length > 0){
-			for(i in navigator.plugins){
-				if(/(Shockwave|Flash)/i.test(navigator.plugins[i]['name'])){
-					return true;
-				}
-			}
-		}
-	}
-	return false;
-}
-
 function download(event){
 	window.location = root_url + 'filemanager/Browser/download?file='+encodeURIComponent($("#file-uri").text());
 	event.preventDefault();
@@ -121,6 +97,7 @@ function highlight(file){
 }
 
 function initFileTree(toOpen){
+	//debugger;
 	if(!toOpen) toOpen = openFolder;
 
 	$('#file-container').fileTree({
@@ -139,7 +116,6 @@ function initFileTree(toOpen){
 		function(file) {
 			highlight(file);
 			
-			$('a.link.copy-url').zclip('remove');
 			$("#file-preview").html("<img src='"+baseUrl+"views/img/throbber.gif'  alt='loading' />");
 			$.post(root_url + "filemanager/Browser/getInfo", {file: file}, function(response){
 				if(response.type){
@@ -158,8 +134,8 @@ function initFileTree(toOpen){
 					});
 					
 					//actions' images
-					if ($("a.link.select, a.link.copy-url, a.link.download, a.link.delete").hasClass('disabled')){
-						$("a.link.select, a.link.copy-url, a.link.download, a.link.delete").removeClass('disabled');
+					if ($("a.link.select, a.link.download, a.link.delete").hasClass('disabled')){
+						$("a.link.select, a.link.download, a.link.delete").removeClass('disabled');
 					} 
 
 					//actions' links
@@ -177,14 +153,7 @@ function initFileTree(toOpen){
 					}
 					
 
-					$("#file-preview").load(root_url + "filemanager/Browser/preview",{file: file}, function() {
-						$("a.link.copy-url").zclip({
-							path: baseUrl + 'views/js/ZeroClipboard.swf',
-							setCSSEffects: false,
-							afterCopy: function(){},
-							copy: function(){return $('#file-url').text();}
-						});
-					});
+					$("#file-preview").load(root_url + "filemanager/Browser/preview",{file: file});
 				}
 			}, "json");
 		},
@@ -198,14 +167,13 @@ function initFileTree(toOpen){
 			$('#file-url, #file-uri').empty();
 			
 			//disable buttons that have no effects on a directory.
-			$("a.link.select, a.link.copy-url, a.link.download").toggleClass("disabled", true);
+			$("a.link.select, a.link.download").toggleClass("disabled", true);
 			//enable buttons that have effects on a directory.
 			$("a.link.new-dir, a.link.root, a.link.delete").toggleClass("disabled", false);
 
 			//events.
 			$("a.link.select, a.link.download, a.link.delete, a.link.root").off('click')
 															  .on('click', function(e){ e.preventDefault(); });
-			$("a.link.copy-url").zclip('remove');
 			$("a.link.delete").bind('click', removeFolder);
 			$("a.link.root").bind('click', goToRoot);
 
@@ -218,7 +186,6 @@ function initFileTree(toOpen){
 }
 
 $(document).ready(function(){
-	if(!hasFlash()) $("a.link.copy-url").hide();
 
 	initFileTree();
 	$("a.link.disabled").live('click', function(event){ event.preventDefault(); });
