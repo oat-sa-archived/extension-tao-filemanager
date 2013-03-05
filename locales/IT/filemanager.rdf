@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     @sourceLanguage EN
-    @targetLanguage FI
+    @targetLanguage IT
 -->
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="http://www.tao.lu/Ontologies/filemanager.rdf#">
   <rdf:Description rdf:about="http://www.tao.lu/Ontologies/filemanager.rdf#MediaManagerRole">
     <!--
     @sourceLanguage EN
-    @targetLanguage FI
+    @targetLanguage IT
     @source Media Manager
     @subject http://www.tao.lu/Ontologies/filemanager.rdf#MediaManagerRole
     @predicate http://www.w3.org/2000/01/rdf-schema#label
     -->
-    <rdfs:label xml:lang="FI"><![CDATA[Media Manager]]></rdfs:label>
+    <rdfs:label xml:lang="IT"><![CDATA[Media Manager]]></rdfs:label>
     <!--
     @sourceLanguage EN
-    @targetLanguage FI
+    @targetLanguage IT
     @source The Media Manager Role
     @subject http://www.tao.lu/Ontologies/filemanager.rdf#MediaManagerRole
     @predicate http://www.w3.org/2000/01/rdf-schema#comment
     -->
-    <rdfs:comment xml:lang="FI"><![CDATA[The Media Manager Role]]></rdfs:comment>
+    <rdfs:comment xml:lang="IT"><![CDATA[The Media Manager Role]]></rdfs:comment>
   </rdf:Description>
 </rdf:RDF>
