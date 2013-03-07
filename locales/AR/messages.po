@@ -1,18 +1,27 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v2.4-beta1\n"
-"PO-Revision-Date: 2013-03-05T10:33:20\n"
-"Last-Translator: TAO Translation Team <translation@tao.lu>\n"
+"Project-Id-Version: TAO v2.3-beta\n"
+"PO-Revision-Date: 2012-12-13 14:42+0200\n"
+"Last-Translator: Anonymous Pootle User\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
-"Language: AR\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Pootle 2.1.6\n"
 
 msgid " MB"
-msgstr ""
+msgstr "ميجا بايت"
+
+msgid "Access denied. Please renew your authentication!"
+msgstr "!تم رفض الوصول. يرجى تجديد المصادقة الخاصة بك"
 
 msgid "Actions"
 msgstr "الأعمال"
+
+msgid "Copy url"
+msgstr "URL نسخ"
 
 msgid "Current directory"
 msgstr "الدليل الحالي"
@@ -23,8 +32,8 @@ msgstr "حذف"
 msgid "Download"
 msgstr "تحميل"
 
-msgid "Enter a name for the new directory."
-msgstr ""
+msgid "Enter the name of the new directory inside "
+msgstr "اادخل اسم المغلف الجديد في الداخل"
 
 msgid "File"
 msgstr "ملف"
@@ -36,32 +45,34 @@ msgid "File upload"
 msgstr "تحميل الملف"
 
 msgid "file upload failed"
-msgstr ""
+msgstr "فشل تحميل الملف"
 
 msgid "Max filesize"
-msgstr ""
+msgstr "اقصى حجم للملف"
 
 msgid "Media Manager"
-msgstr ""
+msgstr "إدارة الوسائط"
 
 msgid "media size must be less than : "
-msgstr ""
+msgstr "حجم ملف الوسيط لابد ان يكون أقل من "
 
 msgid "Name"
-msgstr "الاسم"
+msgstr "اسم"
 
 msgid "New directory"
 msgstr "دليل جديد"
 
 msgid "no file uploaded"
-msgstr ""
+msgstr "لم يحمل أي ملف "
 
 msgid "Please confirm directory deletion.\n"
 "Be careful, it will remove the entire content of the directory!"
 msgstr ""
+"n/ من فضلك تأكيد عملية حذف المجلد./n توخي الحرص , العملية ستقوم بحذف كامل "
+"محتويات المجلد"
 
 msgid "Please confirm file deletion."
-msgstr ""
+msgstr "من فضلك أكد حذف الملف "
 
 msgid "Preview"
 msgstr "معاينة"
@@ -70,20 +81,19 @@ msgid "Root"
 msgstr "الجذر"
 
 msgid "Security issue"
-msgstr ""
+msgstr "مسألة امنية"
 
 msgid "Select"
-msgstr "تحديد"
+msgstr "اختيار"
 
 msgid "unable to move uploaded file"
-msgstr ""
+msgstr "عدم القدرة على تحريك الملف المرسل"
 
 msgid "unknow media size"
-msgstr ""
+msgstr "حجم ملف الوسيط غير معروف"
 
 msgid "Upload"
-msgstr ""
+msgstr "ارسال"
 
 msgid "URL"
 msgstr "URL"
-
