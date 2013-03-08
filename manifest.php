@@ -21,7 +21,7 @@ return array(
 	),
 	'install' => array(
 		'rdf' => array(
-			array('ns' => 'http://www.tao.lu/Ontologies/filemanager.rdf', 'file' => dirname(__FILE__). '/models/ontology/filemanager.rdf')
+			dirname(__FILE__). '/models/ontology/filemanager.rdf'
 		),
 		'checks' => array(
 			array('type' => 'CheckPHPExtension', 'value' => array('id' => 'filemanager_extension_gd', 'name' => 'gd')),
