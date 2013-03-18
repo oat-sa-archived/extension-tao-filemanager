@@ -40,8 +40,8 @@ FmRunner = function() {
 			'resizable'	: 'yes',
 			'status'	: 'no',
 			'toolbar'	: 'no',
-			'dependent' : 'yes',
-		}
+			'dependent' : 'yes'
+		};
 		
 		window.fmRunner.single.load = function(options, callback){
 			if(options.elt){
