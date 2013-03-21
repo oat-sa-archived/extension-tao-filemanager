@@ -33,9 +33,6 @@ return array(
 	'version' => '2.4',
 	'author' => 'CRP Henri Tudor',
 	'dependencies' => array('tao'),
-	'classLoaderPackages' => array(
-		dirname(__FILE__).'/actions/'
-	 ),
 	'models' => array(
 			'http://www.tao.lu/Ontologies/taoFuncACL.rdf',
 			'http://www.tao.lu/Ontologies/filemanager.rdf'
