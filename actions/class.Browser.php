@@ -18,8 +18,7 @@
  *               
  * 
  */
-?>
-<?php
+
 /**
  * 
  * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
@@ -28,14 +27,20 @@
  * @subpackage action
  */
 class filemanager_actions_Browser extends tao_actions_CommonModule {
-	
-	public function __construct(){
+
+    /**
+     * Constructor
+     *
+     * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
+     */
+    public function __construct(){
 		parent::__construct();
 	}
 	
 	/**
 	 * render the main layout
-	 * @return void
+     *
+	 * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
 	 */
 	public function index(){
 		
@@ -67,7 +72,8 @@ class filemanager_actions_Browser extends tao_actions_CommonModule {
 	/**
 	 * returns the fileupload limit in either Bytes or MB
 	 * default is Bytes
-	 * 
+     *
+	 * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
 	 * @param boolean $inMegabytes
 	 * @return number
 	 */
@@ -79,7 +85,8 @@ class filemanager_actions_Browser extends tao_actions_CommonModule {
 	
 	/**
 	 * Manage the form file upload
-	 * @return void
+     *
+     * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
 	 */
 	public function fileUpload(){
 		
@@ -176,7 +183,9 @@ class filemanager_actions_Browser extends tao_actions_CommonModule {
 	
 	/**
 	 * display the list of folders and file of the directory sent in parameter
-	 * @return void
+     *
+     * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
+	 *
 	 */
 	public function fileData(){
 		$root = BASE_DATA;
@@ -197,8 +206,10 @@ class filemanager_actions_Browser extends tao_actions_CommonModule {
 	}
 	
 	/**
-	 * (non-PHPdoc)
+     * get the fileInfo
+	 *
 	 * @see Module::getData()
+     * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
 	 */
 	public function getInfo(){
 		$response = array();
@@ -236,6 +247,8 @@ class filemanager_actions_Browser extends tao_actions_CommonModule {
 	
 	/**
 	 * Create an HTML list from a folder tree
+     *
+     * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
 	 * @param string $dir
 	 * @param string $dataDir
 	 * @param mixed $open [optional]
@@ -293,8 +306,10 @@ class filemanager_actions_Browser extends tao_actions_CommonModule {
 	
 	
 	/**
+     * preview action
+     *
 	 * @todo replace the mime_content_type by the PECL Finfo extension for PHP >= 5.3.0 
-	 * @return 
+     * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
 	 */
 	public function preview(){ 
 		$this->setData('type', '');
@@ -338,8 +353,9 @@ class filemanager_actions_Browser extends tao_actions_CommonModule {
 	}
 	
 	/**
-	 * Create a new folder into the given directory 
-	 * @return void
+	 * Create a new folder into the given directory
+     *
+	 * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
 	 */
 	public function addFolder(){
 		$data = array('added' => false);
@@ -359,7 +375,8 @@ class filemanager_actions_Browser extends tao_actions_CommonModule {
 	
 	/**
 	 * Download the file in paramteters
-	 * @return void
+	 *
+     * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
 	 */
 	public function download(){
 		$file = urldecode($this->getRequestParameter('file'));
@@ -377,7 +394,8 @@ class filemanager_actions_Browser extends tao_actions_CommonModule {
 	
 	/**
 	 * delete the selected file or folder
-	 * @return void
+	 *
+     * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
 	 */
 	public function delete(){
 		$data = array('deleted' => false);
@@ -397,12 +415,27 @@ class filemanager_actions_Browser extends tao_actions_CommonModule {
 		}
 		echo json_encode($data);
 	}
-	
-	private function isMimeTypeAllowed($mimeType) {
+
+    /**
+     * Check if Mimetype is allowes
+     *
+     * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
+     * @access private
+     * @param $mimeType
+     * @return bool
+     */
+    private function isMimeTypeAllowed($mimeType) {
 		$extFM = common_ext_ExtensionsManager::singleton()->getExtensionById('filemanager');
 		return (in_array($mimeType, $extFM->getConstant('allowed_media')));
 	}
-	
+
+    /**
+     * Check auth
+     *
+     * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
+     * @access private
+     *
+     */
 	protected function _isAllowed() {
 		if (NO_FM_AUTH) {
 			return true;
