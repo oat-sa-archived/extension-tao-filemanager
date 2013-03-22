@@ -135,3 +135,7 @@ ul.jqueryFileTree A:hover{
 }
 
 #button-submit{cursor: pointer;}
+
+#url{
+	overflow-x: auto;
+}

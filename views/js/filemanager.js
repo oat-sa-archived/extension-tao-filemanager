@@ -164,7 +164,7 @@ function initFileTree(toOpen){
 									  .bind('click', removeFile);
 
 					//url box
-					$("#file-url").html( urlData + file.replace(/^\//, ''));
+					$("#file-url").html( encodeURI(urlData + file.replace(/^\//, '')));
 					$("#file-uri").html( file );
 					
 					if (typeof(response.dir) != 'undefined'){

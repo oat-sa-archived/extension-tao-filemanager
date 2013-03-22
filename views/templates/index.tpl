@@ -44,9 +44,9 @@
 				<strong><?=__('Current directory')?></strong>:
 				<span id="dir-uri" class="data-container">/</span>
 			</div>
-			<div class="ui-state-highlight ui-corner-all">
+			<div class="ui-state-highlight ui-corner-all" id="url">
 				<strong><?=__('URL')?></strong>:
-				<span id="file-url" class="data-container" ></span>
+				<span id="file-url" class="data-container"></span>
 				<span id="file-uri" style="display:none;"></span>
 			</div>
 			<div class="ui-state-highlight ui-corner-all">
