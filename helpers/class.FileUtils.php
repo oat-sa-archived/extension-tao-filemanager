@@ -95,36 +95,6 @@ class filemanager_helpers_FileUtils
     }
 
     /**
-     * Check if a path contains unsafe data (directory traversal, null char
-     *
-     * @access public
-     * @author Jerome Bogaerts, <jerome.bogaerts@tudor.lu>
-     * @param  string path A path to a directory.
-     * @return boolean
-     */
-    public static function securityCheck($path)
-    {
-        $returnValue = (bool) false;
-
-        // section 10-13-1-85--1a7dc942:13b229d9435:-8000:0000000000003C4A begin
-        //security check: detect directory traversal (deny the ../)
-		if(preg_match("/\.\.\//", $path)){
-			return false;
-		}
-		
-		//security check:  detect the null byte poison by finding the null char injection
-		for($i = 0; $i < strlen($path); $i++){
-			if(ord($path[$i]) === 0){
-				return false;
-			}
-		}
-		return true;
-        // section 10-13-1-85--1a7dc942:13b229d9435:-8000:0000000000003C4A end
-
-        return (bool) $returnValue;
-    }
-
-    /**
      * Check if the path is a folder of refPath.
      *
      * @access public

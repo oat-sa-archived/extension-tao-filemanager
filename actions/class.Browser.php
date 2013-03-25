@@ -46,7 +46,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule {
 		
 		if($this->hasRequestParameter('openFolder')){
 			$folder = $this->getRequestParameter('openFolder');
-			if(filemanager_helpers_FileUtils::securityCheck($folder)){
+			if(tao_helpers_File::securityCheck($folder, true)){
 				$folder = preg_replace('/^\//', '', $folder);
 				$folder = preg_replace('/\/$/', '', $folder);
 				$this->setData('openFolder', $folder);
@@ -150,7 +150,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule {
 					$fileName = $_FILES['media_file']['name'];
 				}
 				
-				if(filemanager_helpers_FileUtils::securityCheck($dataDir) && filemanager_helpers_FileUtils::securityCheck($fileName)){
+				if(tao_helpers_File::securityCheck($dataDir, true) && tao_helpers_File::securityCheck($fileName, true)){
 					$fileName = filemanager_helpers_FileUtils::cleanName($fileName);
 					$destination = filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $dataDir, $fileName));
 					if(move_uploaded_file($_FILES['media_file']['tmp_name'], $destination)){
@@ -198,7 +198,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule {
 			}
 		}
 		$buffer = '';
-		if(filemanager_helpers_FileUtils::securityCheck($dataDir)){
+		if(tao_helpers_File::securityCheck($dataDir, true)){
 			$dir = filemanager_helpers_FileUtils::cleanConcat(array($root, $dataDir));
 			$buffer = $this->createFolderList($dir, $dataDir, $openDir);
 		}
@@ -215,7 +215,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule {
 		$response = array();
 		if($this->hasRequestParameter('file')){
 			$file = urldecode($this->getRequestParameter('file'));
-			if(filemanager_helpers_FileUtils::securityCheck($file)){
+			if(tao_helpers_File::securityCheck($file, true)){
 				$path = filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $file));
 				$mimeType = filemanager_helpers_FileUtils::getMimeType($path);
 				if($this->isMimeTypeAllowed($mimeType)){
@@ -315,7 +315,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule {
 		$this->setData('type', '');
 		if($this->hasRequestParameter('file')){
 			$file = urldecode($this->getRequestParameter('file'));
-			if(filemanager_helpers_FileUtils::securityCheck($file)){
+			if(tao_helpers_File::securityCheck($file, true)){
 				
 				$path = filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $file));
 				
@@ -365,7 +365,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule {
 			$folder = urldecode($this->getRequestParameter('folder'));
 			
 			$dataDir = $parentDir . $folder;
-			if(filemanager_helpers_FileUtils::securityCheck($dataDir)){
+			if(tao_helpers_File::securityCheck($dataDir, true)){
 				$data['added'] = mkdir(filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $dataDir)));
 			}
 		
@@ -382,7 +382,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule {
 		$file = urldecode($this->getRequestParameter('file'));
 		$file = filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $file));
 
-		if(filemanager_helpers_FileUtils::securityCheck($file) && is_readable($file)){
+		if(tao_helpers_File::securityCheck($file, true) && is_readable($file)){
 			header("Content-Type: application/force-download");
 			header('Content-Disposition: attachment; filename="'.basename($file).'"');
 			echo file_get_contents($file);
@@ -401,13 +401,13 @@ class filemanager_actions_Browser extends tao_actions_CommonModule {
 		$data = array('deleted' => false);
 		if($this->hasRequestParameter('file')){
 			$file = urldecode($this->getRequestParameter('file'));
-			if(filemanager_helpers_FileUtils::securityCheck($file)){
+			if(tao_helpers_File::securityCheck($file, true)){
 				$data['deleted'] = unlink(filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $file)));
 			}
 		}
 		if($this->hasRequestParameter("folder")){
 			$folder = urldecode($this->getRequestParameter('folder'));
-			if(filemanager_helpers_FileUtils::securityCheck($folder)){
+			if(tao_helpers_File::securityCheck($folder, true)){
 				if(filemanager_helpers_FileUtils::deleteFolder(filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $folder)), true)){
 					$data['deleted'] = true;
 				}
