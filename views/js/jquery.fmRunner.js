@@ -54,10 +54,10 @@ $.fn.fmbind = function(options, callback){
 
 	return this.each(function () {
 		if(!$(this).next().hasClass(fmType)){
-			imgNode = $("<img src='"+imgSrc+"' style='cursor:pointer;margin:1px;' />");
-			imgNode.addClass(fmType);
-			imgNode.fmload(options, this, callback);
-			$(this).after(imgNode);
+			var $imgNode = $("<img src='"+imgSrc+"' style='cursor:pointer;margin:1px;' />");
+			$imgNode.addClass(fmType);
+			$imgNode.fmload(options, this, callback);
+			$(this).after($imgNode);
 		}
 	});
 };

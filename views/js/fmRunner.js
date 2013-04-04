@@ -75,7 +75,7 @@ FmRunner = function() {
 			
 			window.fmRunner.single.window = window.open(root_url + 'filemanager/Browser/index?showselect=' + showSelectString, 'filemanager', params);
 			window.fmRunner.single.window.focus();
-			$(document).bind('fmSelect', function(e){
+			$(document).off('fmSelect').on('fmSelect', function(e){
 				e.preventDefault();
 				if(window.fmRunner.single.urlData && callback != null && callback != undefined){
 					if(window.fmRunner.single.mediaData){
