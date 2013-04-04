@@ -54,8 +54,14 @@ $.fn.fmbind = function(options, callback){
 
 	return this.each(function () {
 		if(!$(this).next().hasClass(fmType)){
-			var $imgNode = $("<img src='"+imgSrc+"' style='cursor:pointer;margin:1px;' />");
+			var $imgNode = $("<img src='"+imgSrc+"' />");
 			$imgNode.addClass(fmType);
+			$imgNode.attr('title', __('Open File Manager')).css('cursor', 'pointer').css('margin', '1px');
+			$imgNode.hover(function(){
+				$imgNode.css('padding', '1px 0 0 1px').css('opacity', 0.6);
+			}, function(){
+				$imgNode.css('padding', '0').css('opacity', 1);
+			});
 			$imgNode.fmload(options, this, callback);
 			$(this).after($imgNode);
 		}
