@@ -1,26 +1,18 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v2.3-beta\n"
-"PO-Revision-Date: 2012-10-11 15:43+0200\n"
-"Last-Translator: Lionel <lionel.lecaque@tudor.lu>\n"
-"Language: de\n"
+"Project-Id-Version: TAO v2.4-beta3\n"
+"PO-Revision-Date: 2013-04-05T18:27:13\n"
+"Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
+"Language: DE\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.1.6\n"
 
 msgid " MB"
 msgstr ""
 
-msgid "Access denied. Please renew your authentication!"
-msgstr ""
-
 msgid "Actions"
 msgstr "Aktionen"
-
-msgid "Copy url"
-msgstr "URL kopieren"
 
 msgid "Current directory"
 msgstr "Aktuelles Verzeichnis"
@@ -31,7 +23,7 @@ msgstr "Löschen"
 msgid "Download"
 msgstr "Download"
 
-msgid "Enter the name of the new directory inside "
+msgid "Enter a name for the new directory."
 msgstr ""
 
 msgid "File"
@@ -64,6 +56,9 @@ msgstr "Neues Verzeichnis"
 msgid "no file uploaded"
 msgstr ""
 
+msgid "Open File Manager"
+msgstr ""
+
 msgid "Please confirm directory deletion.\n"
 "Be careful, it will remove the entire content of the directory!"
 msgstr "Bitte bestaetigen Sie das Loeschen des Verzeichnisses?"
@@ -94,3 +89,4 @@ msgstr ""
 
 msgid "URL"
 msgstr "URL"
+

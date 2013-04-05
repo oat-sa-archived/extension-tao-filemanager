@@ -1,27 +1,18 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v2.3-beta\n"
-"PO-Revision-Date: 2012-12-13 14:42+0200\n"
-"Last-Translator: Anonymous Pootle User\n"
-"Language: ar\n"
+"Project-Id-Version: TAO v2.4-beta3\n"
+"PO-Revision-Date: 2013-04-05T18:27:13\n"
+"Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
+"Language: AR\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Pootle 2.1.6\n"
 
 msgid " MB"
 msgstr "ميجا بايت"
 
-msgid "Access denied. Please renew your authentication!"
-msgstr "!تم رفض الوصول. يرجى تجديد المصادقة الخاصة بك"
-
 msgid "Actions"
 msgstr "الأعمال"
-
-msgid "Copy url"
-msgstr "URL نسخ"
 
 msgid "Current directory"
 msgstr "الدليل الحالي"
@@ -32,8 +23,8 @@ msgstr "حذف"
 msgid "Download"
 msgstr "تحميل"
 
-msgid "Enter the name of the new directory inside "
-msgstr "اادخل اسم المغلف الجديد في الداخل"
+msgid "Enter a name for the new directory."
+msgstr ""
 
 msgid "File"
 msgstr "ملف"
@@ -65,11 +56,12 @@ msgstr "دليل جديد"
 msgid "no file uploaded"
 msgstr "لم يحمل أي ملف "
 
+msgid "Open File Manager"
+msgstr ""
+
 msgid "Please confirm directory deletion.\n"
 "Be careful, it will remove the entire content of the directory!"
-msgstr ""
-"n/ من فضلك تأكيد عملية حذف المجلد./n توخي الحرص , العملية ستقوم بحذف كامل "
-"محتويات المجلد"
+msgstr "n/ من فضلك تأكيد عملية حذف المجلد./n توخي الحرص , العملية ستقوم بحذف كامل محتويات المجلد"
 
 msgid "Please confirm file deletion."
 msgstr "من فضلك أكد حذف الملف "
@@ -97,3 +89,4 @@ msgstr "ارسال"
 
 msgid "URL"
 msgstr "URL"
+

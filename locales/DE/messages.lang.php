@@ -1,25 +1,4 @@
 <?php
-/*  
- * This program is free software; you can redistribute it and/or
- * modify it under the terms of the GNU General Public License
- * as published by the Free Software Foundation; under version 2
- * of the License (non-upgradable).
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
- * 
- * Copyright (c) 2009-2012 (original work) Public Research Centre Henri Tudor (under the project TAO-SUSTAIN & TAO-DEV);
- *               
- * 
- */
-?>
-<?php
 $GLOBALS['__l10n']["A formated text"]="Formatierter Text";
 $GLOBALS['__l10n']["A long text"]="Textfeld";
 $GLOBALS['__l10n']["A multiple choice list"]="Multiple-Choice liste";
@@ -52,6 +31,7 @@ $GLOBALS['__l10n']["Filter"]="Filter";
 $GLOBALS['__l10n']["Filtering mode"]="Filtermodus";
 $GLOBALS['__l10n']["Filters"]="Filter";
 $GLOBALS['__l10n']["Groups"]="Gruppen";
+$GLOBALS['__l10n']["Home"]="Home";
 $GLOBALS['__l10n']["Interface language"]="Interface-Sprache";
 $GLOBALS['__l10n']["Invalid field length"]="Ungültige Feldlänge";
 $GLOBALS['__l10n']["Invalid file size"]="Ungültige Dateigröße";
@@ -63,6 +43,8 @@ $GLOBALS['__l10n']["Language"]="Sprachen";
 $GLOBALS['__l10n']["List"]="Auflisten";
 $GLOBALS['__l10n']["List values"]="Werte auflisten";
 $GLOBALS['__l10n']["Lists"]="Listen";
+$GLOBALS['__l10n']["Login *"]="Login *";
+$GLOBALS['__l10n']["login already exist"]="das Login existiert bereits";
 $GLOBALS['__l10n']["Manage data list"]="Daten-Liste verwalten";
 $GLOBALS['__l10n']["Manage deliveries"]="Deliveries verwalten";
 $GLOBALS['__l10n']["Manage groups"]="Gruppen verwalten";
@@ -80,6 +62,7 @@ $GLOBALS['__l10n']["Options"]="Optionen";
 $GLOBALS['__l10n']["Password"]="Passwort";
 $GLOBALS['__l10n']["Password *"]="Passwort *";
 $GLOBALS['__l10n']["Please confirm deletion"]="Wollen Sie wirklich löschen?";
+$GLOBALS['__l10n']["Please confirm directory deletion.\nBe careful, it will remove the entire content of the directory!"]="Bitte bestaetigen Sie das Loeschen des Verzeichnisses?";
 $GLOBALS['__l10n']["Please confirm property deletion!"]="Möchten Sie die Eigenschaft wirklich löschen?";
 $GLOBALS['__l10n']["Please confirm user deletion"]="Wollen Sie den Benutzer wirklich löschen?";
 $GLOBALS['__l10n']["Preview"]="Vorschau";
@@ -100,6 +83,7 @@ $GLOBALS['__l10n']["Select"]="Auswählen";
 $GLOBALS['__l10n']["select"]="Auswählen";
 $GLOBALS['__l10n']["Select a language"]="Sprache auswählen";
 $GLOBALS['__l10n']["Selection saved successfully"]="Auswahl erfolgreich gespeichert";
+$GLOBALS['__l10n']["settings updated"]="Einstellungen aktualisiert";
 $GLOBALS['__l10n']["Test takers"]="Testpersonen";
 $GLOBALS['__l10n']["Tests"]="Tests";
 $GLOBALS['__l10n']["The format of this field is not valid."]="Das Format dieses Feldes ist ungültig";
