@@ -12,7 +12,7 @@
     @subject http://www.tao.lu/Ontologies/filemanager.rdf#MediaManagerRole
     @predicate http://www.w3.org/2000/01/rdf-schema#label
     -->
-    <rdfs:label xml:lang="fr-FR"><![CDATA[Media Manager]]></rdfs:label>
+    <rdfs:label xml:lang="fr-FR"><![CDATA[Gestionnaire Media]]></rdfs:label>
     <!--
     @sourceLanguage en-US
     @targetLanguage fr-FR
@@ -20,6 +20,6 @@
     @subject http://www.tao.lu/Ontologies/filemanager.rdf#MediaManagerRole
     @predicate http://www.w3.org/2000/01/rdf-schema#comment
     -->
-    <rdfs:comment xml:lang="fr-FR"><![CDATA[The Media Manager Role]]></rdfs:comment>
+    <rdfs:comment xml:lang="fr-FR"><![CDATA[Le rôle Gestionnaire Media]]></rdfs:comment>
   </rdf:Description>
 </rdf:RDF>
