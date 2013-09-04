@@ -52,7 +52,7 @@ FmRunner = function() {
 				//close previous window
 				window.fmRunner.single.window.close();
 			}
-			params = '';
+			var params = '';
 			for (i in window.fmRunner.single.defaultOpt){
 				params += i + '=';
 				(options[i]) ? params += options[i] :  params += window.fmRunner.single.defaultOpt[i];
@@ -68,8 +68,7 @@ FmRunner = function() {
 			var showSelectString;
 			if (typeof(options['showselect']) != 'undefined' && options['showselect'] == false){
 				showSelectString = '0';
-			}
-			else{
+			}else{
 				showSelectString = '1';
 			}
 			

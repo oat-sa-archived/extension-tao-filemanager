@@ -83,13 +83,14 @@ return array(
 		'NO_FM_AUTH'			=> false,
 
 		# Max file size to upload
-		'UPLOAD_MAX_SIZE'		=> '3145728',
+		'UPLOAD_MAX_SIZE'		=> '83886080',//10MB, to allow some multimedia file 
 	
 		# Allowed media for upload
 		'allowed_media'			=> array(
 			'application/ogg',						//OGG
 			'audio/ogg',
 			'video/ogg',
+			'video/ogv',
 			'application/pdf',						//PDF
 			'application/x-shockwave-flash',		//Flash
 			'application/x-subrip',					//Subtitles
@@ -106,6 +107,7 @@ return array(
 			'image/vnd.microsoft.icon',				//ICO 
 			'video/mpeg',							//MPEG-1
 			'video/mp4',							//MP4
+			'video/webm',							//webm
 			'video/quicktime',						//QuickTime
 			'video/x-ms-wmv',						//Windows Media Video
 			'video/x-msvideo',						//AVI
