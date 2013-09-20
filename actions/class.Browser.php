@@ -106,7 +106,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
                 switch($_FILES['media_file']['error']){
                     case UPLOAD_ERR_INI_SIZE:
                     case UPLOAD_ERR_FORM_SIZE:
-                        $error = __('media size must be less than : ').$this->getFileUploadLimit(true).__(' MB');
+                        $error = __('media size must be less than : ').$this->getFileUploadLimit(true).__(' MB').'\.';
                         break;
                     case UPLOAD_ERR_PARTIAL:
                         $error = __('file upload failed');
@@ -131,7 +131,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
                     $error = __('unknow media size');
                 }else if($_FILES['media_file']['size'] > UPLOAD_MAX_SIZE || !is_int($_FILES['media_file']['size'])){
                     $copy = false;
-                    $error = __('media size must be less than : ').$this->getFileUploadLimit(true).__(' MB');
+                    $error = __('media size must be less than : ').$this->getFileUploadLimit(true).__(' MB').'\.';
                 }
             }
 
@@ -162,7 +162,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
         }else{
             common_Logger::w('file upload information missing, probably file > upload limit in php.ini');
 
-            $error = __('media size must be less than : ').$this->getFileUploadLimit(true).__(' MB');
+            $error = __('media size must be less than : ').$this->getFileUploadLimit(true).__(' MB').'\.';
         }
         if(!empty($error)){
             if(strpos($parameters, '?') === false){
