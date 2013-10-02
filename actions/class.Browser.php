@@ -93,7 +93,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
 
         $error = '';
 
-        $parameters = '';
+        $parameters = '?showselect=1';
 
         if(is_array($_FILES['media_file'])){
 
@@ -151,7 +151,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
                     $fileName = filemanager_helpers_FileUtils::cleanName($fileName);
                     $destination = filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $dataDir, $fileName));
                     if(move_uploaded_file($_FILES['media_file']['tmp_name'], $destination)){
-                        $parameters = "?openFolder=$dataDir&urlData=$fileName";
+                        $parameters .= "&openFolder=$dataDir&urlData=$fileName";
                     }else{
                         $error = __('unable to move uploaded file');
                     }
@@ -165,13 +165,9 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
             $error = __('media size must be less than : ').$this->getFileUploadLimit(true).__(' MB').'\.';
         }
         if(!empty($error)){
-            if(strpos($parameters, '?') === false){
-                $parameters .= '?';
-            }else{
-                $parameters .= '&';
-            }
-            $parameters .= 'error='.$error;
+            $parameters .= '&error='.$error;
         }
+        
         $this->redirect("index".$parameters);
     }
 
