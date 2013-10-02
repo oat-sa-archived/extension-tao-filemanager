@@ -348,12 +348,10 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
      */
     public function addFolder(){
         $data = array('added' => false);
-
         try{
             $parentDir = urldecode($this->getRequestParameter('parent'));
             $folder = urldecode($this->getRequestParameter('folder'));
-
-            $dataDir = $parentDir.$folder;
+            $dataDir = filemanager_helpers_FileUtils::cleanConcat(array($parentDir, $folder));
             if(tao_helpers_File::securityCheck($dataDir, true)){
                 $data['added'] = mkdir(filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $dataDir)));
             }
