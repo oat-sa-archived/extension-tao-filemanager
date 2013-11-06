@@ -353,7 +353,6 @@ class filemanager_helpers_FileUtils
             $ext = common_ext_ExtensionsManager::singleton()->getExtensionById('filemanager');
             self::$provider = $ext->getConfig(self::CONFIG_KEY_CONTROLLER);
         }
-        common_Logger::i(get_class(self::$provider));
         return self::$provider;
     }
     
