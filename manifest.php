@@ -40,12 +40,20 @@ return array(
 		'rdf' => array(
 			dirname(__FILE__). '/models/ontology/filemanager.rdf'
 		),
+	    'php' => array(
+	        dirname(__FILE__). '/install/script/addLocalSource.php'
+        ),
 		'checks' => array(
 			array('type' => 'CheckPHPExtension', 'value' => array('id' => 'filemanager_extension_gd', 'name' => 'gd')),
 			array('type' => 'CheckFileSystemComponent', 'value' => array('id' => 'fs_filemanager_views_data', 'location' => 'filemanager/views/data', 'rights' => 'rw')),
 			array('type' => 'CheckFileSystemComponent', 'value' => array('id' => 'fs_filemanager_includes', 'location' => 'filemanager/includes', 'rights' => 'rw'))
 		)
 	),
+    'local'	=> array(
+        'php'	=> array(
+            dirname(__FILE__).'/install/script/addExamples.php'
+        )
+    ),
 	'managementRole' => 'http://www.tao.lu/Ontologies/filemanager.rdf#MediaManagerRole',
 	'constants' => array(
 		# actions directory
@@ -71,7 +79,6 @@ return array(
 	 
 	
 		#root folder for the files
-		'BASE_DATA'				=> $extpath.'views'.DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR,
 		'URL_DATA'				=> ROOT_URL . 'filemanager/views/data/',
 	
 		#TAO extension Paths

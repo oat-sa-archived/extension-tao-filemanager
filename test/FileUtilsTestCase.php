@@ -44,11 +44,8 @@ class FileUtilsTestCase extends UnitTestCase {
     
     public function testGetFolderPath()
     {
-    	// We first retrieve the BASE_DATA constant to know where files are
-    	// actually stored on this installation.
-    	$man = common_ext_ExtensionsManager::singleton();
-    	$ext = $man->getExtensionById('filemanager');
-    	$base = $ext->getConstant('BASE_DATA');
+    	// We first get the base path
+    	$base = filemanager_helpers_FileUtils::getBasePath();
     	
     	$filePath = $base . 'Animals/puss-in-boots.png';
     	$folderPath = filemanager_helpers_FileUtils::getFolderPath($filePath);

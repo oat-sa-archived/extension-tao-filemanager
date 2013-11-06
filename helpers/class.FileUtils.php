@@ -1,5 +1,5 @@
 <?php
-/*  
+/**  
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * as published by the Free Software Foundation; under version 2
@@ -18,30 +18,6 @@
  *               
  * 
  */
-?>
-<?php
-
-error_reporting(E_ALL);
-
-/**
- * Utility class focusing on files stored by the filemanager.
- *
- * @author Jerome Bogaerts, <jerome.bogaerts@tudor.lu>
- * @package filemanager
- * @subpackage helpers
- */
-
-if (0 > version_compare(PHP_VERSION, '5')) {
-    die('This file was generated for PHP 5');
-}
-
-/* user defined includes */
-// section 10-13-1-85--1a7dc942:13b229d9435:-8000:0000000000003C3C-includes begin
-// section 10-13-1-85--1a7dc942:13b229d9435:-8000:0000000000003C3C-includes end
-
-/* user defined constants */
-// section 10-13-1-85--1a7dc942:13b229d9435:-8000:0000000000003C3C-constants begin
-// section 10-13-1-85--1a7dc942:13b229d9435:-8000:0000000000003C3C-constants end
 
 /**
  * Utility class focusing on files stored by the filemanager.
@@ -57,7 +33,10 @@ class filemanager_helpers_FileUtils
 
 
     // --- ATTRIBUTES ---
-
+    const CONFIG_KEY_CONTROLLER = 'FILEMANAGER_ACCESS_CONTROLLER';
+    
+    private static $provider = null;
+    
     // --- OPERATIONS ---
 
     /**
@@ -304,7 +283,7 @@ class filemanager_helpers_FileUtils
      * @access public
      * @author Jerome Bogaerts, <jerome.bogaerts@tudor.lu>
      * @param  string filePath A path to a file.
-     * @param  string dataPath Set a specific media data path instead of letting the implementation of the method use the value in the BASE_DATA constant.
+     * @param  string dataPath Set a specific media data path instead of the configured path
      * @param  boolean strict Default value is true. If set to false, the file does not necessary need to exist.
      * @return string
      */
@@ -313,18 +292,9 @@ class filemanager_helpers_FileUtils
         $returnValue = (string) '';
 
         // section 10-13-1-85--34176ece:13b2750645e:-8000:0000000000003C63 begin
-        // Get the BASE_DATA constant properly.
         if (is_readable($filePath) || false == $strict){
-        	$base = '';
-        	if (null == $dataPath){
-        		$man = common_ext_ExtensionsManager::singleton();
-        		$ext = $man->getExtensionById('filemanager');
-        		$base = $ext->getConstant('BASE_DATA');
-        	}
-        	else{
-        		$base = $dataPath;
-        	}
-        	
+            
+       		$base = is_null($dataPath) ? self::getBasePath() : $dataPath;
         	$fileName = pathinfo($filePath, PATHINFO_BASENAME);
         	
         	// Remove $base and $fileName from $filePath
@@ -348,7 +318,48 @@ class filemanager_helpers_FileUtils
 
         return (string) $returnValue;
     }
-
-} /* end of class filemanager_helpers_FileUtils */
-
-?>
+    
+    public static function import($zipFile, $subfolder = '') {
+        $zip = new ZipArchive();
+        if ($zip->open($zipFile) === true) {
+            $destination = self::getBasePath().$subfolder;
+            if(!$zip->extractTo($destination)){
+                $zip->close();
+                throw new common_exception_FileSystemError('Could not extract '.$zipFile.' to '.$destination);
+            }
+            $zip->close();
+            return true;
+        } else {
+            throw new common_exception_FileSystemError('Could not open '.$zipFile);
+        }
+    }
+    
+    public static function setAccessProvider(tao_models_classes_fsAccess_FilesystemAccessProvider $provider) {
+        $old = self::getAccessProvider();
+        if (!is_null($old)) {
+            $old->cleanupProvider();
+        }
+        $provider->prepareProvider();
+        $ext = common_ext_ExtensionsManager::singleton()->getExtensionById('filemanager');
+        $ext->setConfig(self::CONFIG_KEY_CONTROLLER, $provider);
+        self::$provider = $provider;
+    }
+    
+    /**
+     * @return tao_models_classes_fsAccess_FilesystemAccessProvider
+     */
+    private static function getAccessProvider() {
+        if (is_null(self::$provider)) {
+            $ext = common_ext_ExtensionsManager::singleton()->getExtensionById('filemanager');
+            self::$provider = $ext->getConfig(self::CONFIG_KEY_CONTROLLER);
+        }
+        common_Logger::i(get_class(self::$provider));
+        return self::$provider;
+    }
+    
+    public static function getBasePath() {
+        $fs = self::getAccessProvider()->getFileSystem();
+        return $fs->getPath();
+    }
+    
+}

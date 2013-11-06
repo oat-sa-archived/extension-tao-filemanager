@@ -12,7 +12,6 @@
             var root_url = "<?=ROOT_URL?>";
             var baseUrl = "<?=BASE_URL?>";
             var basePath = "<?=addslashes(BASE_PATH);?>";
-            var baseData = "<?=addslashes(BASE_DATA);?>";
             var urlData = "<?=URL_DATA?>";
 
             var openFolder = '/';

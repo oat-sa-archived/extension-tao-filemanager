@@ -149,7 +149,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
 
                 if(tao_helpers_File::securityCheck($dataDir, true) && tao_helpers_File::securityCheck($fileName, true)){
                     $fileName = filemanager_helpers_FileUtils::cleanName($fileName);
-                    $destination = filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $dataDir, $fileName));
+                    $destination = filemanager_helpers_FileUtils::cleanConcat(array(filemanager_helpers_FileUtils::getBasePath(), $dataDir, $fileName));
                     if(move_uploaded_file($_FILES['media_file']['tmp_name'], $destination)){
                         $parameters .= "&openFolder=$dataDir&urlData=$fileName";
                     }else{
@@ -178,7 +178,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
      *
      */
     public function fileData(){
-        $root = BASE_DATA;
+        $root = filemanager_helpers_FileUtils::getBasePath();
         $dataDir = urldecode($this->getRequestParameter('dir'));
         $openDir = false;
         if($this->hasRequestParameter('open')){
@@ -206,7 +206,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
         if($this->hasRequestParameter('file')){
             $file = urldecode($this->getRequestParameter('file'));
             if(tao_helpers_File::securityCheck($file, true)){
-                $path = filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $file));
+                $path = filemanager_helpers_FileUtils::cleanConcat(array(filemanager_helpers_FileUtils::getBasePath(), $file));
                 $mimeType = filemanager_helpers_FileUtils::getMimeType($path);
                 if($this->isMimeTypeAllowed($mimeType)){
                     if(file_exists($path) && is_readable($path)){
@@ -274,7 +274,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
                         $tmpbuffer = '';
                         $status = 'collapsed';
                         if($open !== false){
-                            if(filemanager_helpers_FileUtils::isFolder($open, str_replace(BASE_DATA, '', $dir.$file))){
+                            if(filemanager_helpers_FileUtils::isFolder($open, str_replace(filemanager_helpers_FileUtils::getBasePath(), '', $dir.$file))){
                                 $tmpbuffer = $this->createFolderList($dir.$file, preg_replace("/\/$/", '', $dataDir).'/'.preg_replace("/\/$/", '', $file).'/', $open, true);
                                 $status = 'expanded';
                             }
@@ -307,7 +307,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
             $file = urldecode($this->getRequestParameter('file'));
             if(tao_helpers_File::securityCheck($file, true)){
 
-                $path = filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $file));
+                $path = filemanager_helpers_FileUtils::cleanConcat(array(filemanager_helpers_FileUtils::getBasePath(), $file));
 
                 $mimeType = filemanager_helpers_FileUtils::getMimeType($path);
                 if($this->isMimeTypeAllowed($mimeType)){
@@ -320,7 +320,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
                         $this->setData('isEmbded', false);
                         if(preg_match("/^image/", $mimeType)){
                             $this->setData('isImage', true);
-                            $size = getimagesize(BASE_DATA.$file);
+                            $size = getimagesize(filemanager_helpers_FileUtils::getBasePath().$file);
                             $width = $size[0];
                             $height = $size[1];
 
@@ -353,7 +353,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
             $folder = urldecode($this->getRequestParameter('folder'));
             $dataDir = filemanager_helpers_FileUtils::cleanConcat(array($parentDir, $folder));
             if(tao_helpers_File::securityCheck($dataDir, true)){
-                $data['added'] = mkdir(filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $dataDir)));
+                $data['added'] = mkdir(filemanager_helpers_FileUtils::cleanConcat(array(filemanager_helpers_FileUtils::getBasePath(), $dataDir)));
             }
         }catch(Exception $e){
             
@@ -368,7 +368,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
      */
     public function download(){
         $file = urldecode($this->getRequestParameter('file'));
-        $file = filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $file));
+        $file = filemanager_helpers_FileUtils::cleanConcat(array(filemanager_helpers_FileUtils::getBasePath(), $file));
 
         if(tao_helpers_File::securityCheck($file, true) && is_readable($file)){
             header("Content-Type: application/force-download");
@@ -390,13 +390,13 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
         if($this->hasRequestParameter('file')){
             $file = urldecode($this->getRequestParameter('file'));
             if(tao_helpers_File::securityCheck($file, true)){
-                $data['deleted'] = unlink(filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $file)));
+                $data['deleted'] = unlink(filemanager_helpers_FileUtils::cleanConcat(array(filemanager_helpers_FileUtils::getBasePath(), $file)));
             }
         }
         if($this->hasRequestParameter("folder")){
             $folder = urldecode($this->getRequestParameter('folder'));
             if(tao_helpers_File::securityCheck($folder, true)){
-                if(filemanager_helpers_FileUtils::deleteFolder(filemanager_helpers_FileUtils::cleanConcat(array(BASE_DATA, $folder)), true)){
+                if(filemanager_helpers_FileUtils::deleteFolder(filemanager_helpers_FileUtils::cleanConcat(array(filemanager_helpers_FileUtils::getBasePath(), $folder)), true)){
                     $data['deleted'] = true;
                 }
             }
