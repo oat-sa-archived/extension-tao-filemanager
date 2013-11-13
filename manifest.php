@@ -86,9 +86,6 @@ return array(
 		'TAOVIEW_PATH'			=> $taopath.'views'.DIRECTORY_SEPARATOR,
 		'TAO_TPL_PATH'			=> $taopath.'views'.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR,
 	
-		# use the filemanager without authentication, please be carefull!
-		'NO_FM_AUTH'			=> false,
-
 		# Max file size to upload
 		'UPLOAD_MAX_SIZE'		=> '83886080',//10MB, to allow some multimedia file 
 	

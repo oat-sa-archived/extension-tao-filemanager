@@ -417,20 +417,5 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
         return (in_array($mimeType, $extFM->getConstant('allowed_media')));
     }
 
-    /**
-     * Check auth
-     *
-     * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
-     * @access private
-     *
-     */
-    protected function _isAllowed(){
-        if(NO_FM_AUTH){
-            return true;
-        }else{
-            return parent::_isAllowed();
-        }
-    }
-
 }
 ?>
