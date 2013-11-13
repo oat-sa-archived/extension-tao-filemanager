@@ -1,92 +1,97 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TAO v2.5-alpha\n"
-"PO-Revision-Date: 2013-06-18T15:46:16\n"
-"Last-Translator: TAO Translation Team <translation@tao.lu>\n"
+"PO-Revision-Date: 2013-11-10 16:45-0000\n"
+"Last-Translator: Paulo Amorim <paulo@amorims.com>\n"
 "MIME-Version: 1.0\n"
 "Language: pt-PT\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.5.7\n"
 
 msgid " MB"
-msgstr ""
+msgstr "MB"
 
 msgid "Actions"
-msgstr ""
+msgstr "Acções"
 
 msgid "Current directory"
-msgstr ""
+msgstr "Directório corrente"
 
 msgid "Delete"
-msgstr ""
+msgstr "eliminar"
 
 msgid "Download"
-msgstr ""
+msgstr "Baixar"
 
 msgid "Enter a name for the new directory."
-msgstr ""
+msgstr "Entre com o nome da nova directoria"
 
 msgid "File"
-msgstr ""
+msgstr "Ficheiro"
 
 msgid "File Browser"
-msgstr ""
+msgstr "Navegador de ficheiros"
 
 msgid "File upload"
-msgstr ""
+msgstr "Envio de ficheiro"
 
 msgid "file upload failed"
-msgstr ""
+msgstr "envio de ficheiro falhou"
 
 msgid "Max filesize"
-msgstr ""
+msgstr "Tamanho máximo de ficheiro"
 
 msgid "Media Manager"
-msgstr ""
+msgstr "Gestor de mídia"
 
 msgid "media size must be less than : "
-msgstr ""
+msgstr "O tamanho de Mídia tem de ser menor que:"
 
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 msgid "New directory"
-msgstr ""
+msgstr "Nova directoria"
 
 msgid "no file uploaded"
-msgstr ""
+msgstr "O ficheiro não foi enviado"
 
 msgid "Open File Manager"
-msgstr ""
+msgstr "Abrir navegador de ficheiros"
 
-msgid "Please confirm directory deletion.\n"
+msgid ""
+"Please confirm directory deletion.\n"
 "Be careful, it will remove the entire content of the directory!"
 msgstr ""
+"Por favor confirme a eliminação do directorio. \n"
+"Tenha cuidado, remove todo o conteúdo da directoria!"
 
 msgid "Please confirm file deletion."
-msgstr ""
+msgstr "Por favor confirme a eliminação do ficheiro"
 
 msgid "Preview"
-msgstr ""
+msgstr "Previsão"
 
 msgid "Root"
-msgstr ""
+msgstr "Raíz"
 
 msgid "Security issue"
-msgstr ""
+msgstr "Questão de segurança"
 
 msgid "Select"
-msgstr ""
+msgstr "Seleccione"
 
 msgid "unable to move uploaded file"
-msgstr ""
+msgstr "incapaz de se mover arquivo enviado"
 
 msgid "unknow media size"
-msgstr ""
+msgstr "tamanho de mídia desconhecido"
 
 msgid "Upload"
-msgstr ""
+msgstr "enviar"
 
 msgid "URL"
-msgstr ""
-
+msgstr "URL"
