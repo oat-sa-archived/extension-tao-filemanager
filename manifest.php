@@ -55,6 +55,9 @@ return array(
         )
     ),
 	'managementRole' => 'http://www.tao.lu/Ontologies/filemanager.rdf#MediaManagerRole',
+    'acl' => array(
+        array('grant', 'http://www.tao.lu/Ontologies/filemanager.rdf#MediaManagerRole', array('ext'=>'filemanager')),
+    ),
 	'constants' => array(
 		# actions directory
 		"DIR_ACTIONS"			=> $extpath."actions".DIRECTORY_SEPARATOR,
