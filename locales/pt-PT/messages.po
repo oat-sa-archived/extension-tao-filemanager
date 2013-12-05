@@ -21,10 +21,10 @@ msgid "Current directory"
 msgstr "Directório corrente"
 
 msgid "Delete"
-msgstr "eliminar"
+msgstr "Eliminar"
 
 msgid "Download"
-msgstr "Baixar"
+msgstr "Descarregar"
 
 msgid "Enter a name for the new directory."
 msgstr "Entre com o nome da nova directoria"
@@ -33,7 +33,7 @@ msgid "File"
 msgstr "Ficheiro"
 
 msgid "File Browser"
-msgstr "Navegador de ficheiros"
+msgstr "Navegador de Ficheiros"
 
 msgid "File upload"
 msgstr "Envio de ficheiro"
@@ -82,7 +82,7 @@ msgid "Security issue"
 msgstr "Questão de segurança"
 
 msgid "Select"
-msgstr "Seleccione"
+msgstr "Selecionar"
 
 msgid "unable to move uploaded file"
 msgstr "incapaz de se mover arquivo enviado"
@@ -91,7 +91,7 @@ msgid "unknow media size"
 msgstr "tamanho de mídia desconhecido"
 
 msgid "Upload"
-msgstr "enviar"
+msgstr "Enviar"
 
 msgid "URL"
 msgstr "URL"
