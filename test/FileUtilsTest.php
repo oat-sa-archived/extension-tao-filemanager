@@ -31,7 +31,7 @@ include_once dirname(__FILE__) . '/../includes/raw_start.php';
  * @package filemanager
  * @subpackage test
  */
-class FileUtilsTestCase extends TaoPhpUnitTestRunner {
+class FileUtilsTest extends TaoPhpUnitTestRunner {
     
     public function setUp()
     {		
