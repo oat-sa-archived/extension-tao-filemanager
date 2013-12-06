@@ -20,7 +20,8 @@
  */
 ?>
 <?php
-require_once dirname(__FILE__) . '/../../tao/test/TaoTestRunner.php';
+
+require_once dirname(__FILE__) . '/../../tao/test/TaoPhpUnitTestRunner.php';
 include_once dirname(__FILE__) . '/../includes/raw_start.php';
 
 /**
@@ -30,12 +31,12 @@ include_once dirname(__FILE__) . '/../includes/raw_start.php';
  * @package filemanager
  * @subpackage test
  */
-class FileUtilsTestCase extends UnitTestCase {
+class FileUtilsTestCase extends TaoPhpUnitTestRunner {
     
     public function setUp()
     {		
         parent::setUp();
-		TaoTestRunner::initTest();
+		TaoPhpUnitTestRunner::initTest();
 	}
     
     public function tearDown() {
@@ -49,7 +50,7 @@ class FileUtilsTestCase extends UnitTestCase {
     	
     	$filePath = $base . 'Animals/puss-in-boots.png';
     	$folderPath = filemanager_helpers_FileUtils::getFolderPath($filePath);
-    	$this->assertEqual($folderPath, '/Animals/');
+    	$this->assertEquals($folderPath, '/Animals/');
     	
     	// It does not exist!
     	$filePath = $base . 'Animals/hippo-in-boots.png';
@@ -59,17 +60,17 @@ class FileUtilsTestCase extends UnitTestCase {
     	$base = 'C:\\wamp3\\www\\taotrunk\\filemanager\\views\\data\\';
     	$filePath = $base . 'Animals/chicken.png';
     	$folderPath = filemanager_helpers_FileUtils::getFolderPath($filePath, $base, false);
-    	$this->assertEqual($folderPath, '/Animals/');
+    	$this->assertEquals($folderPath, '/Animals/');
     	
     	// Test a linux like test.
     	$base = '/var/www/taoinstall/filemanager/views/data/';
     	$filePath = $base . 'Animals/puss-in-boots.png';
     	$folderPath = filemanager_helpers_FileUtils::getFolderPath($filePath, $base, false);
-    	$this->assertEqual($folderPath, '/Animals/');
+    	$this->assertEquals($folderPath, '/Animals/');
     	
     	$filePath = $base . 'puss-in-boots.png';
     	$folderPath = filemanager_helpers_FileUtils::getFolderPath($filePath, $base, false);
-    	$this->assertEqual($folderPath, '/');
+    	$this->assertEquals($folderPath, '/');
     }
 }
 ?>
