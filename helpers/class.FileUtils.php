@@ -15,6 +15,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  * 
  * Copyright (c) 2009-2012 (original work) Public Research Centre Henri Tudor (under the project TAO-SUSTAIN & TAO-DEV);
+ *               2009-2012 (update and modification) Open Assessment Technologies SA (under the project TAO-PRODUCT);
  *               
  * 
  */
@@ -57,7 +58,7 @@ class filemanager_helpers_FileUtils
 	    foreach($files as $file){
 	        if(substr($file, -1) == '/'){
 	        	if($recursive){
-					 $this->deleteFolder($file, true);
+					 self::deleteFolder($file, true);
 				}
 			}
 	        else{
