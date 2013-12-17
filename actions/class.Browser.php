@@ -224,6 +224,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
                         $response['width'] = $width;
                         $response['height'] = $height;
                         $response['type'] = $mimeType;
+                        $response['url'] = filemanager_helpers_FileUtils::getUrl($file);
 
                         // try to get the folder path of the file.
                         $folderPath = filemanager_helpers_FileUtils::getFolderPath($path);
@@ -314,7 +315,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
 
                     if(file_exists($path) && is_readable($path)){
 
-                        $source = URL_DATA.$file;
+                        $source = filemanager_helpers_FileUtils::getUrl($file);
                         $width = $height = 140;
                         $this->setData('isImage', false);
                         $this->setData('isEmbded', false);

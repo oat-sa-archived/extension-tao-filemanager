@@ -320,6 +320,11 @@ class filemanager_helpers_FileUtils
         return (string) $returnValue;
     }
     
+    public static function getUrl($filePath)
+    {
+        return self::getAccessProvider()->getAccessUrl(dirname($filePath).DIRECTORY_SEPARATOR).basename($filePath);
+    }
+    
     public static function import($zipFile, $subfolder = '') {
         $zip = new ZipArchive();
         if ($zip->open($zipFile) === true) {
@@ -335,24 +340,19 @@ class filemanager_helpers_FileUtils
         }
     }
     
-    public static function setAccessProvider(tao_models_classes_fsAccess_FilesystemAccessProvider $provider) {
-        $old = self::getAccessProvider();
-        if (!is_null($old)) {
-            $old->cleanupProvider();
-        }
-        $provider->prepareProvider();
+    public static function setAccessProvider(tao_models_classes_fsAccess_AccessProvider $provider) {
         $ext = common_ext_ExtensionsManager::singleton()->getExtensionById('filemanager');
-        $ext->setConfig(self::CONFIG_KEY_CONTROLLER, $provider);
+        $ext->setConfig(self::CONFIG_KEY_CONTROLLER, $provider->getId());
         self::$provider = $provider;
     }
     
     /**
-     * @return tao_models_classes_fsAccess_FilesystemAccessProvider
+     * @return tao_models_classes_fsAccess_AccessProvider
      */
     private static function getAccessProvider() {
         if (is_null(self::$provider)) {
             $ext = common_ext_ExtensionsManager::singleton()->getExtensionById('filemanager');
-            self::$provider = $ext->getConfig(self::CONFIG_KEY_CONTROLLER);
+            self::$provider = tao_models_classes_fsAccess_Manager::singleton()->getProvider($ext->getConfig(self::CONFIG_KEY_CONTROLLER));
         }
         return self::$provider;
     }

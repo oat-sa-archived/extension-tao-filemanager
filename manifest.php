@@ -81,9 +81,6 @@ return array(
 		'BASE_WWW'				=> ROOT_URL . 'filemanager/views/',
 	 
 	
-		#root folder for the files
-		'URL_DATA'				=> ROOT_URL . 'filemanager/views/data/',
-	
 		#TAO extension Paths
 		'TAOBASE_WWW'			=> ROOT_URL  . 'tao/views/',
 		'TAOVIEW_PATH'			=> $taopath.'views'.DIRECTORY_SEPARATOR,

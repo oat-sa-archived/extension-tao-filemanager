@@ -20,11 +20,11 @@
  */
 $extension = common_ext_ExtensionsManager::singleton()->getExtensionById('filemanager');
 $dataPath = $extension ->getConstant('BASE_PATH') . 'views' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR;
+$dataUrl = $extension ->getConstant('BASE_WWW') . 'data' . DIRECTORY_SEPARATOR;
 
 tao_helpers_File::emptyDirectory($dataPath);
 
 $fileSystem = tao_models_classes_FileSourceService::singleton()->addLocalSource('Filemanager Directory', $dataPath);
-$provider = new tao_models_classes_fsAccess_DirectAccessProvider($fileSystem);
-$provider->prepareProvider();
 
+$provider = tao_models_classes_fsAccess_DirectAccessProvider::spawnProvider($fileSystem, $dataUrl);
 filemanager_helpers_FileUtils::setAccessProvider($provider);
