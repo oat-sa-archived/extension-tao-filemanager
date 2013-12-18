@@ -4,25 +4,26 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title><?=__('Media Manager')?></title>
         <link rel="shortcut icon" href="<?=BASE_WWW?>img/favicon.ico" type="image/x-icon" />
+        
         <base href="<?=BASE_WWW?>" />
 
-        <?=tao_helpers_Scriptloader::render()?>
-
+        <link rel="stylesheet" type="text/css" href='<?=TAOBASE_WWW?>css/custom-theme/jquery-ui-1.8.22.custom.css' />
+	<link rel="stylesheet" type="text/css" href='js/jqueryFileTree/jqueryFileTree.css' />
+	<link rel="stylesheet" type="text/css" href='css/style.css' />
+        
         <script type='text/javascript'>
-            var root_url = "<?=ROOT_URL?>";
-            var baseUrl = "<?=BASE_URL?>";
-            var basePath = "<?=addslashes(BASE_PATH);?>";
+            var fileManagerOptions = {
+                urlData     : "<?=URL_DATA?>",
+                openFolder  : "<?=(has_data('openFolder') ? get_data('openFolder') : '/')?>",
+            };
 
-            var openFolder = '/';
-
-<?if(get_data("openFolder")):?>
-                openFolder = "<?=get_data('openFolder')?>";
-<?endif?>
-
-            var runner = window.top.opener.fmRunner.single;
-            runner.urlData = urlData;
-            runner.mediaData = {};
         </script>
+        <script id='amd-loader' 
+            type='text/javascript' 
+            src="<?=TAOBASE_WWW?>js/lib/require.js"
+            data-main="<?=BASE_WWW?>js/main"
+            data-config="<?=get_data('client_config_url')?>"></script>
+        
     </head>
     <body>
         <div id="header" class="ui-widget-header ui-corner-all"><?=__('Media Manager')?></div>

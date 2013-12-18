@@ -31,7 +31,7 @@
 // is copyright 2008 A Beautiful Site, LLC. 
 //
 if(jQuery) (function($){
-	
+
 	$.extend($.fn, {
 		fileTree: function(o, h, d) {
 			// Defaults
