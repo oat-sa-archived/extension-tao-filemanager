@@ -13,7 +13,6 @@
         
         <script type='text/javascript'>
             var fileManagerOptions = {
-                urlData     : "<?=URL_DATA?>",
                 openFolder  : "<?=(has_data('openFolder') ? get_data('openFolder') : '/')?>",
             };
 

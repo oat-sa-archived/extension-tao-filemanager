@@ -19,8 +19,6 @@
  */
 define(['jquery', 'i18n', 'context', 'filemanager/jqueryFileTree/jqueryFileTree'], function($, __, context){
         
-         var urlData;
-        
         function selectUrl(){
                 var urlData = $("#file-url").text();
                 var mediaData = $("#file-url").data('media');
@@ -205,8 +203,6 @@ define(['jquery', 'i18n', 'context', 'filemanager/jqueryFileTree/jqueryFileTree'
         
         return {
             start : function(options){
-                
-                urlData = options.urlData;
                 
                 initFileTree(options.openFolder);
 
