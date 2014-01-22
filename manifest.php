@@ -29,8 +29,9 @@ $taopath = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'tao'.DIRECTORY_SEPARA
 
 return array(
 	'name' => 'filemanager',
-	'description' => 'Manage media files on server',
-	'version' => '2.4',
+	'description' => 'Mediamanager',
+    'license' => 'GPL-2.0',
+    'version' => '2.4',
 	'author' => 'CRP Henri Tudor',
 	'dependencies' => array('tao'),
 	'models' => array(
