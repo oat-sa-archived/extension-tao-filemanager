@@ -19,8 +19,8 @@
  * 
  */
 $extension = common_ext_ExtensionsManager::singleton()->getExtensionById('filemanager');
-$dataPath = $extension ->getConstant('BASE_PATH') . 'views' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR;
-$dataUrl = $extension ->getConstant('BASE_WWW') . 'data' . DIRECTORY_SEPARATOR;
+$dataPath = $extension ->getDir() . 'views' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR;
+$dataUrl = $extension ->getConstant('BASE_WWW') . 'data/';
 
 tao_helpers_File::emptyDirectory($dataPath);
 
