@@ -18,8 +18,7 @@
  *               
  * 
  */
-?>
-<?php
+
 /**
  * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
@@ -28,12 +27,15 @@ $extpath = dirname(__FILE__).DIRECTORY_SEPARATOR;
 $taopath = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'tao'.DIRECTORY_SEPARATOR;
 
 return array(
-	'name' => 'filemanager',
-	'description' => 'Mediamanager',
+    'id' => 'filemanager',
+	'name' => 'Media-manager',
+	'description' => 'Mediamanager manages media-files that are used in several locations',
     'license' => 'GPL-2.0',
-    'version' => '2.4',
+    'version' => '2.6',
 	'author' => 'CRP Henri Tudor',
-	'dependencies' => array('tao'),
+	'requires' => array(
+	    'tao' => '2.6'
+    ),
 	'models' => array(
 			'http://www.tao.lu/Ontologies/filemanager.rdf'
 	),
@@ -138,4 +140,3 @@ return array(
 		)
 	)
 );
-?>
