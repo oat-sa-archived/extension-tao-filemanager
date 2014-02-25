@@ -213,7 +213,9 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
     public function getInfo(){
         $response = array();
         if($this->hasRequestParameter('file')){
-            $file = urldecode($this->getRequestParameter('file'));
+            $relUrl = urldecode($this->getRequestParameter('file'));
+            // convert url to file path
+            $file = str_replace('/', DIRECTORY_SEPARATOR, $relUrl);
             if(tao_helpers_File::securityCheck($file, true)){
                 $path = filemanager_helpers_FileUtils::cleanConcat(array(filemanager_helpers_FileUtils::getBasePath(), $file));
                 $mimeType = filemanager_helpers_FileUtils::getMimeType($path);
