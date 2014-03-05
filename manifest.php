@@ -48,8 +48,7 @@ return array(
         ),
 		'checks' => array(
 			array('type' => 'CheckPHPExtension', 'value' => array('id' => 'filemanager_extension_gd', 'name' => 'gd')),
-			array('type' => 'CheckFileSystemComponent', 'value' => array('id' => 'fs_filemanager_views_data', 'location' => 'filemanager/views/data', 'rights' => 'rw')),
-			array('type' => 'CheckFileSystemComponent', 'value' => array('id' => 'fs_filemanager_includes', 'location' => 'filemanager/includes', 'rights' => 'rw'))
+			array('type' => 'CheckFileSystemComponent', 'value' => array('id' => 'fs_filemanager_views_data', 'location' => 'filemanager/views/data', 'rights' => 'rw'))
 		)
 	),
     'local'	=> array(
