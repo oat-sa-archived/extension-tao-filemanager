@@ -34,7 +34,7 @@ class filemanager_helpers_FileUtils
 
 
     // --- ATTRIBUTES ---
-    const CONFIG_KEY_CONTROLLER = 'FILEMANAGER_ACCESS_CONTROLLER';
+    const CONFIG_KEY_CONTROLLER = 'access_control';
     
     private static $provider = null;
     
