@@ -29,7 +29,7 @@ include_once dirname(__FILE__) . '/../includes/raw_start.php';
  * 
  * @author Jerome Bogaerts, <taosupport@tudor.lu>
  * @package filemanager
- * @subpackage test
+ 
  */
 class FileUtilsTest extends TaoPhpUnitTestRunner {
     

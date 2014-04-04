@@ -26,7 +26,7 @@
  * @access public
  * @author Jerome Bogaerts, <jerome.bogaerts@tudor.lu>
  * @package filemanager
- * @subpackage helpers
+ 
  */
 class filemanager_helpers_FileUtils
 {
