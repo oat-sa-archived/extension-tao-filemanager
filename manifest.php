@@ -27,8 +27,8 @@ $extpath = dirname(__FILE__).DIRECTORY_SEPARATOR;
 $taopath = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'tao'.DIRECTORY_SEPARATOR;
 
 return array(
-    'id' => 'filemanager',
-	'name' => 'Media-manager',
+    'name' => 'filemanager',
+	'label' => 'Media manager',
 	'description' => 'Mediamanager manages media-files that are used in several locations',
     'license' => 'GPL-2.0',
     'version' => '2.6',
