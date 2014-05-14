@@ -30,15 +30,11 @@
  */
 class filemanager_helpers_FileUtils
 {
-    // --- ASSOCIATIONS ---
-
-
-    // --- ATTRIBUTES ---
     const CONFIG_KEY_CONTROLLER = 'access_control';
     
     private static $provider = null;
     
-    // --- OPERATIONS ---
+
 
     /**
      * Short description of method deleteFolder
@@ -51,9 +47,7 @@ class filemanager_helpers_FileUtils
      */
     public static function deleteFolder($dir, $recursive = false)
     {
-        $returnValue = (bool) false;
-
-        // section 10-13-1-85--1a7dc942:13b229d9435:-8000:0000000000003C3E begin
+        
         $files = glob($dir. "*", GLOB_MARK);
 	    foreach($files as $file){
 	        if(substr($file, -1) == '/'){
@@ -69,9 +63,8 @@ class filemanager_helpers_FileUtils
 	    	rmdir($dir);
 		}
 		return !file_exists($dir);
-        // section 10-13-1-85--1a7dc942:13b229d9435:-8000:0000000000003C3E end
 
-        return (bool) $returnValue;
+
     }
 
     /**
@@ -85,9 +78,7 @@ class filemanager_helpers_FileUtils
      */
     public static function isFolder($refPath, $path)
     {
-        $returnValue = (bool) false;
 
-        // section 10-13-1-85--1a7dc942:13b229d9435:-8000:0000000000003C50 begin
         if(!empty($refPath) && !empty($path) && is_string($refPath)){
 			do{
 				if($refPath == $path || $refPath == basename($path)){
@@ -98,9 +89,7 @@ class filemanager_helpers_FileUtils
 			} while(($refPath != '/'  && $refPath != '\\' )&& $refPath != '' && $refPath != '.');
 		}
 		return false;
-        // section 10-13-1-85--1a7dc942:13b229d9435:-8000:0000000000003C50 end
 
-        return (bool) $returnValue;
     }
 
     /**
@@ -115,9 +104,7 @@ class filemanager_helpers_FileUtils
      */
     public static function cleanName($fileName, $joker = '_')
     {
-        $returnValue = (string) '';
 
-        // section 10-13-1-85--1a7dc942:13b229d9435:-8000:0000000000003C55 begin
 		$i = 0;
 		while ($i < strlen($fileName)){
 			if(preg_match("/^[a-zA-Z0-9.-]{1}$/", $fileName[$i])){
@@ -129,9 +116,7 @@ class filemanager_helpers_FileUtils
 			$i++;
 		}
 		return $returnValue;
-        // section 10-13-1-85--1a7dc942:13b229d9435:-8000:0000000000003C55 end
 
-        return (string) $returnValue;
     }
 
     /**
@@ -144,9 +129,7 @@ class filemanager_helpers_FileUtils
      */
     public static function cleanConcat($files)
     {
-        $returnValue = (string) '';
 
-        // section 10-13-1-85--1a7dc942:13b229d9435:-8000:0000000000003C5F begin
         $path = '';
 		foreach($files as $file){
 			if(!preg_match("/^\//", $file) && !preg_match("/\/$/", $path) && !empty($path)){
@@ -155,9 +138,7 @@ class filemanager_helpers_FileUtils
 			$path .= $file;
 		}
 		return $path;
-        // section 10-13-1-85--1a7dc942:13b229d9435:-8000:0000000000003C5F end
 
-        return (string) $returnValue;
     }
 
     /**
@@ -171,10 +152,8 @@ class filemanager_helpers_FileUtils
      */
     public static function getMimeType($fileName)
     {
-        $returnValue = (string) '';
 
-        // section 10-13-1-85--1a7dc942:13b229d9435:-8000:0000000000003C64 begin
-    if (empty($fileName)) {
+        if (empty($fileName)) {
 			common_Logger::e('getMimeType called without filename');
 		}
 
@@ -272,9 +251,7 @@ class filemanager_helpers_FileUtils
         else {
             return (empty($mimetype)) ? 'application/octet-stream' : $mimetype;
         }
-        // section 10-13-1-85--1a7dc942:13b229d9435:-8000:0000000000003C64 end
 
-        return (string) $returnValue;
     }
 
     /**
@@ -292,7 +269,6 @@ class filemanager_helpers_FileUtils
     {
         $returnValue = (string) '';
 
-        // section 10-13-1-85--34176ece:13b2750645e:-8000:0000000000003C63 begin
         if (is_readable($filePath) || false == $strict){
             
        		$base = is_null($dataPath) ? self::getBasePath() : $dataPath;
@@ -315,16 +291,28 @@ class filemanager_helpers_FileUtils
         else{
         	return null;
         }
-        // section 10-13-1-85--34176ece:13b2750645e:-8000:0000000000003C63 end
 
         return (string) $returnValue;
     }
-    
+    /**
+     * 
+     * @author Jerome Bogaerts, <jerome.bogaerts@tudor.lu>
+     * @param string $filePath
+     * @return string
+     */
     public static function getUrl($filePath)
     {
         return self::getAccessProvider()->getAccessUrl(dirname($filePath).DIRECTORY_SEPARATOR).basename($filePath);
     }
     
+    /**
+     * 
+     * @author Jerome Bogaerts, <jerome.bogaerts@tudor.lu>
+     * @param string $zipFile
+     * @param string $subfolder
+     * @throws common_exception_FileSystemError
+     * @return boolean
+     */
     public static function import($zipFile, $subfolder = '') {
         $zip = new ZipArchive();
         if ($zip->open($zipFile) === true) {
@@ -340,6 +328,11 @@ class filemanager_helpers_FileUtils
         }
     }
     
+    /**
+     * 
+     * @author Jerome Bogaerts, <jerome.bogaerts@tudor.lu>
+     * @param tao_models_classes_fsAccess_AccessProvider $provider
+     */
     public static function setAccessProvider(tao_models_classes_fsAccess_AccessProvider $provider) {
         $ext = common_ext_ExtensionsManager::singleton()->getExtensionById('filemanager');
         $ext->setConfig(self::CONFIG_KEY_CONTROLLER, $provider->getId());
@@ -356,7 +349,10 @@ class filemanager_helpers_FileUtils
         }
         return self::$provider;
     }
-    
+    /**
+     * @author Jerome Bogaerts, <jerome.bogaerts@tudor.lu>
+     * @return string
+     */
     public static function getBasePath() {
         $fs = self::getAccessProvider()->getFileSystem();
         return $fs->getPath();
