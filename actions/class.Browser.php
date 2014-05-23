@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * as published by the Free Software Foundation; under version 2
@@ -29,14 +29,7 @@
 class filemanager_actions_Browser extends tao_actions_CommonModule
 {
 
-    /**
-     * Constructor
-     *
-     * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
-     */
-    public function __construct(){
-        parent::__construct();
-    }
+
 
     /**
      * render the main layout
