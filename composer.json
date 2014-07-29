@@ -51,7 +51,7 @@
 	"GPL-2.0"
 	],
     "extra" : {
-    	"tao-extension-name" : "filemanger"
+    	"tao-extension-name" : "filemanager"
     },
     "minimum-stability" : "dev",
     "require": {
