@@ -81,10 +81,6 @@ return array(
 	
 		#BASE WWW the web resources path
 		'BASE_WWW'				=> ROOT_URL . 'filemanager/views/',
-	 
-	
-		#TAO extension Paths
-		'TAOBASE_WWW'			=> ROOT_URL  . 'tao/views/',
 	
 		# Max file size to upload
 		'UPLOAD_MAX_SIZE'		=> '83886080',//10MB, to allow some multimedia file 

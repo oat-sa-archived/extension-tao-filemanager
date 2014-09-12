@@ -1,4 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php
+use oat\tao\helpers\Template;
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -7,7 +9,7 @@
         
         <base href="<?=BASE_WWW?>" />
 
-        <link rel="stylesheet" type="text/css" href='<?=TAOBASE_WWW?>css/custom-theme/jquery-ui-1.8.22.custom.css' />
+        <link rel="stylesheet" type="text/css" href='<?=Template::css('custom-theme/jquery-ui-1.8.22.custom.css', 'tao')?>' />
 	<link rel="stylesheet" type="text/css" href='js/jqueryFileTree/jqueryFileTree.css' />
 	<link rel="stylesheet" type="text/css" href='css/style.css' />
         
@@ -19,7 +21,7 @@
         </script>
         <script id='amd-loader' 
             type='text/javascript' 
-            src="<?=TAOBASE_WWW?>js/lib/require.js"
+            src="<?= Template::js('lib/require.js', 'tao')?>"
             data-main="<?=BASE_WWW?>js/main"
             data-config="<?=get_data('client_config_url')?>"></script>
         
