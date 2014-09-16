@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE extension SYSTEM "../../tao/doc/structures.dtd">
+<!DOCTYPE structures SYSTEM "../../tao/doc/structures.dtd">
 <structures>
     <structure id="mediamanager" name="Media Manager" level="8" js="controller/main">
         <icon src="" id="icon-video" />
