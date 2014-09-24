@@ -18,12 +18,9 @@
  *               
  * 
  */
-?>
-<?php
+use oat\tao\test\TaoPhpUnitTestRunner;
 
-require_once dirname(__FILE__) . '/../../tao/test/TaoPhpUnitTestRunner.php';
 include_once dirname(__FILE__) . '/../includes/raw_start.php';
-
 /**
  * Test Case aiming at testing the filemanager_helpers_FileUtils class.
  * 
@@ -73,4 +70,3 @@ class FileUtilsTest extends TaoPhpUnitTestRunner {
     	$this->assertEquals($folderPath, '/');
     }
 }
-?>
