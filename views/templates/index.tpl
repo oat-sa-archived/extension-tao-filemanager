@@ -35,11 +35,11 @@ use oat\tao\helpers\Template;
             </div>
 
             <div id="file-data-container">
-                <?if(get_data('error')):?>
+                <?php if(get_data('error')):?>
                     <div class="ui-widget ui-corner-all ui-state-error error-message">
                         <?=urldecode(get_data('error'))?>
                     </div>
-                <?endif?>
+                <?php endif?>
                 <div class="ui-state-highlight ui-corner-all">
                     <strong><?=__('Current directory')?></strong>:
                     <span id="dir-uri" class="data-container"><?=(get_data("openFolder") ? get_data("openFolder") : '/')?></span>
@@ -56,9 +56,9 @@ use oat\tao\helpers\Template;
                 <div class="ui-state-highlight ui-corner-all">
                     <strong><?=__('Actions')?></strong>
                     <ul id="actions">
-                        <?if(get_data('showSelect') == true):?>
+                        <?php if(get_data('showSelect') == true):?>
                             <li class="ui-corner-all"><a class="link select disabled" href="#"><?=__('Select')?></a></li>
-                        <?endif;?>
+                        <?php endif;?>
                         <li class="ui-corner-all"><a class="link root disabled" href="#"><?=__('Root')?></a></li>
                         <li class="ui-corner-all"><a class="link new-dir" href="#"><?=__('New directory')?></a></li>
                         <li class="ui-corner-all"><a class="link download disabled" href="#"><?=__('Download')?></a></li>
