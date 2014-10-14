@@ -1,94 +1,98 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v2.6-RC03\n"
-"PO-Revision-Date: 2014-06-20T16:27:53\n"
+"Project-Id-Version: TAO v2.7\n"
+"PO-Revision-Date: 2014-10-14T10:43:27\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: da-DK\n"
+"sourceLanguage: en-US\n"
+"targetLanguage: da-DK\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
 
 msgid " MB"
-msgstr " MB"
+msgstr ""
 
 msgid "Actions"
-msgstr "Handlinger"
+msgstr ""
 
 msgid "Current directory"
-msgstr "Aktuel mappe"
+msgstr ""
 
 msgid "Delete"
-msgstr "Slet"
+msgstr ""
 
 msgid "Download"
-msgstr "Hent"
+msgstr ""
 
 msgid "Enter a name for the new directory."
-msgstr "Skriv navnet på den nye mappe."
+msgstr ""
 
 msgid "File"
-msgstr "Fil"
+msgstr ""
 
 msgid "File Browser"
-msgstr "Fil browser"
+msgstr ""
 
 msgid "File upload"
-msgstr "Fil upload"
+msgstr ""
 
 msgid "file upload failed"
-msgstr "fil upload fejlede"
+msgstr ""
 
 msgid "Max filesize"
-msgstr "Max fil størrelse"
+msgstr ""
 
 #, tao-public
 msgid "Media Manager"
-msgstr "Medie Manager"
+msgstr ""
 
 msgid "media size must be less than : "
-msgstr "størrelsen på mediet skal være mindre end : "
+msgstr ""
 
 msgid "Name"
-msgstr "Navn"
+msgstr ""
 
 msgid "New directory"
-msgstr "Ny mappe"
+msgstr ""
 
 msgid "no file uploaded"
-msgstr "ingen fil er uploadet"
+msgstr ""
 
 msgid "Open File Manager"
 msgstr ""
 
 msgid "Please confirm directory deletion.\n"
 "Be careful, it will remove the entire content of the directory!"
-msgstr "Bekræft sletning af mappe.\n"
-"Vær forsigtig, handlingen vil slette alt indhold i mappen!"
+msgstr ""
 
 msgid "Please confirm file deletion."
-msgstr "Bekræft sletning af fil."
+msgstr ""
 
 msgid "Preview"
-msgstr "Forhåndsvisning"
+msgstr ""
 
 msgid "Root"
-msgstr "Root"
+msgstr ""
 
 msgid "Security issue"
-msgstr "Sikkerheds emne"
+msgstr ""
 
 msgid "Select"
-msgstr "Vælg"
+msgstr ""
 
 msgid "unable to move uploaded file"
-msgstr "ikke muligt at flytte uploade fil"
+msgstr ""
 
 msgid "unknow media size"
-msgstr "ukendt medie størrelse"
+msgstr ""
 
 msgid "Upload"
-msgstr "Upload"
+msgstr ""
 
 msgid "URL"
-msgstr "URL"
+msgstr ""
 

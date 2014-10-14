@@ -1,39 +1,44 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v2.6-RC03\n"
-"PO-Revision-Date: 2014-06-20T16:27:53\n"
+"Project-Id-Version: TAO v2.7\n"
+"PO-Revision-Date: 2014-10-14T10:43:27\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: de-DE\n"
+"sourceLanguage: en-US\n"
+"targetLanguage: de-DE\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
 
 msgid " MB"
 msgstr ""
 
 msgid "Actions"
-msgstr "Aktionen"
+msgstr ""
 
 msgid "Current directory"
-msgstr "Aktuelles Verzeichnis"
+msgstr ""
 
 msgid "Delete"
-msgstr "Löschen"
+msgstr ""
 
 msgid "Download"
-msgstr "Download"
+msgstr ""
 
 msgid "Enter a name for the new directory."
 msgstr ""
 
 msgid "File"
-msgstr "Datei"
+msgstr ""
 
 msgid "File Browser"
-msgstr "Dateibrowser"
+msgstr ""
 
 msgid "File upload"
-msgstr "Datei-Upload"
+msgstr ""
 
 msgid "file upload failed"
 msgstr ""
@@ -49,10 +54,10 @@ msgid "media size must be less than : "
 msgstr ""
 
 msgid "Name"
-msgstr "Name"
+msgstr ""
 
 msgid "New directory"
-msgstr "Neues Verzeichnis"
+msgstr ""
 
 msgid "no file uploaded"
 msgstr ""
@@ -62,22 +67,22 @@ msgstr ""
 
 msgid "Please confirm directory deletion.\n"
 "Be careful, it will remove the entire content of the directory!"
-msgstr "Bitte bestaetigen Sie das Loeschen des Verzeichnisses?"
+msgstr ""
 
 msgid "Please confirm file deletion."
 msgstr ""
 
 msgid "Preview"
-msgstr "Vorschau"
+msgstr ""
 
 msgid "Root"
-msgstr "Root"
+msgstr ""
 
 msgid "Security issue"
 msgstr ""
 
 msgid "Select"
-msgstr "Auswählen"
+msgstr ""
 
 msgid "unable to move uploaded file"
 msgstr ""
@@ -89,5 +94,5 @@ msgid "Upload"
 msgstr ""
 
 msgid "URL"
-msgstr "URL"
+msgstr ""
 

@@ -1,39 +1,44 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v2.6-RC03\n"
-"PO-Revision-Date: 2014-06-20T16:27:53\n"
+"Project-Id-Version: TAO v2.7\n"
+"PO-Revision-Date: 2014-10-14T10:43:27\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: sv-SE\n"
+"sourceLanguage: en-US\n"
+"targetLanguage: sv-SE\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
 
 msgid " MB"
 msgstr ""
 
 msgid "Actions"
-msgstr "Handlingar"
+msgstr ""
 
 msgid "Current directory"
-msgstr "Aktuell katalog"
+msgstr ""
 
 msgid "Delete"
-msgstr "Ta bort"
+msgstr ""
 
 msgid "Download"
-msgstr "Ladda ner"
+msgstr ""
 
 msgid "Enter a name for the new directory."
 msgstr ""
 
 msgid "File"
-msgstr "Fil"
+msgstr ""
 
 msgid "File Browser"
-msgstr "Filbläddrare"
+msgstr ""
 
 msgid "File upload"
-msgstr "Filöverföring"
+msgstr ""
 
 msgid "file upload failed"
 msgstr ""
@@ -49,10 +54,10 @@ msgid "media size must be less than : "
 msgstr ""
 
 msgid "Name"
-msgstr "Namn"
+msgstr ""
 
 msgid "New directory"
-msgstr "Ny katalog"
+msgstr ""
 
 msgid "no file uploaded"
 msgstr ""
@@ -68,16 +73,16 @@ msgid "Please confirm file deletion."
 msgstr ""
 
 msgid "Preview"
-msgstr "Förhandsvisning"
+msgstr ""
 
 msgid "Root"
-msgstr "Rot"
+msgstr ""
 
 msgid "Security issue"
 msgstr ""
 
 msgid "Select"
-msgstr "Välj"
+msgstr ""
 
 msgid "unable to move uploaded file"
 msgstr ""
@@ -89,5 +94,5 @@ msgid "Upload"
 msgstr ""
 
 msgid "URL"
-msgstr "URL"
+msgstr ""
 

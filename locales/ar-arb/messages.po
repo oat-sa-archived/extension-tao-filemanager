@@ -1,93 +1,98 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v2.6-RC03\n"
-"PO-Revision-Date: 2014-06-20T16:27:53\n"
+"Project-Id-Version: TAO v2.7\n"
+"PO-Revision-Date: 2014-10-14T10:43:27\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: ar-arb\n"
+"sourceLanguage: en-US\n"
+"targetLanguage: ar-arb\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
 
 msgid " MB"
-msgstr "ميجا بايت"
+msgstr ""
 
 msgid "Actions"
-msgstr "الأعمال"
+msgstr ""
 
 msgid "Current directory"
-msgstr "الدليل الحالي"
+msgstr ""
 
 msgid "Delete"
-msgstr "حذف"
+msgstr ""
 
 msgid "Download"
-msgstr "تحميل"
+msgstr ""
 
 msgid "Enter a name for the new directory."
 msgstr ""
 
 msgid "File"
-msgstr "ملف"
+msgstr ""
 
 msgid "File Browser"
-msgstr "متصفح الملف"
+msgstr ""
 
 msgid "File upload"
-msgstr "تحميل الملف"
+msgstr ""
 
 msgid "file upload failed"
-msgstr "فشل تحميل الملف"
+msgstr ""
 
 msgid "Max filesize"
-msgstr "اقصى حجم للملف"
+msgstr ""
 
 #, tao-public
 msgid "Media Manager"
-msgstr "إدارة الوسائط"
+msgstr ""
 
 msgid "media size must be less than : "
-msgstr "حجم ملف الوسيط لابد ان يكون أقل من "
+msgstr ""
 
 msgid "Name"
-msgstr "اسم"
+msgstr ""
 
 msgid "New directory"
-msgstr "دليل جديد"
+msgstr ""
 
 msgid "no file uploaded"
-msgstr "لم يحمل أي ملف "
+msgstr ""
 
 msgid "Open File Manager"
 msgstr ""
 
 msgid "Please confirm directory deletion.\n"
 "Be careful, it will remove the entire content of the directory!"
-msgstr "n/ من فضلك تأكيد عملية حذف المجلد./n توخي الحرص , العملية ستقوم بحذف كامل محتويات المجلد"
+msgstr ""
 
 msgid "Please confirm file deletion."
-msgstr "من فضلك أكد حذف الملف "
+msgstr ""
 
 msgid "Preview"
-msgstr "معاينة"
+msgstr ""
 
 msgid "Root"
-msgstr "الجذر"
+msgstr ""
 
 msgid "Security issue"
-msgstr "مسألة امنية"
+msgstr ""
 
 msgid "Select"
-msgstr "اختيار"
+msgstr ""
 
 msgid "unable to move uploaded file"
-msgstr "عدم القدرة على تحريك الملف المرسل"
+msgstr ""
 
 msgid "unknow media size"
-msgstr "حجم ملف الوسيط غير معروف"
+msgstr ""
 
 msgid "Upload"
-msgstr "ارسال"
+msgstr ""
 
 msgid "URL"
-msgstr "URL"
+msgstr ""
 

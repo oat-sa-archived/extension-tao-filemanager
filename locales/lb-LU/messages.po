@@ -1,39 +1,44 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v2.6-RC03\n"
-"PO-Revision-Date: 2014-06-20T16:27:53\n"
+"Project-Id-Version: TAO v2.7\n"
+"PO-Revision-Date: 2014-10-14T10:43:27\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: lb-LU\n"
+"sourceLanguage: en-US\n"
+"targetLanguage: lb-LU\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
 
 msgid " MB"
 msgstr ""
 
 msgid "Actions"
-msgstr "Aktiounen"
+msgstr ""
 
 msgid "Current directory"
-msgstr "Aktuellen Répertoire"
+msgstr ""
 
 msgid "Delete"
-msgstr "Läschen"
+msgstr ""
 
 msgid "Download"
-msgstr "Erooflueden"
+msgstr ""
 
 msgid "Enter a name for the new directory."
 msgstr ""
 
 msgid "File"
-msgstr "Fichier"
+msgstr ""
 
 msgid "File Browser"
-msgstr "Dateibrowser"
+msgstr ""
 
 msgid "File upload"
-msgstr "Fichier roplueden"
+msgstr ""
 
 msgid "file upload failed"
 msgstr ""
@@ -49,10 +54,10 @@ msgid "media size must be less than : "
 msgstr ""
 
 msgid "Name"
-msgstr "Numm"
+msgstr ""
 
 msgid "New directory"
-msgstr "Naien Répertoire"
+msgstr ""
 
 msgid "no file uploaded"
 msgstr ""
@@ -68,16 +73,16 @@ msgid "Please confirm file deletion."
 msgstr ""
 
 msgid "Preview"
-msgstr "Viirbléck"
+msgstr ""
 
 msgid "Root"
-msgstr "Root"
+msgstr ""
 
 msgid "Security issue"
 msgstr ""
 
 msgid "Select"
-msgstr "Auswielen"
+msgstr ""
 
 msgid "unable to move uploaded file"
 msgstr ""
@@ -89,5 +94,5 @@ msgid "Upload"
 msgstr ""
 
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
