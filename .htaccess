@@ -9,3 +9,4 @@ RewriteCond %{REQUEST_URI} !/locales/  [NC]
 RewriteRule ^(.*)$ index.php [L]
 
 
+#testing
