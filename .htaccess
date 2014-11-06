@@ -7,5 +7,5 @@ RewriteCond %{REQUEST_URI} !/views/  [NC]
 RewriteCond %{REQUEST_URI} !/locales/  [NC]
 #call entry point for url resolving and framework bootstrap
 RewriteRule ^(.*)$ index.php [L]
-
+#test
 
