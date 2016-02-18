@@ -34,7 +34,7 @@ return array(
     'version' => '2.6',
 	'author' => 'CRP Henri Tudor',
 	'requires' => array(
-	    'tao' => '2.6'
+	    'tao' => '>=2.6'
     ),
 	'models' => array(
 			'http://www.tao.lu/Ontologies/filemanager.rdf'

@@ -59,14 +59,7 @@ class filemanager_actions_Browser extends tao_actions_CommonModule
             $this->setData('showSelect', true);
         }
         
-        //creates the URL of the action used to configure the client side
-        $context = Context::getInstance();
-        $clientConfigParameters = array(
-                    'extension'         => $context->getExtensionName(),
-                    'module'            => $context->getModuleName(),
-                    'action'            => $context->getActionName()
-        );
-        $this->setData('client_config_url', _url('config', 'ClientConfig', 'tao', $clientConfigParameters));
+        $this->setData('client_config_url', $this->getClientConfigUrl());
 
         $this->setData('upload_limit', $this->getFileUploadLimit());
         $this->setView('index.tpl');
