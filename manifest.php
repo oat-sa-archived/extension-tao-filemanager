@@ -31,7 +31,7 @@ return array(
 	'label' => 'Media manager',
 	'description' => 'Mediamanager manages media-files that are used in several locations',
     'license' => 'GPL-2.0',
-    'version' => '2.6',
+    'version' => '2.6.1',
 	'author' => 'CRP Henri Tudor',
 	'requires' => array(
 	    'tao' => '>=2.6'
@@ -51,6 +51,7 @@ return array(
 			array('type' => 'CheckFileSystemComponent', 'value' => array('id' => 'fs_filemanager_views_data', 'location' => 'filemanager/views/data', 'rights' => 'rw'))
 		)
 	),
+    'update' => 'oat\\taoFilemanager\\scripts\\update\\Updater',
     'local'	=> array(
         'php'	=> array(
             dirname(__FILE__).'/install/script/addExamples.php'
